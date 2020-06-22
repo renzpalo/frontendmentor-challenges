@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Public Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; */
+    background-color: white;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-menu-list {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    padding: 5rem 2rem 2rem;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background: hsla(233, 26%, 24%, 50%);
+    z-index: -1;
+}
+
+.nav-list {
+    padding: 2rem;
+    background-color: white;
+    font-size: 1.2rem;
+    list-style: none;
+    border-radius: 10px;
+}
+
+.nav-item {
+    padding: 14px 0;
+}
+
+.nav-link {
+    color: hsl(233, 26%, 24%);
+    transition: color .2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: hsl(233, 8%, 62%);
+}
+
+.nav-menu-icon {
+    width: 40px;
+    cursor: pointer;
+}
+
+/* .nav-icon-open {
+    background: url('../images/icon-hamburger.svg') center no-repeat;
+    background-size: contain;
+    color: black;
+} */
+
+/* Main */
+.main {
+    height: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.border {
+    border: solid 1px grey;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
