@@ -16,10 +16,6 @@ body {
 
 header {
     width: 100%;
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; */
     background-color: white;
 }
 
@@ -27,6 +23,15 @@ img {
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+h1 {
+    margin: 0 0 0.6rem;
+    color: hsl(233, 26%, 24%);
+}
+
+p {
+    color: hsl(233, 8%, 62%);
 }
 
 a {
@@ -37,27 +42,40 @@ a {
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.4rem;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+    align-items: center;
 }
 
 nav {
     display: flex;
     width: 100%;
-    height: 60px;
+    height: 80px;
     align-items: center;
     justify-content: space-between;
+    
+}
+
+.nav-logo {
+    width: 150px;
 }
 
 .nav-menu-list {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100vh;
-    padding: 5rem 2rem 2rem;
-    top: 0;
+    padding: 2rem;
+    top: 80px;
     left: 0;
     text-align: center;
     background: hsla(233, 26%, 24%, 50%);
-    z-index: -1;
+    animation: fadeIn .4s;
 }
 
 .nav-list {
@@ -84,6 +102,17 @@ nav {
 .nav-menu-icon {
     width: 40px;
     cursor: pointer;
+    -webkit-user-select: none;
+    transition: all .1s ease;
+}
+
+.nav-open {
+    content: url(../images/icon-hamburger.svg);
+}
+
+.nav-close {
+    content: url(../images/icon-close.svg);
+    width: 25px;
 }
 
 /* .nav-icon-open {
@@ -92,9 +121,38 @@ nav {
     color: black;
 } */
 
-/* Main */
-.main {
+/* Call-To-Action */
+.cta {
     height: 100vh;
+    background: url('../images/bg-intro-mobile.svg') top right no-repeat;
+    background-size: contain;
+    text-align: center;
+}
+
+.cta .row {
+    flex-direction: column-reverse;
+}
+
+/* Why choose Easybank? */
+.why-choose-easybank {
+    text-align: center;
+}
+
+.feature-card img {
+    width: 80px;
+}
+
+/* Buttons */
+.btn-primary {
+    padding: 14px 32px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    cursor: pointer;
 }
 
 
@@ -115,6 +173,12 @@ nav {
 
 
 
+
+/* Footer */
+footer {
+    background-color: hsl(233, 26%, 24%);
+    color: white;
+}
 
 .border {
     border: solid 1px grey;
@@ -122,3 +186,9 @@ nav {
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
