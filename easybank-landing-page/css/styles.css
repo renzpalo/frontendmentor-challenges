@@ -33,13 +33,14 @@ img {
     height: auto;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.6rem;
     font-weight: 400;
     color: hsl(233, 26%, 24%);
 }
 
 p {
+    font-weight: 300;
     color: hsl(233, 8%, 62%);
 }
 
@@ -144,6 +145,7 @@ nav {
 }
 
 .cta .row {
+    height: 100vh;
     flex-direction: column-reverse;
 }
 
@@ -167,6 +169,12 @@ nav {
     color: white;
     background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
     cursor: pointer;
+    transition: opacity .2s ease-in-out;
+}
+
+.btn-primary:hover {
+    /* background: linear-gradient(to right, hsla(136, 65%, 51%, 50%), hsla(192, 70%, 51%, 50%)); */
+    opacity: 50%;
 }
 
 
@@ -230,24 +238,10 @@ footer .row {
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media (min-width: 768px) {
-    .cta {
-        background: url('../images/bg-intro-desktop.svg') no-repeat;
-        background-position: 40vw -30vh;
-        background-size: 80%;
-        text-align: left;
+    h1 {
+        font-size: 3rem;
     }
 
-    .cta .row {
-        flex-direction: row;
-    }
-
-    .cta img {
-        position: absolute;
-        top: 0;
-        right: -8%;
-        width: 50%;
-        overflow-y: hidden;
-    }
 
     .row {
         flex-direction: row;
@@ -261,6 +255,80 @@ footer .row {
     .col-3 {
         flex: 25%;
     }
+
+    /* Navigation */
+    .nav-menu-icon {
+        display: none;
+    }
+
+    .nav-menu-list {
+        display: initial;
+        position: initial;
+        width: initial;
+        height: initial;
+        padding: initial;
+        top: initial;
+        left: initial;
+        background: transparent;
+        animation: initial;
+    }
+    
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        padding: initial;
+        background-color: transparent;
+        font-size: 1rem;
+    }
+
+    .nav-item {
+        margin: 0 .8rem;
+    }
+
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1.9rem;
+        background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+        width: 100%;
+        height: 2px;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform .2s;
+    }
+
+    .nav-link:hover::before {
+        transform: scaleY(1);
+    }
+
+    .cta {
+        padding: 0;
+        background: url('../images/bg-intro-desktop.svg') no-repeat;
+        background-position: 40vw -30vh;
+        background-size: 80%;
+        text-align: left;
+    }
+
+    .cta .row {
+        flex-direction: row;
+    }
+
+    
+
+    .cta img {
+        position: absolute;
+        top: 0;
+        right: -8%;
+        width: 50%;
+        overflow-y: hidden;
+    }
+
+    
 
     /* Feature Card */
     .why-choose-easybank {
