@@ -54,7 +54,9 @@ img {
 }
 
 .article-card .card-texts {
-    padding: 1rem 3rem;
+    min-height: 350px;
+    padding: 0 3rem;
+    position: relative;
 }
 
 .article-card .card-texts h2 {
@@ -66,14 +68,14 @@ img {
     width: 100%;
     min-height: 100px;
     max-height: 100px;
-    padding: 1rem 3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: absolute;
     left: 0;
     bottom: 0;
+    padding: 0 3rem;
 }
 
 .article-card .card-author .card-author-image img {
