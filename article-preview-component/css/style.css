@@ -1,6 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
+html {
+    font-family: 'Manrope', sans-serif;
+    background-color: hsl(210, 46%, 95%);
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: hsl(217, 19%, 35%);
+}
+
+p {
+    color: hsl(214, 17%, 51%);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    padding: 0 28px;
+}
+
+/* ARTICLE CARD */
+.article-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 32px 0;
+    background-color: #FFF;
+}
+
+.article-card .card-texts {
+    
+    padding: 1.6rem;
+}
+
+/* ARTICLE CARD - Card Author */
+.article-card .card-author {
+    width: 100%;
+    padding: 0 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.article-card .card-author .card-author-image img {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+}
+
+.article-card .card-share-links {
+    display: none;
+}
+
+.article-card .card-share-button {
+    width: 32px;
+    height: 32px;
+}
+
+.article-card .card-share-button:hover {
+    background-color: hsl(214, 17%, 51%);
+    border: solid 1px white;
+    border-radius: 100%;
+}
 
 
 /* ATTRIBUTIONS */
