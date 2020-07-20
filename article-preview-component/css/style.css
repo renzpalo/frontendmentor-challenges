@@ -16,10 +16,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
     color: hsl(217, 19%, 35%);
 }
 
 p {
+    font-weight: 500;
     color: hsl(214, 17%, 51%);
 }
 
@@ -29,6 +31,9 @@ img {
 }
 
 .container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
     padding: 0 28px;
 }
 
@@ -42,43 +47,125 @@ img {
     background-color: #FFF;
 }
 
+.article-card .card-image {
+    overflow: hidden;
+    min-height: 300px;
+    max-height: 300px;
+}
+
 .article-card .card-texts {
-    
-    padding: 1.6rem;
+    padding: 1rem 3rem;
+}
+
+.article-card .card-texts h2 {
+    font-size: 1.4rem;
 }
 
 /* ARTICLE CARD - Card Author */
 .article-card .card-author {
     width: 100%;
-    padding: 0 1.6rem;
+    min-height: 100px;
+    max-height: 100px;
+    padding: 1rem 3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    left: 0;
+    bottom: 0;
 }
 
 .article-card .card-author .card-author-image img {
     width: 64px;
-    height: 64px;
     border-radius: 100%;
 }
 
+/* ARTICLE CARD - Card Author Texts */
+.article-card .card-author .card-author-texts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-card .card-author .card-author-texts .card-author-text {
+    margin: 0 1.4rem;
+}
+
+.article-card .card-author .card-author-texts h4 {
+    font-size: 1.2rem;
+}
+
+.article-card .card-author .card-author-text * {
+    margin: 0 0 .4rem;
+}
+
+/* ARTICLE CARD - Card Author Links */
+
 .article-card .card-share-links {
     display: none;
+    flex-direction: row;
+}
+
+.article-card .card-share-links p {
+    text-transform: uppercase;
+}
+
+.article-card .card-share-links .social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
 }
 
 .article-card .card-share-button {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
+    background-color: hsl(210, 46%, 95%);
+    border-radius: 100%;
+    cursor: pointer;
 }
 
 .article-card .card-share-button:hover {
     background-color: hsl(214, 17%, 51%);
-    border: solid 1px white;
-    border-radius: 100%;
+}
+
+.article-card .card-share-button img {
+    transform: translate(100%, 100%);
 }
 
 
 /* ATTRIBUTIONS */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+/* DEBUG */
+.border {
+    border: solid 1px black;
+}
+
+@media (min-width: 768px) {
+    .article-card {
+        flex-direction: row;
+    }
+
+    .article-card .card-image {
+        min-width: 40%;
+        max-width: 40%;
+        min-height: 350px;
+        max-height: 350px;
+    }
+
+    .article-card .card-image img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .article-card .card-texts {
+        min-width: 60%;
+        max-width: 60%;
+        min-height: 350px;
+        max-height: 350px;
+    }
+}
