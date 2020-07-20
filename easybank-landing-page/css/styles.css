@@ -151,7 +151,6 @@ nav {
 /* Call-To-Action */
 .cta {
     position: relative;
-    height: 100vh;
     background: url('../images/bg-intro-mobile.svg') top right no-repeat;
     background-size: contain;
     text-align: center;
@@ -164,11 +163,17 @@ nav {
     align-items: center;
 }
 
+.cta-texts {
+    margin-top: 120%;
+}
+
 .cta img {
     position: absolute;
     top: -90px;
     right: 0;
 }
+
+
 
 /* Why choose Easybank? */
 .why-choose-easybank {
@@ -215,7 +220,6 @@ nav {
 .card-img {
     max-height: 250px;
     min-height: 250px;
-    
 }
 
 .card-img img {
@@ -226,7 +230,7 @@ nav {
 
 .card-text {
     padding: 2.4rem;
-    
+    background-color: white !important;
 }
 
 .card-text p {
@@ -260,25 +264,6 @@ nav {
     opacity: 50%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Footer */
 footer {
     padding: 60px 0;
@@ -287,18 +272,34 @@ footer {
 }
 
 footer .row {
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
 
 /* Footer Links */
 .footer-links {
+    margin: 0;
     padding: 0;
+    font-size: 1.2rem;
     list-style: none;
 }
 
+.footer-links li {
+    margin-bottom: 1.4rem;
+}
 
 .footer-links a {
     color: white;
+}
+
+.footer-brand {
+    margin-bottom: 2rem;
+}
+
+.footer-copyrights button {
+    margin: 1.2rem 0;
 }
 
 /* Socials */
@@ -313,6 +314,12 @@ footer .row {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.social-item img {
+    width: 32px;
+    height: 32px;
 }
 
 .border {
@@ -324,6 +331,7 @@ footer .row {
     font-size: 11px; text-align: center;
     color: hsl(233, 8%, 62%);
 }
+
 .attribution a { color: white; }
 
 @media (min-width: 768px) {
@@ -375,6 +383,7 @@ footer .row {
     }
 
     .nav-link {
+        color: hsl(233, 8%, 62%);
         position: relative;
     }
 
@@ -400,6 +409,7 @@ footer .row {
     }
 
     .cta {
+        height: 100vh;
         padding: 0;
         background: url('../images/bg-intro-desktop.svg') no-repeat;
         background-position: 40vw -30vh;
@@ -409,6 +419,10 @@ footer .row {
 
     .cta .row {
         flex-direction: row;
+    }
+
+    .cta-texts {
+        margin-top: 0;
     }
 
     .cta img {
@@ -493,6 +507,10 @@ footer .row {
         height: 120px;
     }
 
+    footer .row {
+        flex-direction: row;
+    }
+
     footer a {
         transition: color .2s ease;
     }
@@ -506,12 +524,52 @@ footer .row {
     }
 
     .footer-links li {
-        padding: 5px 0;
+        margin: 0;
+    }
+
+    .footer-links li a {
+        font-size: 1rem;
     }
 
     footer .footer-copyrights {
         align-items: flex-end;
     }
+
+    .social-links img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-brand {
+        margin-bottom: 4rem;
+    }
+
+    .footer-copyrights button {
+        margin: 0;
+    }
+
+    /* .footer-links {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2rem;
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 1.4rem;
+    }
+    
+    .footer-links a {
+        color: white;
+    }
+    
+    .footer-brand {
+        margin-bottom: 2rem;
+    }
+    
+    .footer-copyrights button {
+        margin: 1.2rem 0;
+    } */
 
     
 }
