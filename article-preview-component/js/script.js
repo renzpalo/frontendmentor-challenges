@@ -9,8 +9,11 @@ const shareButton = document.querySelector('.card-share-button');
 
 shareButton.addEventListener('click', () => {
     if(cardAuthorTexts.style.display == 'flex' || cardAuthorTexts.style.display == '') {
-        cardAuthor.style.backgroundColor = 'hsl(217, 19%, 35%)';
-        cardAuthorTexts.style.display = 'none';
+        if(!window.matchMedia("(min-width: 768px)")) {
+            cardAuthor.style.backgroundColor = 'hsl(217, 19%, 35%)';
+        }
+        
+        cardAuthorTexts.style.visibility = 'none';
         cardShareLinks.style.display = 'flex';
     } else if(cardAuthorTexts.style.display == 'none') {
         cardAuthor.style.backgroundColor = '#FFF';
