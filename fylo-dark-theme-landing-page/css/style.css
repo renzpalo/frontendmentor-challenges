@@ -6,13 +6,151 @@
     box-sizing: border-box;
 }
 
-html {
+body {
+    margin: 0;
+    background-color: hsl(218, 28%, 13%);
     font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
     color: white;
 }
 
+header {
+    width: 100%;
+    background-color: hsl(217, 28%, 15%);
+}
 
+img {
+    width: 100%;
+    height: auto;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+p {
+    color: whitesmoke;
+    line-height: 1.4rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1.4rem;
+}
+
+/* ---------- NAVIGATION ---------- */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+nav .nav-logo {
+    width: 30%;
+}
+
+nav .nav-menu {
+    color: white;
+}
+
+nav .nav-menu .nav-menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-menu .nav-menu-list .nav-item .nav-link {
+    color: white;
+    padding: .6rem;
+}
+
+nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
+    padding-right: 0;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    padding: 2rem 0 3rem;
+    text-align: center;
+    background: hsl(217, 28%, 15%) url('../images/bg-curvy-mobile.svg') bottom left no-repeat;
+}
+
+.cta p {
+    margin: 0 1rem 3rem;
+}
+
+.btn-main-link {
+    padding: .8rem 4rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: white;
+    border-radius: 2rem;
+    background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+}
+
+/* ---------- FEATURES ---------- */
+.features {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.features .feature-card {
+    padding: 2rem 1rem;
+}
+
+.features .feature-card img {
+    width: 64px;
+}
+
+/* ---------- STAY PRODUCTIVE ---------- */
+.stay-productive {
+    padding: 3rem 0;
+}
+
+.link-icon {
+    display: flex;
+    align-items: center;
+}
+
+.link-icon::after {
+    
+}
+
+.link-icon a {
+    color: hsl(176, 68%, 64%);
+    border-bottom: solid 1px hsl(176, 68%, 64%);
+    display: flex;
+    align-items: center;
+}
+
+.link-icon a img {
+    width: 2rem;
+    margin: .4rem 0 .4rem .8rem;
+}
 
 /* Attribution ------------------------------ */
 .attribution { 
