@@ -235,26 +235,71 @@ nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
 footer {
     padding: 1rem 0;
     border: solid 1px white;
+    font-size: 16px;
 }
 
-footer .footer-logo {
+footer .footer-logo img {
     width: 50%;
+    margin-bottom: 2rem;
 }
 
-.text-icon {
+footer .footer-col {
+    border: solid 1px pink;
+}
+
+footer .footer-text-icon {
     display: flex;
+    margin-bottom: 1rem;
 }
 
-.text-icon img {
+footer .footer-text-icon img {
+    width: 21px;
+    height: 24px;
+    margin-top: 3px;
     margin-right: 1rem;
 }
 
-.text-icon p {
-    margin-top: 4px;
+footer .footer-text-icon img[alt="Email"] {
+    height: 16px;
+}
+
+footer .footer-text-icon p {
+    margin: 0;
+}
+
+footer .footer-menu-list {
+    margin-bottom: 2rem;
+}
+
+footer .footer-menu-list li {
+    padding: 6px 0;
+}
+
+footer .footer-menu-list li a {
+    color: white;
+}
+
+footer .footer-icon-list {
+    display: flex;
+    justify-content: center;
+}
+
+footer .footer-icon-list li {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border: solid 1px white;
+    border-radius: 32px;
+}
+
+footer .footer-icon-list li a {
+    color: white;
 }
 
 /* Attribution ------------------------------ */
-.attribution { 
+.attribution {
+    text-align: center;
     font-size: 11px;
 }
 .attribution a {
