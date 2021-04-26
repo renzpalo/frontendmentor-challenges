@@ -189,6 +189,70 @@ nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
     font-size: 11px;
 }
 
+/* ---------- SUBSCRIBE ---------- */
+.subscribe {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.subscribe .subscribe-panel {
+    padding: 1rem 1.8rem 2rem;
+    background-color: hsl(217, 28%, 15%);
+    border-radius: 10px;
+}
+
+.subscribe .subscribe-panel h1 {
+    font-size: 1.2rem;
+}
+
+.subscribe .subscribe-panel form {
+    margin-top: 2rem;
+}
+
+.subscribe .subscribe-panel form input {
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+    border: none;
+    border-radius: 32px;
+    outline: none;
+}
+
+.subscribe .subscribe-panel form button {
+    width: 100%;
+    height: 3rem;
+    border: none;
+    border-radius: 32px;
+    background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+    font-family: 'Raleway', sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    padding: 1rem 0;
+    border: solid 1px white;
+}
+
+footer .footer-logo {
+    width: 50%;
+}
+
+.text-icon {
+    display: flex;
+}
+
+.text-icon img {
+    margin-right: 1rem;
+}
+
+.text-icon p {
+    margin-top: 4px;
+}
+
 /* Attribution ------------------------------ */
 .attribution { 
     font-size: 11px;
