@@ -20,6 +20,11 @@ header {
     background-color: hsl(217, 28%, 15%);
 }
 
+section {
+    width: 100%;
+    height: auto;
+}
+
 img {
     width: 100%;
     height: auto;
@@ -102,6 +107,7 @@ nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
     padding: 2rem 0 3rem;
     text-align: center;
     background: hsl(217, 28%, 15%) url('../images/bg-curvy-mobile.svg') bottom left no-repeat;
+    background-size: contain;
 }
 
 .cta p {
@@ -196,14 +202,20 @@ nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
 
 /* ---------- SUBSCRIBE ---------- */
 .subscribe {
-    padding: 4rem 0;
+    padding: 8rem 0;
     text-align: center;
 }
 
+.subscribe .col {
+    position: relative;
+}
+
 .subscribe .subscribe-panel {
+    position: absolute;
     padding: 1rem 1.8rem 2rem;
     background-color: hsl(217, 28%, 15%);
     border-radius: 10px;
+    transform: translateY(-25%);
 }
 
 .subscribe .subscribe-panel h1 {
@@ -238,8 +250,9 @@ nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
 
 /* ---------- FOOTER ---------- */
 footer {
-    padding: 1rem 0;
+    padding: 12rem 0 1rem;
     font-size: 16px;
+    background-color: hsl(216, 53%, 9%);
 }
 
 footer .footer-logo img {
@@ -316,3 +329,37 @@ footer .footer-icon-list li a {
     border: solid 1px white;
 }
 
+/* MEDIA QUERIES ------------------------------ */
+
+
+@media (min-width: 375px) {
+    nav .nav-logo {
+        width: 25%;
+    }
+}
+
+@media (min-width: 576px) {
+    nav .nav-logo {
+        width: 18%;
+    }
+
+    .cta {
+        padding: 4rem;
+    }
+
+    .features .feature-card {
+        padding: 2rem 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (min-width: 992px) {
+    
+}
+
+@media (min-width: 1200px) {
+    
+}
