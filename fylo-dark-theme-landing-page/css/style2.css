@@ -267,3 +267,111 @@ footer .container .row > * {
 .border {
     border: solid 1px white;
 }
+
+@media (min-width: 600px) {
+
+}
+
+@media (min-width: 1200) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .row {
+        flex-flow: row wrap;
+    }
+
+    /* ---------- HEADER ---------- */
+    nav {
+        height: 170px;
+    }
+
+    nav .nav-logo {
+        width: 16%;
+    }
+
+    nav .nav-menu .nav-menu-list {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    nav .nav-menu .nav-menu-list .nav-item .nav-link {
+        color: white;
+        padding: 1.4rem;
+    }
+    
+    nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
+        padding-right: 0;
+    }
+
+    /* ---------- CTA ---------- */
+    .cta {
+        padding: 0 600px 200px;
+        background: hsl(217, 28%, 15%) url('../images/bg-curvy-desktop.svg') bottom left no-repeat;
+        background-size: contain;
+    }
+
+    .cta h1 {
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+    }
+
+    .cta p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .btn-main-link {
+        padding: 1.2rem 6rem;
+    }
+
+    /* ---------- FEATURES ---------- */
+    .features .row .col {
+        border: solid 1px white;
+        flex: 50%;
+    }
+
+    .features .feature-card {
+        padding: 3rem 6rem;
+    }
+
+    .feature-card img {
+        width: 128px;
+    }
+
+    /* ---------- STAY PRODUCTIVE ---------- */
+    .stay-productive .row .col {
+        border: solid 1px white;
+        flex: 50%;
+    }
+
+    .stay-productive h2 {
+        width: 70%;
+        font-size: 2.4rem;
+        line-height: 3rem;
+    }
+
+    .stay-productive p {
+        font-size: 1rem;
+    }
+
+    /* ---------- STAY PRODUCTIVE ---------- */
+    footer {
+        
+    }
+
+    footer .row {
+
+    }
+
+    footer .footer-menu {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .footer-col {
+        flex: 20%;
+        border: solid 1px white;
+    }
+    
+}

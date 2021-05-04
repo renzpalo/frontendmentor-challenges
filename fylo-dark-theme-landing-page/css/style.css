@@ -61,6 +61,11 @@ ul {
     padding: 0 1.4rem;
 }
 
+.row {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 /* ---------- NAVIGATION ---------- */
 nav {
     display: flex;
@@ -234,17 +239,12 @@ nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
 /* ---------- FOOTER ---------- */
 footer {
     padding: 1rem 0;
-    border: solid 1px white;
     font-size: 16px;
 }
 
 footer .footer-logo img {
     width: 50%;
     margin-bottom: 2rem;
-}
-
-footer .footer-col {
-    border: solid 1px pink;
 }
 
 footer .footer-text-icon {
@@ -261,10 +261,15 @@ footer .footer-text-icon img {
 
 footer .footer-text-icon img[alt="Email"] {
     height: 16px;
+    margin-bottom: 3rem;
 }
 
 footer .footer-text-icon p {
     margin: 0;
+}
+
+footer .footer-menu-list:first {
+    padding-top: 4rem;
 }
 
 footer .footer-menu-list {
@@ -287,6 +292,7 @@ footer .footer-icon-list {
 footer .footer-icon-list li {
     width: 36px;
     height: 36px;
+    margin: 0 6px;
     line-height: 36px;
     text-align: center;
     border: solid 1px white;
@@ -309,3 +315,4 @@ footer .footer-icon-list li a {
 .border {
     border: solid 1px white;
 }
+
