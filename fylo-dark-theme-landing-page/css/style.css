@@ -212,7 +212,7 @@ nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
 
 .subscribe .subscribe-panel {
     position: absolute;
-    padding: 1rem 1.8rem 2rem;
+    padding: 2rem 1.8rem;
     background-color: hsl(217, 28%, 15%);
     border-radius: 10px;
     transform: translateY(-25%);
@@ -353,13 +353,129 @@ footer .footer-icon-list li a {
 }
 
 @media (min-width: 768px) {
-    
+    nav {
+        height: 100px;
+    }
+
+    /* ----- CTA ----- */
+    .cta {
+        padding: 1rem 0 4rem;
+        background: hsl(217, 28%, 15%) url('../images/bg-curvy-desktop.svg') bottom left no-repeat;
+        background-size: contain;
+    }
+
+    .cta .col {
+        padding: 0 6rem;
+    }
+
+    .cta h1 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+    .cta p {
+        font-size: 1.1rem;
+    }
+
+    .btn-main-link {
+        padding: 1.2rem 5.2rem;
+    }
+
+    /* ----- FEATURES ----- */
+    .features .row {
+        flex-flow: row wrap;
+    }
+
+    .features .row .col {
+        flex: 50%;
+        border: solid 1px white;
+    }
+
+    .features .feature-card {
+        padding: 3rem 2rem;
+    }
+
+    /* ----- FEATURES ----- */
+    .subscribe-panel {
+        border: solid 1px white;
+        padding: 2rem 4rem !important;
+    }
+
+    .subscribe-panel form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .subscribe-panel form input {
+        flex: 65%;
+        margin-right: 1.4rem;
+    }
+
+    .subscribe-panel form button {
+        flex: 30%;
+    }
+
+    /* ----- FOOTER ----- */
+    footer .row {
+        flex-flow: row wrap;
+    }
+
+    .footer-col {
+        flex: 50%;
+    }
 }
 
 @media (min-width: 992px) {
-    
+    /* ----- STAY PRODUCTIVE ----- */
+    .stay-productive .row {
+        flex-flow: row wrap;
+    }
+
+    .stay-productive .row .col {
+        flex: 50%;
+    }
+
+    .stay-productive .row .col:last-child {
+        padding-left: 3rem;
+    }
+
+    .stay-productive .col h2 {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+    }
+
+    .stay-productive .col p {
+        font-size: .9rem;
+    }   
+
+    /* ----- TESTIMONIALS ----- */
+    .testimonials .row {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .testimonials .row .col {
+        flex: 25%;
+        margin: 0 .8rem;
+    }
 }
 
 @media (min-width: 1200px) {
-    
+    header {
+        border: solid 1px white;
+    }
+
+    nav {
+        height: 200px;
+    }
+
+    nav .nav-menu .nav-menu-list li a {
+        margin-left: 1.6rem;
+        font-size: 16px;
+    }
+
+    /* ----- CTA ----- */
+    .cta {
+
+    }
 }
