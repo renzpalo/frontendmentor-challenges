@@ -162,8 +162,18 @@ nav .nav-menu .nav-menu-list .nav-item:last-of-type .nav-link {
 /* ---------- TESTIMONIALS ---------- */
 .testimonials {
     padding: 3rem 1rem;
-    background: url('../images/bg-quotes.png') 48px 28px no-repeat;
-    background-size: 24px 24px;
+}
+
+.testimonials .col {
+    position: relative;
+}
+
+.bg-quotes {
+    position: absolute;
+    top: -10%;
+    left: 3%;
+    width: 10%;
+    z-index: -999;
 }
 
 .testimonial-card {
@@ -365,7 +375,7 @@ footer .footer-icon-list li a {
     }
 
     .cta .col {
-        padding: 0 6rem;
+        padding: 0 5rem;
     }
 
     .cta h1 {
@@ -388,16 +398,14 @@ footer .footer-icon-list li a {
 
     .features .row .col {
         flex: 50%;
-        border: solid 1px white;
     }
 
     .features .feature-card {
         padding: 3rem 2rem;
     }
 
-    /* ----- FEATURES ----- */
+    /* ----- SUBSCRIBE ----- */
     .subscribe-panel {
-        border: solid 1px white;
         padding: 2rem 4rem !important;
     }
 
@@ -415,6 +423,13 @@ footer .footer-icon-list li a {
         flex: 30%;
     }
 
+    /* ----- TESTIMONIALS ----- */
+    .bg-quotes {
+        width: 5%;
+        top: -15%;
+        left: 2%;
+    }
+
     /* ----- FOOTER ----- */
     footer .footer-logo img {
         width: 25%;
@@ -422,6 +437,12 @@ footer .footer-icon-list li a {
 }
 
 @media (min-width: 992px) {
+
+    /* ----- CTA ----- */
+    .cta .col {
+        padding: 0 8rem;
+    }
+
     /* ----- STAY PRODUCTIVE ----- */
     .stay-productive .row {
         flex-flow: row wrap;
@@ -454,13 +475,14 @@ footer .footer-icon-list li a {
         flex: 25%;
         margin: 0 .8rem;
     }
+
+    .bg-quotes {
+        top: -10%;
+        left: 3%;
+    }
 }
 
 @media (min-width: 1200px) {
-    header {
-        border: solid 1px white;
-    }
-
     nav {
         height: 200px;
     }
@@ -470,26 +492,32 @@ footer .footer-icon-list li a {
         font-size: 16px;
     }
 
-    /* ----- CTA ----- */
-    .cta {
-
-    }
-
     /* ----- FOOTER ----- */
     footer .row {
         flex-flow: row wrap;
     }
 
-    .footer-col {
-        border: solid 1px white;
+    .footer-col:nth-of-type(1) {
+        flex: 35%;
+        padding-right: 1rem;
     }
 
-    .footer-col:nth-of-type(1) {
-        flex: 10%;
+    .footer-col:nth-of-type(2) {
+        flex: 20%;
+    }
+
+    .footer-col:nth-of-type(3) {
+        flex: 20%;
+    }
+
+    .footer-col:nth-of-type(4) {
+        flex: 15%;
     }
 
     .footer-menu {
-        flex-flow: column wrap;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
     }
 
 }
