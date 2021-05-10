@@ -416,12 +416,8 @@ footer .footer-icon-list li a {
     }
 
     /* ----- FOOTER ----- */
-    footer .row {
-        flex-flow: row wrap;
-    }
-
-    .footer-col {
-        flex: 50%;
+    footer .footer-logo img {
+        width: 25%;
     }
 }
 
@@ -478,4 +474,22 @@ footer .footer-icon-list li a {
     .cta {
 
     }
+
+    /* ----- FOOTER ----- */
+    footer .row {
+        flex-flow: row wrap;
+    }
+
+    .footer-col {
+        border: solid 1px white;
+    }
+
+    .footer-col:nth-of-type(1) {
+        flex: 10%;
+    }
+
+    .footer-menu {
+        flex-flow: column wrap;
+    }
+
 }
