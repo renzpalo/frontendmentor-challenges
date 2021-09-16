@@ -108,6 +108,7 @@ input {
 }
 
 input:focus {
+    color: hsl(249, 10%, 26%);
     border: solid 1px hsl(248, 32%, 49%);
 }
 

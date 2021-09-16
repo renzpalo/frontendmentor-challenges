@@ -18,29 +18,62 @@ console.log(firstName.parentNode.childNodes, 'load');
 
 // Data Validation
 function validateNameInput(element, input) {
-    let inputHasError = document.getElementById('first-name').classList.contains('.error-input');
+    let inputHasError = element.classList.contains('error-input');
 
-    console.log(element.value, inputHasError);
     if (element.value == "" && !inputHasError) {
-        element.insertAdjacentHTML('afterend', '<i class="error-message">' + input + ' cannot be empty</i>');
-        element.insertAdjacentHTML('beforebegin', '<div class="error-icon"></div>');
-        element.classList.add('error-input');
-
-        console.log(element.value, inputHasError);
-    } else if (element.value !== '' && element.value.length > 0) {
-        element.classList.remove('error-input');
-
-        console.log(element.value, inputHasError);
+        generateErrorMessage(element, input, 'cannot be empty.');
+    } else if (element.value !== "") {
+        if (inputHasError) {
+            removeErrorMessage(element);
+        }
     }
+}
 
-    console.log(element.value, inputHasError);
-    console.log(element.value, "Element value");
+function validateEmail() {
+    let inputHasError = email.classList.contains('error-input');
+
+    if (email.value == "" && !inputHasError) {
+        generateErrorMessage(email, 'Looks like this is not an', 'email.');
+    } else if (email.value !== "") {
+        if (inputHasError) {
+            removeErrorMessage(email);
+        }
+    }
+}
+
+function validatePassword() {
+    let inputHasError = password.classList.contains('error-input');
+
+    if (password.value == "" && !inputHasError) {
+        generateErrorMessage(password, 'Password', 'cannot be empty.');
+    } else if (password.value.length < 8 && !inputHasError) {    
+        generateErrorMessage(password, 'Password', 'must contain 8 characters.');
+    } else if (password.value !== "" && password.value.length >= 8) {
+        if (inputHasError) {
+            removeErrorMessage(password);
+        }
+    }
+}
+
+function removeErrorMessage(element) {
+    element.classList.remove('error-input');
+    element.parentNode.removeChild(document.querySelector('.error-message'));
+    element.parentNode.removeChild(document.querySelector('.error-icon'));
+}
+
+function generateErrorMessage(element, input, message) {
+    element.insertAdjacentHTML('afterend', '<i class="error-message">' + input + ' ' + message + '</i>');
+    element.insertAdjacentHTML('beforebegin', '<div class="error-icon"></div>');
+    element.classList.add('error-input');
 }
 
 trialForm.addEventListener('submit', function(e) {
     
 
     validateNameInput(firstName, 'First Name');
+    validateNameInput(lastName, 'Last Name');
+    validateEmail();
+    validatePassword();
 
     
     e.preventDefault();
