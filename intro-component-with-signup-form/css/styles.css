@@ -36,6 +36,10 @@ a {
     align-items: center;
 }
 
+.row .col:first-child {
+    margin-top: 64px;
+}
+
 .col {
     flex: 100%;
 }
@@ -166,6 +170,10 @@ input:focus {
     .row {
         flex-flow: row nowrap;
         align-items: center;
+    }
+
+    .row .col:first-child {
+        margin-top: 0;
     }
 
     .col {

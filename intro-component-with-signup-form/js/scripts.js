@@ -7,9 +7,6 @@ let password = document.getElementById('password');
 
 let trialForm = document.getElementById('trial-form');
 
-// Error Message
-console.log(firstName.parentNode.childNodes, 'load');
-
 // Error Messages
 // First Name cannot be empty
 // Last Name cannot be empty
@@ -68,13 +65,10 @@ function generateErrorMessage(element, input, message) {
 }
 
 trialForm.addEventListener('submit', function(e) {
-    
-
     validateNameInput(firstName, 'First Name');
     validateNameInput(lastName, 'Last Name');
     validateEmail();
     validatePassword();
-
     
     e.preventDefault();
 });
