@@ -11,21 +11,23 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    
   </style>
 </head>
 <body>
   <main>
     <div class="nft-card">
-      <img src="images/image-equilibrium.jpg" alt="Equilibrium">
+      <div class="nft-card-image">
+        <img src="images/image-equilibrium.jpg" alt="Equilibrium">
+        <div class="nft-card-image-overlay"><img src="images/icon-view.svg" alt="View Icon"></div>
+      </div>
       <div class="nft-card-content">
         <div class="nft-card-info">
-          <h1>Equilibrium #3429</h1>
+          <a href="#" class="nft-card-title"><h1>Equilibrium #3429</h1></a>
           <p>Our Equilibrium collection promotes balance and calm.</p>
-          <div class="ntf-card-info-details">
-            <p>0.041 ETH</p>
-            <p>3 days left</p>
+          <div class="nft-card-info-details">
+            <p class="nft-card-info-details-text nft-card-price"><img src="images/icon-ethereum.svg" alt="Etherium Icon"> 0.041 ETH</p>
+            <p class="nft-card-info-details-text nft-card-time"><img src="images/icon-clock.svg" alt="Clock Icon"> 3 days left</p>
           </div>
         </div>
         <hr>
@@ -36,7 +38,7 @@
       </div>
     </div>
   </main>
-  
+
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/renzpalo">Renz Palo</a>.

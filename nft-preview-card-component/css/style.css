@@ -17,32 +17,134 @@ body {
 }
 
 hr {
-    border-top: 1px solid hsl(215, 32%, 27%);
+    border: none;
+    border-top: solid 1px hsl(215, 32%, 27%);
 }
 
 h1 {
-    outline: hsl(0, 0%, 100%);
+    font-size: 24px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
 }
 
 p {
+    font-weight: 300;
+    color: hsl(215, 51%, 70%);
+}
 
+a {
+    color: #FFF;
+    text-decoration: none;
 }
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
+    margin: 0;
 }
 
 main {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 90vh;
     padding: 28px;
 }
 
 .nft-card {
+    max-width: 320px;
     padding: 21px;
     background-color: hsl(216, 50%, 16%);
     border-radius: 16px;
     overflow: hidden;
+}
+
+.nft-card-title h1 {
+    transition: color .4s ease;
+}
+
+.nft-card-title:hover h1 {
+    color: hsl(178, 100%, 50%);
+}
+
+.nft-card-image {
+    position: relative;
+}
+
+.nft-card-image img {
+    border-radius: 16px;
+}
+
+.nft-card-image .nft-card-image-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: hsla(178, 100%, 50%, 50%);
+    opacity: 0;
+    text-align: center;
+    border-radius: 16px;
+    transition: .4s ease;
+}
+
+.nft-card-image:hover .nft-card-image-overlay {
+    opacity: 1;
+}
+
+.nft-card-price {
+    font-weight: 700;
+    color: hsl(178, 100%, 50%);
+}
+
+/* NFT Card Details */
+.nft-card-info-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nft-card-info-details-text {
+    display: flex;
+    align-items: center;
+}
+
+.nft-card-info-details-text img {
+    margin-right: .5rem;
+}
+
+/* NFT Card Creator */
+.nft-card-creator {
+    display: flex;
+    align-items: center;
+}
+
+.nft-card-creator img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.nft-card-creator p a  {
+    transition: color .4s ease;
+}
+
+.nft-card-creator p a:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+/* Footer */
+.attribution { 
+    font-size: 11px; 
+    color: #FFF;
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(215, 51%, 70%); 
 }
