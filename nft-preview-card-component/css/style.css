@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: hsl(217, 54%, 11%);
+}
+
+hr {
+    border-top: 1px solid hsl(215, 32%, 27%);
+}
+
+h1 {
+    outline: hsl(0, 0%, 100%);
+}
+
+p {
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+}
+
+.nft-card {
+    padding: 21px;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 16px;
+    overflow: hidden;
+}
