@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: hsl(225, 100%, 98%);
+}
+
+image {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 1.4rem;
+    /* background: url('../images/pattern-background-mobile.svg') top left no-repeat; */
+    /* background-size: 100%; */
+}
+
+/* ORDER SUMMARY */
+.order-summary {
+    margin: 1rem 0;
+    background-color: #FFF;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.order-summary-image {
+    height: 161.44px;
+}
+
+.order-summary-image img {
+    width: 100%;
+}
+
+.order-summary-details {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* ORDER PLAN */
+.order-plan {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-plan-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.order-plan-info img {
+    margin-right: 21px;
+    width: 50px;
+    height: 50px;
+}
+
+.order-plan-text p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
