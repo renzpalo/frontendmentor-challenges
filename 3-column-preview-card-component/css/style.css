@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+}
+
+/* CAR TYPE PANEL */
+.car-type-panel {
+    display: flex;
+    flex-direction: column;
+    margin: 1.2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* CAR TYPE CARD */
+.car-type-card {
+    padding: 50px;
+    color: white;
+}
+
+.car-type-card h1 {
+    margin: 24px 0 16px;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+}
+
+.car-type-card p {
+    margin-top: 0;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.learn-more-link {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: #FFF;
+    font-size: 15px;
+    text-decoration: none;
+    border: solid 2px white;
+    border-radius: 32px;
+}
+
+#sedan-card {
+    background-color: hsl(31, 77%, 52%);
+}
+
+#sedan-card a {
+    color: hsl(31, 77%, 52%);
+}
+
+#suv-card {
+    background-color: hsl(184, 100%, 22%);
+}
+
+#suv-card a {
+    color: hsl(184, 100%, 22%);
+}
+
+#luxury-card {
+    background-color: hsl(179, 100%, 13%);
+}
+
+#luxury-card a {
+    color: hsl(179, 100%, 13%);
+}
+
+.learn-more-link:hover {
+    color: #FFF !important;
+    background-color: transparent;
+    transition: all .2s ease;
+}
+
+
+/* FOOTER */
+footer {
+    padding: 32px 0;
+}
+
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media(min-width: 1024px) {
+    .container {
+        display: flex;
+        align-items: center;
+        height: 90vh;
+    }
+
+    /* CAR TYPE PANEL */
+    .car-type-panel {
+        flex-direction: row;
+        border-radius: 10px;
+    }
+
+    .learn-more-link {
+        margin-top: 64px;
+    }
+}
