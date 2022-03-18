@@ -6,6 +6,9 @@
     --light-red: hsl(354, 100%, 66%);
     --gray: hsl(0, 0%, 59%);
     --very-dark-blue: hsl(209, 33%, 12%);
+    --blue-shadow: hsla(223, 87%, 63%, 70%);
+
+    --font-main: 'Libre Franklin', sans-serif;
 }
 
 *,
@@ -17,7 +20,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: var(--font-main);
 }
 
 img {
@@ -26,24 +29,211 @@ img {
 }
 
 .container {
-    max-width: 980px;
+    max-width: 768px;
     margin: 0 auto;
-    padding: 1.2rem;
+    padding: 0 1.8rem;
+}
+
+/* COMPONENTS */
+
+/* COMPONENTS > Forms & Buttons */
+.input {
+    padding: .8rem 2rem;
+    color: var(--very-dark-blue);
+    font-family: var(--font-main);
+    font-size: .8rem;
+    border: 1px solid var(--pale-blue);
+    border-radius: 2rem;
+    outline: none;
+}
+
+.input:hover,
+.input:focus {
+    border: 2px solid var(--pale-blue);
+    margin: -1px;
+}
+
+.input::placeholder {
+    color: var(--pale-blue);
+}
+
+.input-error {
+    border: 1px solid var(--light-red);
+}
+
+.input-error:hover,
+.input-error:focus {
+    border: 2px inset var(--light-red);
+}
+
+.email-error-message {
+    display: none;
+    margin: .5rem 0 1rem;
+    color: var(--light-red);
+    font-size: .7rem;
+}
+
+.button {
+    padding: .8rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 600;
+    transition: all .4s ease;
+}
+
+.button-primary {
+    background-color: var(--blue);
+    color: #FFF;
+    box-shadow: 0 3px 8px var(--blue-shadow);
+}
+
+.button:hover {
+    background-color: var(--blue-shadow);
+    box-shadow: none;
+
 }
 
 /* COMING SOON SECTION */
 #section-coming-soon {
-
+    padding: 4rem 0;
+    text-align: center;
 }
 
+#section-coming-soon .brand {
+    width: 20%;
+}
+
+#section-coming-soon h1 {
+    font-weight: 300;
+    color: var(--gray);
+}
+
+#section-coming-soon h1 strong {
+    color: var(--very-dark-blue);
+}
+
+#section-coming-soon h4 {
+    color: var(--very-dark-blue);
+    font-size: .8rem;
+    font-weight: 300;
+}
+
+/* COMING SOON > SUBSCRIBE FORM */
+#subscribe-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .6rem;
+    margin: 2rem 0 4rem;
+}
+
+#subscribe-form * {
+    width: 100%;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
 }
 
+footer .copyrights {
+    color: var(--gray);
+    font-size: .7rem;
+}
+
+.footer-socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: .8rem;
+    margin: 0 0 1.4rem;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-socials li {
+    text-align: center;
+    line-height: 32px;
+}
+
+.footer-socials li a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--pale-blue);
+    border-radius: 32px;
+    color: var(--blue);
+    transition: all .4s ease;
+}
+
+.footer-socials li a:hover {
+    background-color: var(--blue);
+    color: #FFF;
+}
+
 .attribution {
+    margin: 2rem 0;
     font-size: 11px; text-align: center;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--blue);
+    transition: all .4s ease;
+}
+
+.attribution a:hover {
+    text-decoration: none;
+}
+
+@media(min-width: 768px) {
+    /* COMING SOON */
+    #section-coming-soon .brand {
+        width: 10%;
+    }
+
+    #section-coming-soon h1 {
+        font-size: 2.4rem;
+    }
+
+    #section-coming-soon h4 {
+        font-size: 1.1rem;
+    }
+
+    /* COMPONENTS > Forms & Buttons */
+    .input {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .email-error-message {
+        padding-left: 2rem;
+        font-size: .8rem;
+        text-align: left;
+    }
+
+    .button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    /* COMING SOON > SUBSCRIBE FORM */
+    #subscribe-form {
+        flex-direction: row;
+    }
+
+    #subscribe-form .form-group {
+        flex: 70%;
+    }
+
+    #subscribe-form #subscribe-submit {
+        flex: 30%;
+    }
+
+}
+
+@media(min-width: 1440px) {
+    
 }
