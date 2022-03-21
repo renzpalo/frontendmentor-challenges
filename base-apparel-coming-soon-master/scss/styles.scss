@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,600;1,400&display=swap');
+
+// Colors
+$desaturated-red: hsl(0, 36%, 70%);
+$soft-red: hsl(0, 93%, 68%);
+$dark-grayish-red: hsl(0, 6%, 24%);
+
+// Gradients
+$gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$gradient-two: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+// Fonts
+$main-font: 'Josefin Sans', sans-serif;
+
+html {
+    font-family: $main-font;
+}
+
+body {
+    margin: 0;
+    
+}
+
+// GRIDS
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+// INPUTS & BUTTONS
+input {
+    padding: 1rem 1.6rem;
+    font-family: $main-font;
+    border: 1px solid $desaturated-red;
+    border-radius: 32px;
+    outline: none;
+
+    &::placeholder {
+        color: $desaturated-red;
+        font-family: $main-font;
+        
+    }
+}
+
+button {
+    padding: 1rem 2rem;
+    background: $gradient-two;
+    border: none;
+    border-radius: 32px;
+    outline: none;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.chevron-right {
+
+    span {
+        width: 32px;
+        height: 2px;
+        border: 1px solid #FFF;
+
+        &:first-child {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+
+// HEADER
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 85px;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem;
+
+        .navbar-brand {
+            flex: 10%;
+        }
+    }
+}
+
+// CTA SECTION
+.cta {
+
+    .row {
+        flex-direction: column-reverse;
+
+        .cta-content {
+            padding: 2rem 1.2rem;
+            text-align: center;
+
+            h1 {
+                color: $desaturated-red;
+                font-size: 2.4rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                letter-spacing: .6rem;
+
+                strong {
+                    color: $dark-grayish-red;
+                }
+            }
+
+            p {
+                color: $desaturated-red;
+                font-size: 1rem;
+                line-height: 1.4rem;
+            }
+
+            .subscribe-form {
+
+                .form-subscribe {
+                    
+
+                }
+
+            }
+        }
+
+        .cta-background {
+            width: 100%;
+            min-height: 250px;
+            background: url(../images/hero-mobile.jpg) top left no-repeat;
+        }
+    }
+}
+
+// FOOTER
+footer {
+
+    .attribution { 
+        font-size: 11px; text-align: center; 
+
+        a {
+            color: $soft-red;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

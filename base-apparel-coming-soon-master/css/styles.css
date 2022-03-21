@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,600;1,400&display=swap");
+html {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 1rem 1.6rem;
+  font-family: "Josefin Sans", sans-serif;
+  border: 1px solid #ce9797;
+  border-radius: 32px;
+  outline: none;
+}
+input::placeholder {
+  color: #ce9797;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+button {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  border: none;
+  border-radius: 32px;
+  outline: none;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.input-group button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.chevron-right span {
+  width: 32px;
+  height: 2px;
+  border: 1px solid #FFF;
+}
+.chevron-right span:first-child {
+  transform: rotate(45deg);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85px;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+}
+header nav .navbar-brand {
+  flex: 10%;
+}
+
+.cta .row {
+  flex-direction: column-reverse;
+}
+.cta .row .cta-content {
+  padding: 2rem 1.2rem;
+  text-align: center;
+}
+.cta .row .cta-content h1 {
+  color: #ce9797;
+  font-size: 2.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+}
+.cta .row .cta-content h1 strong {
+  color: #413a3a;
+}
+.cta .row .cta-content p {
+  color: #ce9797;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+.cta .row .cta-background {
+  width: 100%;
+  min-height: 250px;
+  background: url(../images/hero-mobile.jpg) top left no-repeat;
+}
+
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: #f96262;
+}
+footer .attribution a:hover {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
