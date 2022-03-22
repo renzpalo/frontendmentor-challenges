@@ -1,15 +1,23 @@
 @use "sass:map";
 
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;600&display=swap');
 
 $theme-colors: (
     "cyan": hsl(179, 62%, 43%),
+    "cyan-light": hsl(179, 47%, 52%),
     "bright-yellow": hsl(71, 73%, 54%),
     "light-gray": hsl(204, 43%, 93%),
     "grayish-blue": hsl(218, 22%, 67%)
 );
 
 $font-family: 'Karla', sans-serif;
+$box-shadow: 0px 4px 16px 1px rgba(0, 0, 0, 0.10);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 html {
     font-family: $font-family;
@@ -20,29 +28,157 @@ body {
     background-color: map.get($theme-colors, "light-gray");
 }
 
+.container {
+    margin: 0 auto;
+    padding: 1.2rem;
+}
 
+// COMPONENTS
+.btn-link {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    background-color: map.get($theme-colors, "bright-yellow");
+    border-radius: 5px;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: $box-shadow;
+    transition: box-shadow .4s ease;
 
+    &:hover {
+        box-shadow: none;
+    }
+}
 
+#join-our-community {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
 
+    .join-our-community-panel {
+        display: grid;
+        max-width: 636px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: $box-shadow;
 
+        .panel {
+            padding: 2rem;
+        }
 
+        .panel-one {
+            background-color: #FFF;
 
+            h1 {
+                color: map.get($theme-colors, "cyan");
+                font-size: 1.4rem;
+            }
 
+            h2 {
+                font-size: 1rem;
+                color: map.get($theme-colors, "bright-yellow");
+            }
 
+            p {
+                color: map.get($theme-colors, "grayish-blue");
+                font-size: .9rem;
+                line-height: 1.6rem;
+            }
+        }
 
+        .panel-two {
+            display: grid;
+            background-color: map.get($theme-colors, "cyan");
+            color: #FFF;
 
+            h2 {
+                font-size: 1.1rem;
+            }
 
+            .subscription-panel {
 
+                h3 {
+                    color: map.get($theme-colors, "light-gray");
+                    font-size: 1rem;
+                    font-weight: 400;
 
+                    strong {
+                        margin-right: 8px;
+                        color: #FFF;
+                        font-size: 2rem;
+                    }
+                }
 
+                p {
+                    color: map.get($theme-colors, "light-gray");
+                }
 
+                .btn-link {
+                    margin-top: 1rem;
+                }
+            }
+
+            .why-us-panel {
+                background-color: map.get($theme-colors, "cyan-light");
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+
+                    li {
+                        margin-bottom: 4px;
+                        color: map.get($theme-colors, "light-gray");
+                        font-size: .9rem;
+                        font-weight: 300;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #join-our-community {
+        padding: 8% 0;
+
+        .join-our-community-panel {
+            border-radius: 8px;
+
+            .panel-one {
+    
+                h1 {
+                    font-size: 1.6rem;
+                }
+    
+                h2 {
+                    font-size: 1.2rem;
+                }
+    
+                p {
+                    font-size: 1rem;
+                }
+            }
+    
+            .panel-two {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 100%;
+            }
+        }
+    }
+}
 
 footer {
     .attribution {
         font-size: 11px; text-align: center;
 
         a {
-            color: hsl(228, 45%, 44%);
+            color: map.get($theme-colors, "cyan");
         }
     }
 }
