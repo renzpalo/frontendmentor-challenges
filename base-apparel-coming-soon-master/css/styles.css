@@ -1,10 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,600;1,400&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: "Josefin Sans", sans-serif;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  background: url("../images/bg-pattern-desktop.svg") top left no-repeat;
+  background-size: 100% auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin-bottom: 1.6rem;
 }
 
 .row {
@@ -13,8 +31,12 @@ body {
 }
 
 input {
+  width: 100%;
+  height: 50px;
   padding: 1rem 1.6rem;
+  color: #000;
   font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
   border: 1px solid #ce9797;
   border-radius: 32px;
   outline: none;
@@ -22,52 +44,95 @@ input {
 input::placeholder {
   color: #ce9797;
   font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+input:hover {
+  border: 2px solid #ce9797;
+}
+input:focus {
+  border: 2px solid #ce9797;
 }
 
 button {
-  padding: 1rem 2rem;
+  width: 64px;
+  height: 50px;
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
   border: none;
   border-radius: 32px;
   outline: none;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}
+button:hover {
+  background: linear-gradient(135deg, rgba(248, 191, 191, 0.5), rgba(238, 140, 140, 0.5));
 }
 
-.input-group {
+.form-group {
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.input-group button {
+.form-group input {
+  padding-right: 40%;
+}
+.form-group button {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
+}
+.form-group p {
+  margin-top: 0.4rem;
+  padding: 0 1.8rem;
+  text-align: left;
+}
+.form-group .error-icon {
+  display: none;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  right: 0;
+  transform: translate(-500%, 100%);
+}
+.form-group .error-message {
+  display: none;
+}
+
+.error-message {
+  color: #f96262 !important;
+  font-size: 0.8rem !important;
+}
+
+.error-input,
+.error-input:focus {
+  border: 2px solid #f96262;
 }
 
 .chevron-right span {
-  width: 32px;
-  height: 2px;
+  display: block;
+  width: 14px;
+  height: 1px;
+  background-color: #FFF;
   border: 1px solid #FFF;
+  border-radius: 8px;
 }
 .chevron-right span:first-child {
-  transform: rotate(45deg);
+  transform: rotate(45deg) translate(0px, -5px);
+}
+.chevron-right span:last-child {
+  transform: rotate(-45deg) translate(0, 5px);
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 85px;
-}
 header nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1.2rem;
+  height: 85px;
+  padding: 0 1.2rem;
 }
 header nav .navbar-brand {
-  flex: 10%;
+  width: 40%;
 }
 
 .cta .row {
@@ -92,10 +157,15 @@ header nav .navbar-brand {
   font-size: 1rem;
   line-height: 1.4rem;
 }
+.cta .row .cta-content .subscribe-form {
+  padding: 2rem 0;
+}
 .cta .row .cta-background {
   width: 100%;
+  height: auto;
   min-height: 250px;
   background: url(../images/hero-mobile.jpg) top left no-repeat;
+  background-size: cover;
 }
 
 footer .attribution {
@@ -107,6 +177,102 @@ footer .attribution a {
 }
 footer .attribution a:hover {
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  header nav .navbar-brand {
+    width: 20%;
+  }
+
+  .cta .row .cta-content {
+    padding: 4rem 12rem;
+  }
+  .cta .row .cta-background {
+    min-height: 400px;
+  }
+}
+@media (min-width: 1024px) {
+  input {
+    height: 56px;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100px;
+    height: 56px;
+  }
+
+  .input-group .error-icon {
+    width: 20px;
+    height: 20px;
+    right: 0;
+    transform: translate(-550%, 100%);
+  }
+
+  header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  header nav {
+    padding: 4rem 8rem;
+  }
+
+  .cta {
+    height: 100vh;
+  }
+  .cta .row {
+    height: 100%;
+    flex-direction: row;
+  }
+  .cta .row .cta-content {
+    width: 60%;
+    padding: 12rem 8rem;
+    text-align: left;
+  }
+  .cta .row .cta-content h1 {
+    font-size: 4rem;
+  }
+  .cta .row .cta-content p {
+    font-size: 1rem;
+    line-height: 2.4rem;
+  }
+  .cta .row .cta-background {
+    width: 40%;
+    background: url("../images/hero-desktop.jpg") top left no-repeat;
+    background-size: cover;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 8rem;
+  }
+  footer .attribution {
+    text-align: left;
+  }
+}
+@media (min-width: 1440px) {
+  header nav {
+    padding: 4% 16%;
+  }
+
+  main .cta .row .cta-content {
+    padding: 8% 16%;
+  }
+  main .cta .row .cta-content h1 {
+    font-size: 5rem;
+  }
+  main .cta .row .cta-content p {
+    font-size: 1.2rem;
+  }
+
+  footer {
+    padding: 2% 16%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

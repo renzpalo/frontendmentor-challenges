@@ -24,15 +24,16 @@
           <h1>We're <strong>coming soon</strong></h1>
           <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
           <div class="subscribe-form">
-            <form class="form-subscribe">
-              <div class="input-group">
-                <input type="email" placeholder="Email Address">
-                <button type="submit">
-                  <div class="chevron-right">
-                    <span></span>
-                    <span></span>
-                  </div>
+            <form class="form-subscribe" novalidate>
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="email" placeholder="Email Address" id="subscribe-email">
+                  <img src="images/icon-error.svg" alt="Error Icon" class="error-icon" id="subscribe-error-icon">
+                </div>
+                <button type="submit" id="subscribe-submit">
+                  <img src="images/icon-arrow.svg" alt="Arrow Icon">
                 </button>
+                <p class="error-message">Error Message</p>
               </div>
             </form>
           </div>
@@ -49,5 +50,7 @@
       Coded by <a href="http://github.com/renzpalo">Renz Palo</a>.
     </p>
   </footer>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>

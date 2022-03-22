@@ -8,9 +8,24 @@ $dark-grayish-red: hsl(0, 6%, 24%);
 // Gradients
 $gradient-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 $gradient-two: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+$gradient-transparent: linear-gradient(135deg, hsla(0, 80%, 86%, 50%), hsla(0, 74%, 74%, 50%));
 
 // Fonts
 $main-font: 'Josefin Sans', sans-serif;
+
+// Breakpoins
+$breakpoint-mobile-sm: 320px;
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+$breakpoint-desktop: 1200px;
+$breakpoint-desktop-fullhd: 1440px;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 html {
     font-family: $main-font;
@@ -18,7 +33,18 @@ html {
 
 body {
     margin: 0;
-    
+    padding: 0;
+    background: url('../images/bg-pattern-desktop.svg') top left no-repeat;
+    background-size: 100% auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    margin-bottom: 1.6rem;
 }
 
 // GRIDS
@@ -29,8 +55,12 @@ body {
 
 // INPUTS & BUTTONS
 input {
+    width: 100%;
+    height: 50px;
     padding: 1rem 1.6rem;
+    color: #000;
     font-family: $main-font;
+    font-weight: 700;
     border: 1px solid $desaturated-red;
     border-radius: 32px;
     outline: none;
@@ -38,40 +68,95 @@ input {
     &::placeholder {
         color: $desaturated-red;
         font-family: $main-font;
-        
+        font-weight: 400;
+    }
+
+    &:hover {
+        border: 2px solid $desaturated-red;
+    }
+
+    &:focus {
+        border: 2px solid $desaturated-red;
     }
 }
 
 button {
-    padding: 1rem 2rem;
+    width: 64px;
+    height: 50px;
     background: $gradient-two;
     border: none;
     border-radius: 32px;
     outline: none;
+    cursor: pointer;
+    transition: opacity .4s ease;
+
+    &:hover {
+        background: $gradient-transparent;
+    }
 }
 
-.input-group {
+.form-group {
     display: flex;
     flex-direction: column;
     position: relative;
+
+    input {
+        padding-right: 40%;
+    }
 
     button {
         position: absolute;
         top: 0;
         right: 0;
-        bottom: 0;
     }
+
+    p {
+        margin-top: .4rem;
+        padding: 0 1.8rem;
+        text-align: left;
+    }
+
+    .error-icon {
+        display: none;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        right: 0;
+        transform: translate(-500%, 100%);
+    }
+
+    .error-message {
+        display: none;
+    }
+}
+
+.error-message {
+    color: $soft-red !important;
+    font-size: .8rem !important;
+}
+
+.error-input,
+.error-input:focus {
+    border: 2px solid $soft-red;
 }
 
 .chevron-right {
 
     span {
-        width: 32px;
-        height: 2px;
+        display: block;
+        width: 14px;
+        height: 1px;
+        background-color: #FFF;
         border: 1px solid #FFF;
+        border-radius: 8px;
 
         &:first-child {
-            transform: rotate(45deg);
+            transform: rotate(45deg) translate(0px, -5px);
+        }
+
+        &:last-child {
+            transform: rotate(-45deg) translate(0, 5px);
         }
     }
 }
@@ -79,20 +164,17 @@ button {
 
 // HEADER
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 85px;
 
     nav {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-        padding: 1.2rem;
+        height: 85px;
+        padding: 0 1.2rem;
 
         .navbar-brand {
-            flex: 10%;
+            width: 40%;
         }
     }
 }
@@ -126,25 +208,24 @@ header {
             }
 
             .subscribe-form {
-
-                .form-subscribe {
-                    
-
-                }
+                padding: 2rem 0;
 
             }
         }
 
         .cta-background {
             width: 100%;
+            height: auto;
             min-height: 250px;
             background: url(../images/hero-mobile.jpg) top left no-repeat;
+            background-size: cover;
         }
     }
 }
 
 // FOOTER
 footer {
+    
 
     .attribution { 
         font-size: 11px; text-align: center; 
@@ -156,5 +237,147 @@ footer {
                 text-decoration: none;
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    // HEADER
+    header {
+
+        nav {
+    
+            .navbar-brand {
+                width: 20%;
+            }
+        }
+    }
+
+    // CTA SECTION
+    .cta {
+
+        .row {
+            
+            .cta-content {
+                padding: 4rem 12rem;
+            }
+
+            .cta-background {
+                min-height: 400px;
+                
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-laptop) {
+    // INPUTS AND BUTTONS
+    input {
+        height: 56px;
+        font-size: 1rem;
+    }
+    
+    button {
+        width: 100px;
+        height: 56px;
+    }
+
+    .input-group {
+
+        .error-icon {
+            width: 20px;
+            height: 20px;
+            right: 0;
+            transform: translate(-550%, 100%);
+        }
+    }
+
+    // HEADER
+    header {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        nav {
+            padding: 4rem 8rem;
+        }
+    }
+
+    // CTA SECTION
+    .cta {
+        height: 100vh;
+
+        .row {
+            height: 100%;
+            flex-direction: row;
+        
+            .cta-content {
+                width: 60%;
+                padding: 12rem 8rem;
+                text-align: left;
+
+                h1 {
+                    font-size: 4rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    line-height: 2.4rem;
+                }
+            }
+
+            .cta-background {
+                width: 40%;
+                background: url('../images/hero-desktop.jpg') top left no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem 8rem;
+
+        .attribution {
+            text-align: left;
+        }
+        
+    }
+}
+
+@media (min-width: $breakpoint-desktop-fullhd) {
+    header {
+
+        nav {
+            padding: 4% 16%;
+        }
+    }
+
+    main {
+
+        .cta {
+
+            .row {
+
+                .cta-content {
+                    padding: 8% 16%;
+
+                    h1 {
+                        font-size: 5rem;
+                    }
+
+                    p {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        padding: 2% 16%;
     }
 }
