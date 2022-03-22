@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap");
+html {
+  font-family: "Karla", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #e5eff5;
+}
+
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: #3e52a3;
+}
+
+/*# sourceMappingURL=styles.css.map */

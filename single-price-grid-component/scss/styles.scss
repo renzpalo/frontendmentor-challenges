@@ -1,0 +1,48 @@
+@use "sass:map";
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap');
+
+$theme-colors: (
+    "cyan": hsl(179, 62%, 43%),
+    "bright-yellow": hsl(71, 73%, 54%),
+    "light-gray": hsl(204, 43%, 93%),
+    "grayish-blue": hsl(218, 22%, 67%)
+);
+
+$font-family: 'Karla', sans-serif;
+
+html {
+    font-family: $font-family;
+}
+
+body {
+    margin: 0;
+    background-color: map.get($theme-colors, "light-gray");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    .attribution {
+        font-size: 11px; text-align: center;
+
+        a {
+            color: hsl(228, 45%, 44%);
+        }
+    }
+}
