@@ -173,6 +173,7 @@ h1 {
 
   #social-proof-section {
     height: 100vh;
+    padding: 0;
   }
   #social-proof-section .social-proof-content {
     flex-direction: row;
