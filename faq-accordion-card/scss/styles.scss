@@ -174,7 +174,7 @@ footer {
         text-align: center;
 
         a {
-            color: hsl(228, 45%, 44%);
+            color: map.get($theme-colors, "soft-red");
         }
     }
 }
