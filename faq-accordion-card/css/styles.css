@@ -30,14 +30,16 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 8rem 0;
+  padding: 10rem 0 6rem;
 }
 #faq .faq-panel {
   display: flex;
   flex-direction: column;
-  padding: 1.2rem;
+  max-width: 328px;
+  padding: 0 2rem 2.4rem;
   background-color: #FFF;
   border-radius: 1.4rem;
+  transition: height 0.2s ease;
 }
 #faq .faq-panel .faq-image {
   position: relative;
@@ -49,10 +51,21 @@ img {
 }
 #faq .faq-panel .faq-image .faq-mobile-image {
   position: absolute;
-  transform: translateY(-70%);
+  transform: translateY(-60%);
+  transition: transform 0.4s ease;
+}
+#faq .faq-panel .faq-image .faq-mobile-image:hover {
+  transform: translateY(-58%);
 }
 #faq .faq-panel .faq-image .faq-desktop-image {
   display: none;
+}
+#faq .faq-panel .faq-image .faq-desktop-box {
+  display: none;
+}
+#faq .faq-panel .faq-questions {
+  display: flex;
+  flex-direction: column;
 }
 #faq .faq-panel .faq-questions h1 {
   font-size: 2rem;
@@ -61,39 +74,55 @@ img {
 #faq .faq-panel .faq-questions .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 #faq .faq-panel .faq-questions .faq-list .faq-item {
   border-bottom: 1px solid #e7e7e9;
+  padding: 1rem 0;
 }
 #faq .faq-panel .faq-questions .faq-list .faq-item .faq-question {
   display: flex;
   flex-direction: row;
+  align-content: stretch;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 1rem;
   cursor: pointer;
+  user-select: none;
 }
 #faq .faq-panel .faq-questions .faq-list .faq-item .faq-question h4 {
+  flex: 1;
   margin: 0;
   font-weight: 400;
+  transition: color 0.2s ease;
 }
 #faq .faq-panel .faq-questions .faq-list .faq-item .faq-question .faq-dropdown {
   width: 10px;
   height: 7px;
   background: url(../images/icon-arrow-down.svg) center no-repeat;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease;
 }
-#faq .faq-panel .faq-questions .faq-list .faq-item .faq-active h4 {
-  font-weight: 700;
+#faq .faq-panel .faq-questions .faq-list .faq-item .faq-question:hover h4 {
+  color: #f47c57;
 }
 #faq .faq-panel .faq-questions .faq-list .faq-item .faq-answer {
-  display: none;
-  padding-bottom: 1rem;
+  max-height: 0px;
+  color: #787887;
+  overflow: hidden;
+  transition: all 0.6s ease;
 }
 #faq .faq-panel .faq-questions .faq-list .faq-item .faq-answer p {
   margin: 0;
   font-size: 0.9rem;
+}
+#faq .faq-panel .faq-questions .faq-list .faq-active .faq-question h4 {
+  font-weight: 700;
+}
+#faq .faq-panel .faq-questions .faq-list .faq-active .faq-question .faq-dropdown {
+  transform: rotate(180deg);
+}
+#faq .faq-panel .faq-questions .faq-list .faq-active .faq-answer {
+  max-height: 100px;
+  margin-top: 1rem;
 }
 
 footer {
@@ -110,19 +139,62 @@ footer .attribution a {
 
 @media (min-width: 1024px) {
   #faq {
-    height: 100vh;
-    padding: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 10% 0 0;
   }
   #faq .faq-panel {
     flex-direction: row;
+    min-width: 920px;
+    max-width: 920px;
+    min-height: 510px;
+    padding: 0;
   }
   #faq .faq-panel .faq-image {
-    width: 40%;
-    background: url(../images/bg-pattern-desktop.svg) top left no-repeat;
-    background-size: 100% auto;
+    position: relative;
+    width: 50%;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-position: 105% 70%;
+    background-size: 150% auto;
+    background-repeat: no-repeat;
+  }
+  #faq .faq-panel .faq-image .faq-mobile-image {
+    display: none;
+  }
+  #faq .faq-panel .faq-image .faq-desktop-image {
+    display: block;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  #faq .faq-panel .faq-image .faq-desktop-image img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-15%, -20%);
+    transition: transform 0.4s ease;
+  }
+  #faq .faq-panel .faq-image .faq-desktop-image img:hover {
+    transform: translate(-15%, -18%);
+  }
+  #faq .faq-panel .faq-image .faq-desktop-box {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s ease;
+  }
+  #faq .faq-panel .faq-image .faq-desktop-box:hover {
+    transform: translate(-70%, -50%);
   }
   #faq .faq-panel .faq-questions {
-    width: 60%;
+    width: 50%;
+    padding: 4rem;
+  }
+  #faq .faq-panel .faq-questions h1 {
+    text-align: left;
   }
 }
 
