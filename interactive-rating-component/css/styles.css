@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  background-color: #121417;
+  color: #FFF;
+}
+
+p {
+  color: #959eac;
+}
+
+.rating-submit {
+  padding: 1rem;
+  border: none;
+  border-radius: 32px;
+  outline: none;
+  font-family: "Overpass", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #fb7413;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.rating-submit:hover {
+  background-color: #fff;
+  color: #fb7413;
+}
+
+#rating-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1.2rem;
+}
+#rating-section .rating-card {
+  max-width: 415px;
+  padding: 2.4rem 1.4rem;
+  background-color: #252d37;
+  background-position: -100% -100%;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+  animation: fadeIn 1s;
+}
+#rating-section .rating-card .rating-rate {
+  display: block;
+}
+#rating-section .rating-card .rating-rate h2 {
+  font-size: 1.8rem;
+}
+#rating-section .rating-card .rating-rate .rating-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(124, 135, 152, 0.2);
+  border-radius: 100%;
+}
+#rating-section .rating-card .rating-rate .rating-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio {
+  display: grid;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+  appearance: none;
+  margin: 0;
+  background-color: rgba(124, 135, 152, 0.2);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:nth-child(1)::before {
+  content: "1";
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:nth-child(2)::before {
+  content: "2";
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:nth-child(3)::before {
+  content: "3";
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:nth-child(4)::before {
+  content: "4";
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:nth-child(5)::before {
+  content: "5";
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio::before {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  color: #959eac;
+  font-family: inherit;
+  text-align: center;
+  line-height: 32px;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:hover {
+  background-color: #fb7413;
+  color: #fff;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:hover::before {
+  color: #fff;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:checked {
+  background-color: #959eac;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-radio:checked::before {
+  color: #fff;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-number {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(124, 135, 152, 0.2);
+  border: none;
+  border-radius: 100%;
+  color: #959eac;
+  font-family: "Overpass", sans-serif;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-number:hover {
+  background-color: #fb7413;
+  color: #fff;
+}
+#rating-section .rating-card .rating-rate .rating-form .rating-star .rating-number-active {
+  background-color: #959eac;
+  color: #fff;
+}
+#rating-section .rating-card .rating-thank-you {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4rem;
+  text-align: center;
+  animation: fadeIn 1s;
+}
+#rating-section .rating-card .rating-thank-you .rating-score {
+  display: inline-block;
+  margin: 2rem 0 0;
+  padding: 0.4rem 1.4rem;
+  background-color: rgba(124, 135, 152, 0.2);
+  border-radius: 32px;
+}
+#rating-section .rating-card .rating-thank-you .rating-score p {
+  margin: 0;
+  color: #fb7413;
+}
+#rating-section .rating-card .rating-thank-you .rating-score p em {
+  font-style: normal;
+}
+#rating-section .rating-card .rating-thank-you h2 {
+  margin: 2rem 0 0;
+  font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  #rating-section {
+    padding: 0;
+  }
+  #rating-section .rating-card {
+    padding: 2.6rem 2rem;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+footer {
+  padding: 4rem 0;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: #fb7413;
+}
+
+/*# sourceMappingURL=styles.css.map */
