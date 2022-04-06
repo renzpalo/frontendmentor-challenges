@@ -5,69 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/styles.css">
+
   <title>Frontend Mentor | Fylo landing page with two column layout</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script src="https://kit.fontawesome.com/55bcc0ee16.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="navbar-brand">
+          <img src="images/logo.svg" alt="Fylo Logo">
+        </a>
+        <div class="navbar-menu">
+          <ul class="navbar-menu-list">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Sign In</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-  Features
-  Team
-  Sign In
-
-  All your files in one secure location, accessible anywhere.
-
-  Fylo stores your most important files in one secure location. 
-  Access them wherever you need, share and collaborate with friends, 
-  family, and co-workers.
-
-  Get Started
-
-  Stay productive, wherever you are
-
-  Never let location be an issue when accessing your files. Fylo has you 
-  covered for all of your file storage needs.
-
-  Securely share files and folders with friends, family and colleagues for 
-  live collaboration. No email attachments required!
-
-  See how Fylo works
-
-  Fylo has improved our team productivity by an order of magnitude. Since 
-  making the switch our team has become a well-oiled collaboration machine.
-
-  Kyle Burton
-  Founder & CEO, Huddle
-
-  Get early access today
-
-  It only takes a minute to sign up and our free starter tier is extremely generous. 
-  If you have any questions, our support team would be happy to help you.
-
-  Get Started For Free
-
-  Phone: +1-543-123-4567
-  example@fylo.com
-
-  About Us
-  Jobs
-  Press
-  Blog
-
-  Contact Us
-  Terms
-  Privacy
-
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero-section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <h1>All your files in one secure location, accessible anywhere.</h1>
+            <p>Fylo stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
+            <form class="newsletter-form">
+              <div class="input-group">
+                <label for="newsletter-email">Email</label>
+                <input type="email" class="input" name="newsletter-email" placeholder="Enter your email...">
+                <small class="error-message">Invalid email</small>
+              </div>
+              <button type="submit" class="btn btn-primary">Get Started</button>
+            </form>
+          </div>
+          <div class="column">
+            <img src="images/illustration-1.svg" alt="Hero Illustration">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how-it-works-section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <h2>Stay productive, wherever you are</h2>
+            <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
+            <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
+            <div class="link-group">
+              <a href="#">See how Fylo works</a>
+              <img src="images/icon-arrow.svg" alt="Arrow Icon">
+            </div>
+            <div class="testimonial">
+              <img src="images/icon-quotes.svg" alt="Quote Icon">
+              <blockquote>
+                Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.
+              </blockquote>
+              <div class="testimonial-author">
+                <img src="images/avatar-testimonial.jpg" alt="Kyle Burton">
+                <div class="testimonial-author-details">
+                  <h6>Kyle Burton</h6>
+                  <small>Founder & CEO, Huddle</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <img src="images/illustration-2.svg" alt="How It Works Illustration">
+          </div>
+        </div>
+      </div>
+    </section> <!-- HOW IT WORKS SECTION -->
+    <!-- CTA SECTION -->
+    <section id="cta-section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <h2>Get early access today</h2>
+            <p>
+              It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.
+            </p>
+          </div>
+          <div class="column">
+            <form class="newsletter-form">
+              <div class="input-group">
+                <label for="newsletter-email">Email</label>
+                <input type="email" name="newsletter-email" id="newsletter-email" placeholder="email@example.com">
+                <small class="error-message">Please check your email</small>
+              </div>
+              <button type="submit" class="btn btn-primary">Get Started For Free</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA SECTION -->
+  </main>
+  <!-- FOOTER -->
   <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
+    <div class="container">
+      <div class="columns">
+        <div class="column footer-brand">
+          <a href="#">
+            <img src="images/logo-white.svg" alt="Fylo Logo">
+          </a>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <div class="contact-details">
+            <div class="contact-info">
+              <img src="images/icon-phone.svg" alt="Phone Icon">
+              <p>Phone: +1-543-123-4567</p>
+            </div>
+            <div class="contact-info">
+              <img src="images/icon-email.svg" alt="Email Icon">
+              <p>example@fylo.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="column footer-menu">
+          <div class="footer-nav">
+            <ul class="footer-nav-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+            <ul class="footer-nav-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="column footer-socials">
+          <ul class="social-links">
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <p class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="https://github.com/renzpalo">Renz Palo</a>.
+          </p>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
