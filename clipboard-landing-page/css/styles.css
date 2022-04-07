@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3 {
+  color: #4c545d;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: #9fabb2;
+  line-height: 1.6rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container-full {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+}
+.columns .column {
+  flex: 1;
+}
+
+.btn {
+  display: block;
+  padding: 1rem 4rem;
+  border-radius: 32px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #26baa4;
+}
+
+.btn-secondary {
+  background-color: #6173ff;
+}
+
+.download-links {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1.4rem;
+}
+
+#hero-section {
+  padding: 8rem 0 4rem;
+  background: url(../images/bg-header-mobile.png) top left no-repeat;
+  background-size: 100% auto;
+  text-align: center;
+}
+#hero-section .download-links {
+  margin-top: 2.8rem;
+}
+
+#features-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+#features-section img {
+  margin: 2.8rem 0 2rem;
+}
+
+#clipboard-section {
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+#clipboard-section img {
+  margin: 2rem 0 0;
+}
+
+#workflow-section {
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+#workflow-section .columns {
+  gap: 2.8rem;
+}
+#workflow-section .columns:nth-of-type(1) {
+  margin-bottom: 4rem;
+}
+#workflow-section .workflow-feature img {
+  margin-bottom: 1rem;
+}
+
+#brands-section {
+  padding: 4rem 0;
+  text-align: center;
+}
+#brands-section .columns {
+  gap: 4rem;
+}
+
+#cta-section {
+  padding: 4rem 0 8rem;
+  text-align: center;
+}
+
+footer {
+  padding: 4rem 0 2rem;
+  background-color: #f6f7f9;
+  text-align: center;
+}
+footer .footer-brand img {
+  width: 18%;
+}
+footer .footer-menu {
+  margin: 2rem 0;
+}
+footer .footer-menu .footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer .footer-menu .footer-links li a {
+  display: block;
+  padding: 0.8rem 0;
+  color: #4c545d;
+  font-size: 1.2rem;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: #26baa4;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+}
+.social-links li a {
+  color: #4c545d;
+}
+.social-links li a i {
+  font-size: 1.6rem !important;
+}
+
+/*# sourceMappingURL=styles.css.map */

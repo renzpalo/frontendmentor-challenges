@@ -1,0 +1,231 @@
+@use 'sass:map';
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+$theme-colors: (
+    'primary': hsl(171, 66%, 44%),
+    'secondary': hsl(233, 100%, 69%),
+    'neutral-dark-blue': hsl(210, 10%, 33%),
+    'neutral-grayish-blue': hsl(201, 11%, 66%),
+    'neutral-gray': hsl(220, 18%, 97%)
+);
+
+$font-main: 'Bai Jamjuree', sans-serif;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $font-main;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    color: map.get($theme-colors, 'neutral-dark-blue');
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    color: map.get($theme-colors, 'neutral-grayish-blue');
+    line-height: 1.6rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.container-full {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+
+    .column {
+        flex: 1;
+    }
+}
+
+// Buttons
+.btn {
+    display: block;
+    padding: 1rem 4rem;
+    border-radius: 32px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: map.get($theme-colors, 'primary');
+}
+
+.btn-secondary {
+    background-color: map.get($theme-colors, 'secondary');
+}
+
+.download-links {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1.4rem;
+}
+
+#hero-section {
+    padding: 8rem 0 4rem;
+    background: url(../images/bg-header-mobile.png) top left no-repeat;
+    background-size: 100% auto;
+    text-align: center;
+
+    .download-links {
+        margin-top: 2.8rem;
+    }
+}
+
+#features-section {
+    padding: 4rem 0;
+    text-align: center;
+
+    img {
+        margin: 2.8rem 0 2rem;
+    }
+}
+
+#clipboard-section {
+    padding: 4rem 0 2rem;
+    text-align: center;
+
+    img {
+        margin: 2rem 0 0;
+    }
+}
+
+#workflow-section {
+    padding: 4rem 0 2rem;
+    text-align: center;
+
+    .columns {
+        gap: 2.8rem;
+
+        &:nth-of-type(1) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .workflow-feature {
+
+        img {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+#brands-section {
+    padding: 4rem 0;
+    text-align: center;
+
+    .columns {
+        gap: 4rem;
+    }
+}
+
+#cta-section {
+    padding: 4rem 0 8rem;
+    text-align: center;
+}
+
+footer {
+    padding: 4rem 0 2rem;
+    background-color: map.get($theme-colors, 'neutral-gray');
+    text-align: center;
+
+    .footer-brand {
+
+        img {
+            width: 18%;
+        }
+    }
+
+    .footer-menu {
+        margin: 2rem 0;
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+
+                a {
+                    display: block;
+                    padding: .8rem 0;
+                    color: map.get($theme-colors, 'neutral-dark-blue');
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+
+        a {
+            color: map.get($theme-colors, 'primary');
+        }
+    }
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    margin: 0;
+    padding: 1rem 0;
+    list-style: none;
+
+    li {
+
+        a {
+            color: map.get($theme-colors, 'neutral-dark-blue');
+
+            i {
+                font-size: 1.6rem !important;
+            }
+            
+        }
+    }
+}
