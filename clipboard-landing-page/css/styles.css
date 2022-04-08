@@ -24,7 +24,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 h3 {
@@ -63,19 +63,32 @@ p {
 
 .btn {
   display: block;
-  padding: 1rem 4rem;
+  padding: 1rem 2.4rem;
   border-radius: 32px;
   color: #fff;
   text-align: center;
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .btn-primary {
   background-color: #26baa4;
+  border-bottom: 4px solid #2f9681;
+  box-shadow: 0 4px 5px 4px rgba(38, 186, 164, 0.2);
+}
+.btn-primary:hover {
+  background-color: #5dccbb;
+  box-shadow: none;
 }
 
 .btn-secondary {
   background-color: #6173ff;
+  border-bottom: 4px solid #5964be;
+  box-shadow: 0 4px 5px 4px rgba(97, 115, 255, 0.2);
+}
+.btn-secondary:hover {
+  background-color: #8896ff;
+  box-shadow: none;
 }
 
 .download-links {
@@ -90,6 +103,9 @@ p {
   background-size: 100% auto;
   text-align: center;
 }
+#hero-section img {
+  margin-bottom: 2rem;
+}
 #hero-section .download-links {
   margin-top: 2.8rem;
 }
@@ -100,6 +116,15 @@ p {
 }
 #features-section img {
   margin: 2.8rem 0 2rem;
+}
+#features-section .feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+#features-section .feature-list h3 {
+  margin: 0 0 1rem;
 }
 
 #clipboard-section {
@@ -120,6 +145,9 @@ p {
 #workflow-section .columns:nth-of-type(1) {
   margin-bottom: 4rem;
 }
+#workflow-section .workflow-feature {
+  margin: 0 auto;
+}
 #workflow-section .workflow-feature img {
   margin-bottom: 1rem;
 }
@@ -136,6 +164,9 @@ p {
   padding: 4rem 0 8rem;
   text-align: center;
 }
+#cta-section .download-links {
+  margin-top: 3.2rem;
+}
 
 footer {
   padding: 4rem 0 2rem;
@@ -144,8 +175,11 @@ footer {
 }
 footer .footer-brand img {
   width: 18%;
+  max-width: 60px;
 }
 footer .footer-menu {
+  display: flex;
+  flex-direction: column;
   margin: 2rem 0;
 }
 footer .footer-menu .footer-links {
@@ -161,6 +195,10 @@ footer .footer-menu .footer-links li a {
   padding: 0.8rem 0;
   color: #4c545d;
   font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+footer .footer-menu .footer-links li a:hover {
+  color: #26baa4;
 }
 footer .attribution {
   font-size: 11px;
@@ -168,6 +206,9 @@ footer .attribution {
 }
 footer .attribution a {
   color: #26baa4;
+}
+footer .attribution a:hover {
+  color: #6173ff;
 }
 
 .social-links {
@@ -182,9 +223,194 @@ footer .attribution a {
 }
 .social-links li a {
   color: #4c545d;
+  transition: color 0.2s ease;
+}
+.social-links li a:hover {
+  color: #26baa4;
 }
 .social-links li a i {
   font-size: 1.6rem !important;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .download-links {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main .container {
+    padding: 0 8rem;
+  }
+
+  #hero-section {
+    background-image: url(../images/bg-header-desktop.png);
+  }
+
+  #features-section .columns .column:nth-of-type(1) {
+    padding: 0 6rem;
+  }
+  #features-section .feature-list {
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 4rem;
+  }
+  #features-section .feature-list .feature {
+    flex: initial;
+    width: 40%;
+  }
+
+  #workflow-section .workflow-feature {
+    width: 50%;
+  }
+
+  #brands-section .container {
+    padding: 0 2rem;
+  }
+  #brands-section .columns {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem 2rem;
+  }
+  #brands-section .columns .column {
+    flex: none;
+    width: 40%;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 2rem;
+  }
+
+  main .container {
+    padding: 0 2rem;
+  }
+
+  #hero-section p {
+    font-size: 21px;
+  }
+
+  #features-section .container {
+    padding: 0 4rem 4rem;
+  }
+  #features-section .container-full {
+    padding: 0;
+  }
+  #features-section .container-full .columns {
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+  }
+  #features-section .container-full .columns .column {
+    flex: 1;
+    max-width: 50%;
+  }
+  #features-section .container-full .columns .column:nth-of-type(1) {
+    padding: 0;
+  }
+  #features-section .container-full .columns .column:nth-of-type(1) img {
+    min-width: 120%;
+    max-width: 120%;
+    margin: 0;
+    float: right;
+  }
+  #features-section .container-full .columns .column:nth-of-type(2) {
+    padding: 0 8rem;
+  }
+  #features-section .feature-list {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    max-width: 340px;
+  }
+  #features-section .feature-list .feature {
+    width: initial;
+  }
+
+  #workflow-section {
+    padding: 4rem 0;
+  }
+  #workflow-section .container {
+    max-width: 1200px;
+  }
+  #workflow-section .columns {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+  #workflow-section .workflow-feature {
+    width: initial;
+  }
+
+  #brands-section {
+    padding: 4rem 0;
+  }
+  #brands-section .container {
+    max-width: 1200px;
+  }
+  #brands-section .columns {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  #brands-section .columns .column {
+    width: initial;
+  }
+
+  footer {
+    text-align: left;
+  }
+  footer .columns {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .columns .column {
+    flex: content;
+  }
+  footer .footer-brand img {
+    width: 64px;
+    max-width: 64px;
+  }
+  footer .footer-menu {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+  }
+  footer .footer-menu .footer-links {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  footer .footer-socials .social-links {
+    justify-content: flex-end;
+  }
+
+  .social-links {
+    padding: 0;
+  }
+
+  .attribution {
+    margin-top: 4rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

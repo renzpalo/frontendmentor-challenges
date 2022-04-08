@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
 h3 {
@@ -78,19 +78,34 @@ p {
 // Buttons
 .btn {
     display: block;
-    padding: 1rem 4rem;
+    padding: 1rem 2.4rem;
     border-radius: 32px;
     color: #fff;
     text-align: center;
     text-decoration: none;
+    transition: all .2s ease;
 }
 
 .btn-primary {
     background-color: map.get($theme-colors, 'primary');
+    border-bottom: 4px solid rgb(47, 150, 129);
+    box-shadow: 0 4px 5px 4px hsla(171, 66%, 44%, 0.20);
+    
+    &:hover {
+        background-color: rgb(93, 204, 187);
+        box-shadow: none;
+    }
 }
 
 .btn-secondary {
     background-color: map.get($theme-colors, 'secondary');
+    border-bottom: 4px solid rgb(89, 100, 190);
+    box-shadow: 0 4px 5px 4px hsla(233, 100%, 69%, 0.20);
+
+    &:hover {
+        background-color: rgb(136, 150, 255);
+        box-shadow: none;
+    }
 }
 
 .download-links {
@@ -105,6 +120,10 @@ p {
     background-size: 100% auto;
     text-align: center;
 
+    img {
+        margin-bottom: 2rem;
+    }
+
     .download-links {
         margin-top: 2.8rem;
     }
@@ -116,6 +135,17 @@ p {
 
     img {
         margin: 2.8rem 0 2rem;
+    }
+
+    .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 0;
+
+        h3 {
+            margin: 0 0 1rem;
+        }
     }
 }
 
@@ -141,6 +171,7 @@ p {
     }
 
     .workflow-feature {
+        margin: 0 auto;
 
         img {
             margin-bottom: 1rem;
@@ -160,6 +191,10 @@ p {
 #cta-section {
     padding: 4rem 0 8rem;
     text-align: center;
+
+    .download-links {
+        margin-top: 3.2rem;
+    }
 }
 
 footer {
@@ -171,10 +206,13 @@ footer {
 
         img {
             width: 18%;
+            max-width: 60px;
         }
     }
 
     .footer-menu {
+        display: flex;
+        flex-direction: column;
         margin: 2rem 0;
 
         .footer-links {
@@ -192,6 +230,11 @@ footer {
                     padding: .8rem 0;
                     color: map.get($theme-colors, 'neutral-dark-blue');
                     font-size: 1.2rem;
+                    transition: color .2s ease;
+
+                    &:hover {
+                        color: map.get($theme-colors, 'primary');
+                    }
                 }
             }
         }
@@ -203,6 +246,10 @@ footer {
 
         a {
             color: map.get($theme-colors, 'primary');
+
+            &:hover {
+                color: map.get($theme-colors, 'secondary');
+            }
         }
     }
 }
@@ -221,11 +268,261 @@ footer {
 
         a {
             color: map.get($theme-colors, 'neutral-dark-blue');
+            transition: color .2s ease;
+
+            &:hover {
+                color: map.get($theme-colors, 'primary');
+            }
 
             i {
                 font-size: 1.6rem !important;
             }
             
         }
+    }
+}
+
+@media (min-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .download-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main {
+
+        .container {
+            padding: 0 8rem;
+        }
+    }
+
+    #hero-section {
+        background-image: url(../images/bg-header-desktop.png);
+
+        
+    }
+
+    #features-section {
+
+        .columns {
+
+            .column {
+                
+                &:nth-of-type(1) {
+                    padding: 0 6rem;
+                }
+            }
+        }
+
+        .feature-list {
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 4rem;
+
+            .feature {
+                flex: initial;
+                width: 40%;
+            }
+        }
+    }
+
+    #workflow-section {
+
+        .workflow-feature {
+            width: 50%;
+        }
+    }
+
+    #brands-section {
+
+        .container {
+            padding: 0 2rem;
+        }
+
+        .columns {
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem 2rem;
+
+            .column {
+                flex: none;
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 2rem;
+    }
+
+    main {
+
+        .container {
+            padding: 0 2rem;
+        }
+    }
+
+    #hero-section {
+
+        p {
+            font-size: 21px;
+        }
+    }
+
+    #features-section {
+
+        .container {
+            padding: 0 4rem 4rem;
+        }
+
+        .container-full {
+            padding: 0;
+
+            .columns {
+                flex-direction: row;
+                align-items: center;
+                justify-content: stretch;
+
+                
+
+                .column {
+                    flex: 1;
+                    max-width: 50%;
+
+                    &:nth-of-type(1) {
+                        padding: 0;
+
+                        img {
+                            min-width: 120%;
+                            max-width: 120%;
+                            margin: 0;
+                            float: right;
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        padding: 0 8rem;
+                    }
+                }
+            }
+        }
+
+        .feature-list {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+            max-width: 340px;
+
+            .feature {
+                width: initial;
+            }
+        }
+    }
+
+    #workflow-section {
+        padding: 4rem 0;
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .columns {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .workflow-feature {
+            width: initial
+        }
+    }
+
+    #brands-section {
+        padding: 4rem 0;
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .columns {
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            .column {
+                width: initial;
+            }
+        }
+    }
+
+    footer {
+        text-align: left;
+
+        .columns {
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            .column {
+                flex: content;
+            }
+        }
+
+        .footer-brand {
+
+            img {
+                width: 64px;
+                max-width: 64px;
+            }
+        }
+
+        .footer-menu {
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0;
+
+            .footer-links {
+                align-items: flex-start;
+                justify-content: flex-start;
+                text-align: left;
+            }
+        }
+
+        .footer-socials {
+            
+            .social-links {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .social-links {
+        padding: 0;
+    }
+
+    .attribution {
+        margin-top: 4rem;
     }
 }
