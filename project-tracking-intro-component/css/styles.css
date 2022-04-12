@@ -243,6 +243,9 @@ footer .attribution a {
     flex-flow: row wrap !important;
   }
 
+  .navbar {
+    height: 150px;
+  }
   .navbar .navbar-burger {
     display: none;
   }
