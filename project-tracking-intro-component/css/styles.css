@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Barlow", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  color: #5b5f71;
+  font-size: 1.2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+.columns {
+  display: flex;
+  flex-flow: column wrap;
+}
+.columns .column {
+  flex: 1;
+}
+
+.link-button {
+  color: #a0a1ac !important;
+}
+
+.button {
+  padding: 0.8rem 1.4rem;
+  border: 1px solid #000;
+  border-radius: 4px;
+  color: #000;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease;
+}
+
+.button-primary {
+  background-color: #ff5c5c;
+  border: none;
+  color: #fff;
+}
+.button-primary:hover {
+  background-color: #ff8584;
+}
+
+.button-group {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+.button-group p {
+  color: #5b5f71;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+.navbar .navbar-burger {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-right: -8px;
+  cursor: pointer;
+}
+.navbar .navbar-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 125%;
+  left: 0;
+  width: 100%;
+  padding: 1.4rem 2rem;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 2px 16px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+.navbar .navbar-menu .navbar-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.navbar .navbar-menu .navbar-links li a {
+  display: block;
+  width: 100%;
+  color: #000;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.navbar .navbar-menu .navbar-links li a:hover {
+  text-decoration: underline;
+}
+.navbar .navbar-menu .menu-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #eef3f6;
+}
+
+#hero-section {
+  padding: 0 0 2rem;
+}
+#hero-section .container {
+  padding: 0;
+}
+#hero-section .columns {
+  flex-direction: column-reverse;
+}
+#hero-section .column-content {
+  padding: 1rem 1.2rem;
+}
+#hero-section .column-image {
+  padding: 8rem 0 4rem;
+  position: relative;
+  padding: 0 -1.2rem;
+  overflow: hidden;
+}
+#hero-section .column-image img {
+  max-width: 150%;
+}
+#hero-section .square-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 52%;
+  background-color: #eef3f6;
+  border-radius: 0 0 0 64px;
+  z-index: -999;
+}
+
+.flare {
+  margin-right: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  background-color: #000;
+  border-radius: 16px;
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  color: #5b5f71;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+footer {
+  padding: 2rem 0;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: #ff5c5c;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  #hero-section {
+    text-align: center;
+  }
+
+  .button-group {
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .columns {
+    flex-flow: row wrap !important;
+  }
+
+  .navbar .navbar-burger {
+    display: none;
+  }
+  .navbar .navbar-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2.8rem;
+    position: initial;
+    top: initial;
+    left: initial;
+    width: initial;
+    padding: initial;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .navbar .navbar-menu .navbar-links {
+    flex-direction: row;
+    gap: 2.8rem;
+    width: initial;
+  }
+  .navbar .navbar-menu .menu-divider {
+    border: none;
+    width: 8px;
+    height: 8px;
+    background-color: #a0a1ac;
+    border-radius: 100%;
+  }
+
+  #hero-section {
+    height: 100vh;
+    overflow: hidden;
+  }
+  #hero-section .columns {
+    align-items: center;
+    height: 100vh;
+  }
+  #hero-section .column-content {
+    text-align: left;
+  }
+  #hero-section .column-image {
+    overflow: visible;
+  }
+  #hero-section .column-image img {
+    max-width: 300%;
+  }
+  #hero-section .button-group {
+    margin-top: 4rem;
+  }
+
+  .button-group {
+    justify-content: flex-start;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

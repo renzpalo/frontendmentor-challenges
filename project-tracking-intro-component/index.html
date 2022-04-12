@@ -2,38 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css">
   
   <title>Frontend Mentor | Project tracking intro component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-  Product
-  Features
-  Pricing
-  Login
-
-  New
-  Monograph Dashboard
-
-  Powerful insights into your team
-  Project planning and time tracking for agile teams
-
-  Schedule a demo
-  to see a live preview
-  
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="navbar-brand">
+          <img src="images/logo.svg" alt="Project Logo">
+        </a>
+        <div class="navbar-burger">
+          <img src="images/icon-hamburger.svg" alt="Hamburger Icon">
+        </div>
+        <div class="navbar-menu">
+          <ul class="navbar-links">
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+          <hr class="menu-divider">
+          <ul class="navbar-links">
+            <li><a href="#" class="link-button">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="hero-section">
+      <div class="container">
+        <div class="columns">
+          <div class="column column-content">
+            <p class="title"><small class="flare">New</small> Monograph Dashboard</p>
+            <h1>Powerful insights into your team</h1>
+            <p>Project planning and time tracking for agile teams</p>
+            <div class="button-group">
+              <a href="#" class="button button-primary">Schedule a demo</a>
+              <p>to see a live preview</p>
+            </div>
+          </div>
+          <div class="column column-image">
+            <img src="images/illustration-devices.svg" alt="Devices Illustration">
+          </div>
+        </div>
+      </div>
+      <div class="square-bg"></div>
+    </section>
+  </main>
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://github.com/renzpalo">Renz Palo</a>.
     </p>
   </footer>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>
