@@ -1,0 +1,175 @@
+@use 'sass:map';
+
+$font-main: 'Raleway', sans-serif;
+
+$theme-colors: (
+    'primary': hsl(6, 100%, 80%),
+    'secondary': hsl(335, 100%, 65%),
+    'pale-blue': hsl(243, 100%, 93%),
+    'grayish-blue': hsl(229, 7%, 55%),
+    'dark-blue': hsl(228, 56%, 26%),
+    'very-dark-blue': hsl(229, 57%, 11%)
+);
+
+$primary-gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $font-main;
+}
+
+body {
+    margin: 0;
+    background-color: map.get($theme-colors, 'very-dark-blue');
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.4rem;
+}
+
+// Buttons
+.icon-button {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    background-color: map.get($theme-colors, 'very-dark-blue');
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+#storage-component-section {
+    width: 100%;
+    padding: 4rem 0;
+    background: url(../images/bg-mobile.png) bottom right no-repeat;
+    background-size: 100% auto;
+    color: #fff;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+.storage-component-panel {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .storage-controls {
+        padding: 2.4rem;
+        background-color: map.get($theme-colors, 'dark-blue');
+        border-radius: 10px 100px 10px 10px;
+
+        .storage-buttons {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+    }
+
+    .storage-usage {
+        position: relative;
+        padding: 2rem 2rem 4rem;
+        background-color: map.get($theme-colors, 'dark-blue');
+        text-align: center;
+
+        p {
+            font-size: .9rem;
+            white-space: nowrap;
+        }
+
+        .storage-usage-bar {
+            min-width: 100%;
+            width: 100%;
+            max-width: 100%;
+            height: 20px;
+            padding: 3px;
+            background-color: map.get($theme-colors, 'very-dark-blue');
+            border-radius: 20px;
+
+            .storage-usage-bar-fill {
+                position: relative;
+                width: 70%;
+                height: 100%;
+                padding: 2px;
+                background-image: $primary-gradient;
+                border-radius: 16px;
+
+                .storage-usage-bar-tip {
+                    width: 10px;
+                    height: 100%;
+                    background-color: #fff;
+                    border-radius: 20px;
+                    float: right;
+                }
+            }
+        }
+
+        .storage-usage-labels {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            p {
+                font-size: .8rem;
+            }
+        }
+
+        .storage-remaining {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 0 1.8rem;
+            background-color: #fff;
+            border-radius: 10px;
+            color: #000;
+            transform: translate(35%, 50%);
+
+            p {
+                color: map.get($theme-colors, 'grayish-blue');
+                font-size: .8rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 2.4rem;
+                white-space: nowrap;
+            }
+
+            .remaining-storage {
+                margin-right: .4rem;
+                color: #000;
+                font-size: 2.4rem;
+            }
+        }
+    }
+}
+
+footer {
+
+    .attribution {
+        font-size: 11px; text-align: center;
+        
+        a {
+            color: hsl(228, 45%, 44%);
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    #storage-component-section {
+        background-image: url(../images/bg-desktop.png);
+        height: 100vh;
+    }
+}
