@@ -1,0 +1,375 @@
+@use 'sass:map';
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+$theme-colors: (
+    'primary': hsl(172, 67%, 45%),
+    'dark-cyan': hsl(183, 100%, 15%),
+    'dark-grayish-cyan': hsl(186, 14%, 43%),
+    'grayish-cyan': hsl(184, 14%, 56%),
+    'light-grayish-cyan': hsl(185, 41%, 84%),
+    'very-light-grayish-cyan': hsl(189, 41%, 97%)
+);
+
+$font-main: 'Space Mono', monospace;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: $font-main;
+    background-color: map.get($theme-colors, 'light-grayish-cyan');
+}
+
+.container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+}
+
+.container-full {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.columns {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+
+    .column {
+        flex: 1;
+    }
+}
+// Buttons
+.button {
+    display: block;
+    width: 100%;
+    padding: .6rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+}
+
+.button-primary {
+    background-color: map.get($theme-colors, 'primary');
+    color: map.get($theme-colors, 'dark-cyan');
+
+    &:hover {
+        background-color: map.get($theme-colors, 'light-grayish-cyan');
+    }
+}
+
+.container-full {
+
+    .columns {
+
+        .column {
+            width: 100%;
+        }
+    }
+}
+
+#main-section {
+    padding: 4rem 0;
+}
+
+#calculator {
+    width: 100%;
+    margin: 2.4rem 0;
+
+    .calculator-panel {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 2rem;
+        background-color: #fff;
+        border-radius: 16px;
+
+        .calculator-column {
+            flex: 1;
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        #calculator-form {
+            display: flex;
+            flex-flow: column wrap;
+            gap: 2rem;
+
+            .form-group {
+
+                label {
+                    display: block;
+                    margin-bottom: .4rem;
+                    color: map.get($theme-colors, 'dark-grayish-cyan');
+                    font-weight: 700;
+                }
+            }
+
+            .input-group {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                position: relative;
+                background-color: map.get($theme-colors, 'very-light-grayish-cyan');
+                border-radius: 8px;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    top: 1.2rem;
+                    left: 1rem;
+                    z-index: 1;
+                }
+
+                input[type=number] {
+                    width: 100%;
+                    padding: .4rem 1rem .4rem 2.4rem;
+                    background-color: map.get($theme-colors, 'very-light-grayish-cyan');
+                    border: 2px solid map.get($theme-colors, 'very-light-grayish-cyan');
+                    border-radius: 8px;
+                    color: map.get($theme-colors, 'dark-cyan');
+                    font-family: inherit;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    text-align: right;
+                    outline: none;
+
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        display: none;
+                        appearance: none;
+                        margin: 0;
+                    }
+
+                    &:focus {
+                        border: 2px solid map.get($theme-colors, 'primary');
+                    }
+                }
+            }
+
+            .radio-group {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem 1rem;
+
+                label {
+                    display: none;
+                }
+
+                input[type=radio] {
+                    appearance: none;
+                    height: 50px;
+                    margin: 0;
+                    background-color: map.get($theme-colors, 'dark-cyan');
+                    border-radius: 4px;
+                    color: #fff;
+                    font-family: inherit;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    line-height: 50px;
+                    text-align: center;
+                    cursor: pointer;
+
+                    &:focus {
+                        background-color: map.get($theme-colors, 'light-grayish-cyan');
+                        color: map.get($theme-colors, 'dark-cyan');
+                    }
+                }
+
+                #input-tip-custom {
+                    padding: .4rem .8rem;
+                }
+
+                #percent-5 {
+
+                    &::before {
+                        content: '5%';
+                    }
+                }
+
+                #percent-10 {
+
+                    &::before {
+                        content: '10%';
+                    }
+                }
+
+                #percent-15 {
+
+                    &::before {
+                        content: '15%';
+                    }
+                }
+
+                #percent-25 {
+
+                    &::before {
+                        content: '25%';
+                    }
+                }
+
+                #percent-50 {
+
+                    &::before {
+                        content: '50%';
+                    }
+                }
+            }
+        }
+
+        .calculator-results {
+            display: flex;
+            flex-flow: column wrap;
+            gap: 2rem;
+            padding: 2rem;
+            background-color: map.get($theme-colors, 'dark-cyan');
+
+            .tip-results {
+                display: flex;
+                flex-flow: column wrap;
+                gap: 1rem;
+                font-weight: 700;
+
+                .tip-result {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    .tip-result-label {
+                        
+                        p {
+                            margin: 0;
+                            color: #fff;
+                        }
+
+                        small {
+                            color: map.get($theme-colors, 'grayish-cyan');
+                        }
+                    }
+
+                    .tip-result-amount {
+
+                        p {
+                            margin: 0;
+                            color: map.get($theme-colors, 'primary');
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #calculator {
+
+        .calculator-panel {
+
+            #calculator-form {
+
+                .radio-group {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1024px) {
+    
+    #main-section {
+        height: 100vh;
+        padding: 8rem 0;
+    }
+
+    #calculator {
+
+        .calculator-panel {
+            flex-direction: row;
+
+            .calculator-column {
+                justify-content: space-between;
+                min-height: 415px;
+            }
+
+            #calculator-form {
+
+                
+            }
+
+            .calculator-results {
+                
+                .tip-results {
+                    gap: 2rem;
+
+                    .tip-result {
+
+                        .tip-result-amount {
+
+                            p {
+                                font-size: 3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    padding: 4rem 0;
+
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+
+        a {
+            color: hsl(228, 45%, 44%);
+        }
+    }
+}
