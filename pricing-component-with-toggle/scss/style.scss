@@ -97,6 +97,7 @@ h1 {
         height: 24px;
         background-color: #fff;
         border-radius: 100%;
+        transform: translateX(100%);
         transition: .2s transform ease;
     }
 
@@ -104,7 +105,7 @@ h1 {
         background-image: map.get($theme-colors, 'primary-opaque');
 
         &::before {
-            transform: translateX(100%);
+            transform: translateX(0%);
         }
     }
 }

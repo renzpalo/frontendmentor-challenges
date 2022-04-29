@@ -78,13 +78,14 @@ h1 {
   height: 24px;
   background-color: #fff;
   border-radius: 100%;
+  transform: translateX(100%);
   transition: 0.2s transform ease;
 }
 .button-toggle:checked {
   background-image: linear-gradient(to right, rgba(163, 168, 240, 0.5), rgba(105, 111, 221, 0.5));
 }
 .button-toggle:checked::before {
-  transform: translateX(100%);
+  transform: translateX(0%);
 }
 
 #pricing-section {

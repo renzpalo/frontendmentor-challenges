@@ -13,12 +13,12 @@ const pricingCards = document.querySelectorAll('.pricing-card .pricing-price');
 subscriptionOptionsToggle.addEventListener('click', (e) => {
     if(e.target.checked) {
         pricingCards.forEach((pricingCardPrice, index) => {
-            pricingCardPrice.textContent = pricingPrices[index][0];
+            pricingCardPrice.textContent = pricingPrices[index][1];
             pricingCardPrice.style.animation = '.4s fadeIn linear';
         });
     } else {
         pricingCards.forEach((pricingCardPrice, index) => {
-            pricingCardPrice.textContent = pricingPrices[index][1];
+            pricingCardPrice.textContent = pricingPrices[index][0];
             
             pricingCardPrice.style.animation = '.4s fadeInOut linear';
         });
