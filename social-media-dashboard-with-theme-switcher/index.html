@@ -2,86 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="color-scheme" content="dark light"> -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/style.css">
+
   <title>Frontend Mentor | [Challenge Name Here]</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
+<body class="theme-dark">
+  <main>
+    <section id="social-media-dashboard-section">
+      <div class="container">
+        <nav id="dashboard-nav__social-media">
+          <div class="dashboard-nav__header">
+            <h1>Social Media Dashboard</h1>
+            <p>Total Followers: 23,004</p>
+          </div>
+          <div class="divider"></div>
+          <div class="dashboard-nav__controls">
+            <div class="theme-switch">
+              <label for="theme-switch-toggle">Dark Mode</label>
+              <input type="checkbox" name="theme-switch-toggle" id="theme-switch-toggle" class="button-toggle">
+            </div>
+          </div>
+        </nav>
+        <div class="dashboard-overview">
+          <div class="card-overview">
+            <div class="card-overview__social-media">
+              <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              <p>@nathanf</p>
+            </div>
+            <p class="card-overview__followers-count">1987</p>
+            <p>Followers</p>
+            <div class="card-overview__increase">
+              <img src="images/icon-up.svg" alt="Arrow Up Icon">
+              <small class="count-increment">12 Today</small>
+            </div>
+          </div>
+          <div class="card-overview">
+            <div class="card-overview__social-media">
+              <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              <p>@nathanf</p>
+            </div>
+            <p class="card-overview__followers-count">1044</p>
+            <p>Followers</p>
+            <div class="card-overview__increase">
+              <img src="images/icon-up.svg" alt="Arrow Up Icon">
+              <small class="count-increment">99 Today</small>
+            </div>
+          </div>
+          <div class="card-overview">
+            <div class="card-overview__social-media">
+              <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              <p>@realnathanf</p>
+            </div>
+            <p class="card-overview__followers-count">11k</p>
+            <p>Followers</p>
+            <div class="card-overview__increase">
+              <img src="images/icon-up.svg" alt="Arrow Up Icon">
+              <small class="count-increment">1099 Today</small>
+            </div>
+          </div>
+          <div class="card-overview">
+            <div class="card-overview__social-media">
+              <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              <p>Nathan F.</p>
+            </div>
+            <p class="card-overview__followers-count">8239</p>
+            <p>Subscribers</p>
+            <div class="card-overview__increase">
+              <img src="images/icon-down.svg" alt="Arrow Down Icon">
+              <small class="count-decrement">144 Today</small>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-overview__today">
+          <h2>Overview - Today</h2>
+          <div class="card-overview-today">
+            <div class="card-overview__today">
+              <div class="card-overview__title">
+                <p>Page Views</p>
+                <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              </div>
+              <div class="card-overview__stats">
+                <p class="card-overview__count">87</p>
+                <div class="card-overview__count-percentage">
+                  <img src="images/icon-up.svg" alt="Arrow Up Icon">
+                  <small class="count-increment">3%</small>
+                </div>
+              </div>
+            </div>
+            <div class="card-overview__today">
+              <div class="card-overview__title">
+                <p>Page Views</p>
+                <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              </div>
+              <div class="card-overview__stats">
+                <p class="card-overview__count">87</p>
+                <div class="card-overview__count-percentage">
+                  <img src="images/icon-down.svg" alt="Down Up Icon">
+                  <small class="count-decrement">3%</small>
+                </div>
+              </div>
+            </div>
+            <div class="card-overview__today">
+              <div class="card-overview__title">
+                <p>Page Views</p>
+                <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              </div>
+              <div class="card-overview__stats">
+                <p class="card-overview__count">87</p>
+                <div class="card-overview__count-percentage">
+                  <img src="images/icon-up.svg" alt="Arrow Up Icon">
+                  <small>3%</small>
+                </div>
+              </div>
+            </div>
+            <div class="card-overview__today">
+              <div class="card-overview__title">
+                <p>Page Views</p>
+                <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              </div>
+              <div class="card-overview__stats">
+                <p class="card-overview__count">87</p>
+                <div class="card-overview__count-percentage">
+                  <img src="images/icon-up.svg" alt="Arrow Up Icon">
+                  <small>3%</small>
+                </div>
+              </div>
+            </div>
+            <div class="card-overview__today">
+              <div class="card-overview__title">
+                <p>Page Views</p>
+                <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              </div>
+              <div class="card-overview__stats">
+                <p class="card-overview__count">87</p>
+                <div class="card-overview__count-percentage">
+                  <img src="images/icon-up.svg" alt="Arrow Up Icon">
+                  <small>3%</small>
+                </div>
+              </div>
+            </div>
+            <div class="card-overview__today">
+              <div class="card-overview__title">
+                <p>Page Views</p>
+                <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              </div>
+              <div class="card-overview__stats">
+                <p class="card-overview__count">87</p>
+                <div class="card-overview__count-percentage">
+                  <img src="images/icon-up.svg" alt="Arrow Up Icon">
+                  <small>3%</small>
+                </div>
+              </div>
+            </div>
+            <div class="card-overview__today">
+              <div class="card-overview__title">
+                <p>Page Views</p>
+                <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              </div>
+              <div class="card-overview__stats">
+                <p class="card-overview__count">87</p>
+                <div class="card-overview__count-percentage">
+                  <img src="images/icon-up.svg" alt="Arrow Up Icon">
+                  <small>3%</small>
+                </div>
+              </div>
+            </div>
+            <div class="card-overview__today">
+              <div class="card-overview__title">
+                <p>Page Views</p>
+                <img src="images/icon-facebook.svg" alt="Facebook Icon">
+              </div>
+              <div class="card-overview__stats">
+                <p class="card-overview__count">87</p>
+                <div class="card-overview__count-percentage">
+                  <img src="images/icon-up.svg" alt="Arrow Up Icon">
+                  <small>3%</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/renzpalo">Renz Palo</a>.
+    </div>
+  </footer>
 
-  Social Media Dashboard
-  Total Followers: 23,004
-
-  Dark Mode
-
-  
-
-  @nathanf
-  1987
-  Followers
-  12 Today
-
-  @nathanf
-  1044
-  Followers
-  99 Today
-
-  @realnathanf
-  11k
-  Followers
-  1099 Today
-
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
-
-
-
-  Overview - Today
-
-  Page Views
-  87
-  3%
-
-  Likes
-  52
-  2%
-
-  Likes
-  5462
-  2257%
-
-  Profile Views
-  52k
-  1375%
-
-  Retweets
-  117
-  303%
-
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12%
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="js/script.js"></script>
 </body>
 </html>
