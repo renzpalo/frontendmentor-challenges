@@ -83,6 +83,7 @@ label {
   background-color: map.get($theme-colors, 'toggle');
   border-radius: 50px;
   overflow: hidden;
+  cursor: pointer;
 
   &::before {
     content: '';
@@ -334,6 +335,17 @@ footer {
 //   }
 // }
 
+@media (min-width: 768px) {
+
+  .dashboard-overview {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-overview-today {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (min-width: 1024px) {
   #social-media-dashboard-section {
   
@@ -352,5 +364,13 @@ footer {
   
       }
     }
+  }
+
+  .dashboard-overview {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .card-overview-today {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

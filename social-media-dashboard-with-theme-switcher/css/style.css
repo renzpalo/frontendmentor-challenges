@@ -48,6 +48,7 @@ label {
   background-color: #aeb3cb;
   border-radius: 50px;
   overflow: hidden;
+  cursor: pointer;
 }
 .button-toggle::before {
   content: "";
@@ -232,6 +233,15 @@ footer .attribution a {
   color: #3e52a3;
 }
 
+@media (min-width: 768px) {
+  .dashboard-overview {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-overview-today {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media (min-width: 1024px) {
   #social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__header {
     flex-flow: row wrap;
@@ -239,6 +249,13 @@ footer .attribution a {
   }
   #social-media-dashboard-section #dashboard-nav__social-media .divider {
     display: none;
+  }
+  .dashboard-overview {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .card-overview-today {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
