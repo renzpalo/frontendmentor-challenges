@@ -1,3 +1,5 @@
+const documentBody = document.getElementsByTagName('body')[0];
+
 const themeSwitchToggle = document.getElementById('theme-switch-toggle');
 const metaColorScheme = document.querySelector('meta[name="color-scheme"');
 
@@ -9,7 +11,7 @@ const socialOverviews = [
     id: 'soc_1',
     socialMedia: 'Facebook',
     socialUsername: '@nathanf',
-    followerCount: 1897,
+    followerCount: 1987,
     followerIncrease: 12
   },
   {
@@ -28,7 +30,7 @@ const socialOverviews = [
   },
   {
     id: 'soc_4',
-    socialMedia: 'Youtube',
+    socialMedia: 'YouTube',
     socialUsername: 'Nathan F.',
     followerCount: 8239,
     followerIncrease: -144
@@ -47,8 +49,8 @@ const socialOverviewsToday = [
     id: 'soc_today_2',
     socialMedia: 'Facebook',
     statType: 'Likes',
-    statsCount: 87,
-    statsIncrease: 3
+    statsCount: 52,
+    statsIncrease: -2
   },
   {
     id: 'soc_today_3',
@@ -101,6 +103,7 @@ const generateSocialOverviews = () => {
   // Default values for icon images
   let socialMediaIcon = 'icon-facebook';
   let followerIncreaseIcon = 'icon-up';
+  
 
   socialOverviews.forEach((socialOverview) => {
   
@@ -126,6 +129,7 @@ const generateSocialOverviews = () => {
     }
   
     socialOverviewsContent +=   `<div class="card-overview">
+                                  <div class="card-border card-border__${socialOverview.socialMedia.toLowerCase()}"></div>
                                   <div class="card-overview__social-media">
                                     <img src="images/${socialMediaIcon}.svg" alt="${socialOverview.socialMedia} Icon">
                                     <p>${socialOverview.socialUsername}</p>
@@ -197,13 +201,8 @@ generateSocialOverviewsToday();
 
 themeSwitchToggle.addEventListener('click', (event) => {
   if(event.target.checked) {
-    // metaColorScheme.setAttribute('content', 'dark');
-
-    console.log('checked', metaColorScheme);
+    documentBody.classList.add('theme-dark');
   } else {
-    
-    // metaColorScheme.setAttribute('content', 'light');
-
-    console.log('unchecked', metaColorScheme);
+    documentBody.classList.remove('theme-dark');
   }
 });

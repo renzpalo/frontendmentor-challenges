@@ -19,10 +19,7 @@ h1 {
   font-size: 1.5rem;
 }
 
-p {
-  color: #63687e;
-}
-
+p,
 label {
   color: #63687e;
 }
@@ -105,7 +102,6 @@ label {
   gap: 1rem;
 }
 #social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__controls .theme-switch label {
-  color: #63687e;
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -117,11 +113,36 @@ label {
 }
 
 .card-overview {
+  position: relative;
   padding: 2rem;
   background-color: #f5f7ff;
-  border-top: 4px solid #000;
   border-radius: 8px;
   text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.card-overview:hover {
+  background-color: #f0f2fa;
+}
+.card-overview .card-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: pink;
+}
+.card-overview .card-border.card-border__facebook {
+  background-color: #198ff5;
+}
+.card-overview .card-border.card-border__twitter {
+  background-color: #1ca0f2;
+}
+.card-overview .card-border.card-border__instagram {
+  background-image: linear-gradient(to right, #fdc468, #df4996);
+}
+.card-overview .card-border.card-border__youtube {
+  background-color: #c4032a;
 }
 .card-overview .card-overview__social-media {
   display: flex;
@@ -182,6 +203,10 @@ label {
   padding: 1.6rem;
   background-color: #f5f7ff;
   border-radius: 6px;
+  cursor: pointer;
+}
+.card-overview__today:hover {
+  background-color: #f0f2fa;
 }
 .card-overview__today .card-overview__title {
   display: flex;
@@ -233,7 +258,56 @@ footer .attribution a {
   color: #3e52a3;
 }
 
+.theme-dark {
+  background-color: #1e202a;
+}
+.theme-dark h1, .theme-dark h2, .theme-dark h3, .theme-dark h4, .theme-dark h5, .theme-dark h6 {
+  color: white;
+}
+.theme-dark p,
+.theme-dark label {
+  color: #8b97c6;
+}
+.theme-dark .divider {
+  border-color: #252a41;
+}
+.theme-dark .card-overview {
+  background-color: #252a41;
+}
+.theme-dark .card-overview:hover {
+  background-color: #1f212e;
+}
+.theme-dark .card-overview .card-overview__followers-count {
+  color: white;
+}
+.theme-dark .card-overview__today {
+  background-color: #252a41;
+}
+.theme-dark .card-overview__today:hover {
+  background-color: #1f212e;
+}
+.theme-dark .card-overview__today .card-overview__stats > p {
+  color: white;
+}
+.theme-dark footer .attribution {
+  color: white;
+}
+.theme-dark footer .attribution a {
+  color: #8b97c6;
+}
+
 @media (min-width: 768px) {
+  #social-media-dashboard-section #dashboard-nav__social-media {
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  #social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__controls .theme-switch {
+    justify-content: flex-end;
+  }
+  #social-media-dashboard-section #dashboard-nav__social-media .divider {
+    display: none;
+  }
+
   .dashboard-overview {
     grid-template-columns: 1fr 1fr;
   }
