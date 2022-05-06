@@ -5,55 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
   
   <title>Frontend Mentor | Loopstudios landing page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script src="https://kit.fontawesome.com/55bcc0ee16.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  About
-  Careers
-  Events
-  Products
-  Support
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="navbar-brand">
+          <img src="images/logo.svg" alt="loopstudios Logo">
+        </a>
+        <div class="navbar-burger-menu">
+          <img src="images/icon-hamburger.svg" alt="Hamburger Menu Icon">
+        </div>
+        <div class="navbar-menu">
+          <ul class="navbar-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="hero-section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="hero-panel">
+              <h1>Immersive experiences that deliver</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="interactive-vr-section">
+      <div class="container">
+        <div class="interactive-vr__image">
+          <img src="images/desktop/image-interactive.jpg" alt="Man using VR">
+        </div>
+        <div class="interactive-vr__content">
+          <h1>The leader in interactive VR</h1>
+          <p>
+            Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our award-winning creations have transformed businesses through digital experiences that bind to their brand.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="our-creations-section">
+      <div class="container container-grid">
+        <h1>Our creations</h1>
+        <div class="our-creations">
+          <!-- <div class="creation-card">
+            <h2>Deep earth</h2>
+          </div> -->
+        </div>
+        <a href="#" class="button button-outline">See all</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <a href="#" class="footer-brand">
+          <img src="images/logo.svg" alt="loopstudios Logo">
+        </a>
+        <div class="footer-menu">
+          <ul class="footer-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-socials">
+          <ul class="social-links">
+            <li><a href="#"><i class="fa-brands fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <p class="footer-copyrights">
+          © 2022 Loopstudios. All rights reserved.
+        </p>
+        <div class="footer-attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="https://www.frontendmentor.io/profile/renzpalo">Renz Palo</a>.
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  Immersive experiences that deliver
-
-  The leader in interactive VR
-
-  Founded in 2011, Loopstudios has been producing world-class virtual reality 
-  projects for some of the best companies around the globe. Our award-winning 
-  creations have transformed businesses through digital experiences that bind 
-  to their brand.
-
-  Our creations
-
-  See all
-
-  Deep earth
-  Night arcade
-  Soccer team VR
-  The grid
-  From up above VR
-  Pocket borealis
-  The curiosity
-  Make it fisheye
-
-  About
-  Careers
-  Events
-  Products
-  Support
-
-  © 2021 Loopstudios. All rights reserved.
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
