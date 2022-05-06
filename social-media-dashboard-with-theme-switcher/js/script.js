@@ -99,6 +99,8 @@ const socialOverviewsToday = [
 let socialOverviewsContent = '';
 let socialOverviewsTodayContent = '';
 
+console.log(-1 > 0 ? 'Positive': 'Negative', Math.abs(-1));
+
 const generateSocialOverviews = () => {
   // Default values for icon images
   let socialMediaIcon = 'icon-facebook';
@@ -138,7 +140,7 @@ const generateSocialOverviews = () => {
                                   <p>Followers</p>
                                   <div class="card-overview__increase">
                                     <img src="images/${followerIncreaseIcon}.svg" alt="${followerIncreaseIcon} Icon">
-                                    <small class="count-${socialOverview.followerIncrease > 0 ? 'increment' : 'decrement'}">${socialOverview.followerIncrease} Today</small>
+                                    <small class="count-${socialOverview.followerIncrease > 0 ? 'increment' : 'decrement'}">${Math.abs(socialOverview.followerIncrease)} Today</small>
                                   </div>
                                 </div>`;
   
@@ -185,7 +187,7 @@ const generateSocialOverviewsToday = () => {
                                         <p class="card-overview__count">${socialOverviewToday.statsCount}</p>
                                         <div class="card-overview__count-percentage">
                                           <img src="images/${followerIncreaseIcon}.svg" alt="Arrow Up Icon">
-                                          <small class="count-${socialOverviewToday.statsIncrease > 0 ? 'increment' : 'decrement'}">${socialOverviewToday.statsIncrease}%</small>
+                                          <small class="count-${socialOverviewToday.statsIncrease > 0 ? 'increment' : 'decrement'}">${Math.abs(socialOverviewToday.statsIncrease)}%</small>
                                         </div>
                                       </div>
                                     </div>`;

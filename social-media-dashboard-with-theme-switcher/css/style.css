@@ -34,7 +34,7 @@ label {
 .divider {
   width: 100%;
   height: 1px;
-  border-bottom: 1px solid #1e202a;
+  border-bottom: 1px solid #f0f2fa;
 }
 
 .button-toggle {
@@ -66,63 +66,68 @@ label {
   background-image: linear-gradient(to right, #198ff5, #1db489);
 }
 
-#social-media-dashboard-section {
+#dashboard-nav__social-media {
   padding: 2.4rem 0;
+  transition: 0.4s background-color ease;
 }
-#social-media-dashboard-section #dashboard-nav__social-media {
+#dashboard-nav__social-media .container {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
-#social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__header {
+#dashboard-nav__social-media .dashboard-nav__header {
   flex: 1;
 }
-#social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__header h1 {
+#dashboard-nav__social-media .dashboard-nav__header h1 {
   margin: 0;
 }
-#social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__header p {
+#dashboard-nav__social-media .dashboard-nav__header p {
   margin: 0.4rem 0;
   font-size: 0.9rem;
   font-weight: 700;
 }
-#social-media-dashboard-section #dashboard-nav__social-media .divider {
+#dashboard-nav__social-media .divider {
   flex: 1;
   width: 100%;
 }
-#social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__controls {
+#dashboard-nav__social-media .dashboard-nav__controls {
   flex: 1;
 }
-#social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__controls .theme-switch {
+#dashboard-nav__social-media .dashboard-nav__controls .theme-switch {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
-#social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__controls .theme-switch label {
+#dashboard-nav__social-media .dashboard-nav__controls .theme-switch label {
   font-size: 0.9rem;
   font-weight: 700;
+}
+
+#social-media-dashboard-section {
+  transition: 0.4s background-color ease;
 }
 
 .dashboard-overview {
   display: grid;
   gap: 1.4rem;
-  padding: 2rem 0;
+  margin-bottom: 4rem;
 }
 
 .card-overview {
   position: relative;
   padding: 2rem;
-  background-color: #f5f7ff;
+  background-color: #f0f2fa;
   border-radius: 8px;
   text-align: center;
   overflow: hidden;
   cursor: pointer;
+  transition: 0.4s background-color ease;
 }
 .card-overview:hover {
-  background-color: #f0f2fa;
+  background-color: #e1e3f0;
 }
 .card-overview .card-border {
   position: absolute;
@@ -201,12 +206,13 @@ label {
   flex-flow: column wrap;
   gap: 1.6rem;
   padding: 1.6rem;
-  background-color: #f5f7ff;
+  background-color: #f0f2fa;
   border-radius: 6px;
   cursor: pointer;
+  transition: 0.4s background-color ease;
 }
 .card-overview__today:hover {
-  background-color: #f0f2fa;
+  background-color: #e1e3f0;
 }
 .card-overview__today .card-overview__title {
   display: flex;
@@ -275,7 +281,7 @@ footer .attribution a {
   background-color: #252a41;
 }
 .theme-dark .card-overview:hover {
-  background-color: #1f212e;
+  background-color: #333a56;
 }
 .theme-dark .card-overview .card-overview__followers-count {
   color: white;
@@ -284,7 +290,7 @@ footer .attribution a {
   background-color: #252a41;
 }
 .theme-dark .card-overview__today:hover {
-  background-color: #1f212e;
+  background-color: #333a56;
 }
 .theme-dark .card-overview__today .card-overview__stats > p {
   color: white;
@@ -297,14 +303,14 @@ footer .attribution a {
 }
 
 @media (min-width: 768px) {
-  #social-media-dashboard-section #dashboard-nav__social-media {
+  #dashboard-nav__social-media .container {
     flex-flow: row nowrap;
     align-items: center;
   }
-  #social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__controls .theme-switch {
+  #dashboard-nav__social-media .dashboard-nav__controls .theme-switch {
     justify-content: flex-end;
   }
-  #social-media-dashboard-section #dashboard-nav__social-media .divider {
+  #dashboard-nav__social-media .divider {
     display: none;
   }
 
@@ -317,19 +323,38 @@ footer .attribution a {
   }
 }
 @media (min-width: 1024px) {
-  #social-media-dashboard-section #dashboard-nav__social-media .dashboard-nav__header {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #dashboard-nav__social-media {
+    padding: 2.4rem 0 10rem;
+    background-color: #f5f7ff;
+  }
+  #dashboard-nav__social-media .dashboard-nav__header {
     flex-flow: row wrap;
     align-items: center;
   }
-  #social-media-dashboard-section #dashboard-nav__social-media .divider {
+  #dashboard-nav__social-media .divider {
     display: none;
   }
+
   .dashboard-overview {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.8rem;
+    transform: translateY(-50%);
   }
 
-  .card-overview-today {
+  .dashboard-overview__today {
+    transform: translateY(-35%);
+  }
+  .dashboard-overview__today .card-overview-today {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.8rem;
+  }
+
+  .theme-dark #dashboard-nav__social-media {
+    background-color: #1f212e;
   }
 }
 

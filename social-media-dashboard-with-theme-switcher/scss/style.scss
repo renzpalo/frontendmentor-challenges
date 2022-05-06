@@ -14,6 +14,7 @@ $dark-theme: (
   'primary': hsl(230, 17%, 14%),
   'secondary': hsl(232, 19%, 15%),
   'accent': hsl(228, 28%, 20%),
+  'accent-hover': rgb(51, 58, 86),
   'text': hsl(0, 0%, 100%),
   'text-muted': hsl(228, 34%, 66%)
 );
@@ -22,6 +23,7 @@ $light-theme: (
   'primary': hsl(0, 0%, 100%),
   'secondary': hsl(225, 100%, 98%),
   'accent': hsl(227, 47%, 96%),
+  'accent-hover': rgb(225, 227, 240),
   'text': hsl(230, 17%, 14%),
   'text-muted': hsl(228, 12%, 44%)
 );
@@ -68,7 +70,7 @@ label {
 .divider {
   width: 100%;
   height: 1px;
-  border-bottom: 1px solid map.get($light-theme, 'text');
+  border-bottom: 1px solid map.get($light-theme, 'accent');
 }
 
 // Buttons
@@ -108,71 +110,76 @@ label {
   }
 }
 
-#social-media-dashboard-section {
+#dashboard-nav__social-media {
   padding: 2.4rem 0;
+  transition: .4s background-color ease;
 
-  #dashboard-nav__social-media {
+  .container {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
     gap: 1rem;
-    margin-bottom: 1rem;
+  }
 
-    .dashboard-nav__header {
-      flex: 1;
+  .dashboard-nav__header {
+    flex: 1;
 
-      h1 {
-        margin: 0;
-      }
+    h1 {
+      margin: 0;
+    }
 
-      p {
-        margin: .4rem 0;
+    p {
+      margin: .4rem 0;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+  }
+
+  .divider {
+    flex: 1;
+    width: 100%;
+  }
+
+  .dashboard-nav__controls {
+    flex: 1;
+
+    .theme-switch {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      label {
         font-size: .9rem;
         font-weight: 700;
-      }
-    }
-
-    .divider {
-      flex: 1;
-      width: 100%;
-    }
-
-    .dashboard-nav__controls {
-      flex: 1;
-
-      .theme-switch {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-
-        label {
-          font-size: .9rem;
-          font-weight: 700;
-        }
       }
     }
   }
 }
 
+#social-media-dashboard-section {
+  transition: .4s background-color ease;
+}
+
 .dashboard-overview {
   display: grid;
   gap: 1.4rem;
-  padding: 2rem 0;
+  margin-bottom: 4rem;
 }
 
 .card-overview {
   position: relative;
   padding: 2rem;
-  background-color: map.get($light-theme, 'secondary');
+  background-color: map.get($light-theme, 'accent');
   border-radius: 8px;
   text-align: center;
   overflow: hidden;
   cursor: pointer;
+  transition: .4s background-color ease;
 
   &:hover {
-    background-color: map.get($light-theme, 'accent');
+    background-color: map.get($light-theme, 'accent-hover');
   }
 
   .card-border {
@@ -269,12 +276,13 @@ label {
   flex-flow: column wrap;
   gap: 1.6rem;
   padding: 1.6rem;
-  background-color: map.get($light-theme, 'secondary');
+  background-color: map.get($light-theme, 'accent');
   border-radius: 6px;
   cursor: pointer;
+  transition: .4s background-color ease;
 
   &:hover {
-    background-color: map.get($light-theme, 'accent');
+    background-color: map.get($light-theme, 'accent-hover');
   }
 
   .card-overview__title {
@@ -357,7 +365,7 @@ footer {
     background-color: map.get($dark-theme, 'accent');
 
     &:hover {
-      background-color: map.get($dark-theme, 'secondary');
+      background-color: map.get($dark-theme, 'accent-hover');
     }
 
     .card-overview__followers-count {
@@ -369,7 +377,7 @@ footer {
     background-color: map.get($dark-theme, 'accent');
 
     &:hover {
-      background-color: map.get($dark-theme, 'secondary');
+      background-color: map.get($dark-theme, 'accent-hover');
     }
 
     .card-overview__stats {
@@ -388,6 +396,78 @@ footer {
       a {
         color: map.get($dark-theme, 'text-muted');
       }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  #dashboard-nav__social-media {
+  
+    .container {
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+
+    .dashboard-nav__controls {
+
+      .theme-switch {
+        justify-content: flex-end;
+      }
+    }
+
+    .divider {
+      display: none;
+    }
+  }
+
+  .dashboard-overview {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-overview-today {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #dashboard-nav__social-media {
+    padding: 2.4rem 0 10rem;
+    background-color: map.get($light-theme, 'secondary');
+  
+    .dashboard-nav__header {
+      flex-flow: row wrap;
+      align-items: center;
+    }
+
+    .divider {
+      display: none;
+    }
+  }
+
+  .dashboard-overview {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.8rem;
+    transform: translateY(-50%);
+  }
+
+  .dashboard-overview__today {
+    transform: translateY(-35%);
+
+    .card-overview-today {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 1.8rem;
+    }
+  }
+
+  .theme-dark {
+
+    #dashboard-nav__social-media {
+      background-color: map.get($dark-theme, 'secondary');
     }
   }
 }
@@ -421,68 +501,3 @@ footer {
 //     }
 //   }
 // }
-
-@media (min-width: 768px) {
-
-  #social-media-dashboard-section {
-
-    #dashboard-nav__social-media {
-      flex-flow: row nowrap;
-      align-items: center;
-      
-
-      .dashboard-nav__header {
-
-      }
-
-      .dashboard-nav__controls {
-
-        .theme-switch {
-          justify-content: flex-end;
-        }
-        
-      }
-
-      .divider {
-        display: none;
-      }
-    }
-  }
-
-  .dashboard-overview {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .card-overview-today {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1024px) {
-  #social-media-dashboard-section {
-  
-    #dashboard-nav__social-media {
-  
-      .dashboard-nav__header {
-        flex-flow: row wrap;
-        align-items: center;
-      }
-
-      .divider {
-        display: none;
-      }
-  
-      .dashboard-nav__controls {
-  
-      }
-    }
-  }
-
-  .dashboard-overview {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-
-  .card-overview-today {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
