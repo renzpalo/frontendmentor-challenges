@@ -2,7 +2,7 @@ const creationItems = [
   {
     title: 'Deep earth',
     bgMobile: 'mobile/image-deep-earth.jpg',
-    bgDesktop: 'mobile/image-deep-earth.jpg'
+    bgDesktop: 'desktop/image-deep-earth.jpg'
   },
   {
     title: 'Night arcade',
@@ -43,13 +43,25 @@ const creationItems = [
 
 const ourCreationsGrid = document.querySelector('.our-creations');
 
+// Media Queries
+const laptopMediaQuery = window.matchMedia('(min-width: 1024px)');
+
 const generateOurCreationsContent = () => {
   let ourCreationsGridContent = '';
+  let creationCardBg = '';
 
   creationItems.forEach(creationItem => {
+    if(laptopMediaQuery.matches) {
+      creationCardBg = creationItem.bgDesktop;
+    } else {
+      creationCardBg = creationItem.bgMobile;
+    }
+
     ourCreationsGridContent += `<div class="creation-card" 
-                                  style="background-image: url('images/${creationItem.bgMobile}');">
-                                  <h2>${creationItem.title}</h2>
+                                  style="background-image: url('images/${creationCardBg}');">
+                                  <div class="overlay">
+                                    <h2>${creationItem.title}</h2>
+                                  </div>
                                 </div>`;
   });
 
