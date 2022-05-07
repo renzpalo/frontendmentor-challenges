@@ -38,7 +38,7 @@ img {
 .divider {
   min-width: 100%;
   height: 1px;
-  margin: 2rem -1.4rem;
+  margin: 2rem 0;
   background-color: #eaeefb;
 }
 
@@ -55,6 +55,9 @@ img {
   border-radius: 32px;
   color: #bdccff;
 }
+.button-primary:hover {
+  color: white;
+}
 
 .toggle-button {
   appearance: none;
@@ -63,6 +66,8 @@ img {
   padding: 4px;
   background-color: #cdd7ee;
   border-radius: 32px;
+  cursor: pointer;
+  transition: 0.2s background-color ease;
 }
 .toggle-button::before {
   content: "";
@@ -74,6 +79,12 @@ img {
   border-radius: 100%;
   transition: 0.2s transform ease;
 }
+.toggle-button:hover {
+  background-color: #a5f3eb;
+}
+.toggle-button:checked {
+  background-color: #10d5c2;
+}
 .toggle-button:checked::before {
   transform: translateX(125%);
 }
@@ -84,6 +95,7 @@ img {
   height: 8px;
   background-color: #eaeefb;
   border-radius: 32px;
+  cursor: pointer;
 }
 .input-range::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -97,7 +109,7 @@ img {
 }
 
 .flare {
-  padding: 0.1rem 0.4rem;
+  padding: 0.2rem 0.6rem;
   background-color: #feece7;
   border-radius: 24px;
   color: #ff8c66;
@@ -148,6 +160,9 @@ img {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+#interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__head b {
+  color: #858fad;
+}
 #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid #pricing-options__range {
   display: block;
   width: 100%;
@@ -183,11 +198,11 @@ img {
 }
 #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .flare em {
   display: none;
+  font-style: normal;
 }
 #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__features {
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
   gap: 1rem;
 }
 #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__features .features {
@@ -202,6 +217,14 @@ img {
 #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__features .features li {
   padding: 0.4rem;
 }
+#interactive-pricing__section .interactive-pricing__panel .interactive-pricing__features .features li::marker {
+  margin: 2rem;
+}
+#interactive-pricing__section .interactive-pricing__panel .divider {
+  width: 100%;
+  margin: 2rem -1.4rem;
+  transform: scaleX(100%);
+}
 #interactive-pricing__section .input-group {
   display: flex;
   flex-flow: column wrap;
@@ -211,6 +234,9 @@ img {
   display: none;
 }
 
+footer {
+  padding: 2rem 0;
+}
 footer .attribution {
   font-size: 11px;
   text-align: center;
@@ -219,17 +245,27 @@ footer .attribution a {
   color: #3e52a3;
 }
 
+@media (min-width: 425px) {
+  #interactive-pricing__section {
+    background-size: 100% 50%;
+  }
+  #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__billing-options p:nth-of-type(2) span {
+    top: 0;
+    left: 110%;
+  }
+}
 @media (min-width: 768px) {
   #interactive-pricing__section .interactive-pricing__header h1 {
     font-size: 2rem;
   }
   #interactive-pricing__section .interactive-pricing__panel {
-    padding: 4rem 2.8rem;
+    padding: 3.4rem 3.4rem 2rem;
     text-align: left;
   }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1 1;
     grid-template-rows: 1 1 1;
+    row-gap: 2.8rem;
     width: 100%;
   }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__head {
@@ -237,6 +273,7 @@ footer .attribution a {
     grid-row: 1;
     align-self: center;
     justify-self: start;
+    font-size: 0.9rem;
   }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__price {
     grid-column: 2;
@@ -244,13 +281,17 @@ footer .attribution a {
     align-self: center;
     justify-self: end;
   }
+  #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__price b {
+    font-size: 2.8rem;
+  }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__billing-options {
     grid-column: 2 span;
     grid-row: 3;
   }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__billing-options p:nth-of-type(2) span {
+    display: inline;
     top: 0;
-    left: 125%;
+    left: 115%;
   }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__billing-options p:nth-of-type(2) span em {
     display: inline;
@@ -260,9 +301,11 @@ footer .attribution a {
     grid-row: 2;
   }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__features {
+    width: 100%;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
+    gap: initial;
   }
 }
 

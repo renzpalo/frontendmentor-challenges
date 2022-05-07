@@ -60,7 +60,7 @@ img {
 .divider {
   min-width: 100%;
   height: 1px;
-  margin: 2rem -1.4rem;
+  margin: 2rem 0;
   background-color: map.get($theme-colors, 'gray');
 }
 
@@ -77,6 +77,10 @@ img {
   background-color: map.get($text-colors, 'header');
   border-radius: 32px;
   color: map.get($text-colors, 'text-muted');
+
+  &:hover {
+    color: map.get($theme-colors, 'white');
+  }
 }
 
 .toggle-button {
@@ -86,6 +90,8 @@ img {
   padding: 4px;
   background-color: map.get($theme-colors, 'toggle');
   border-radius: 32px;
+  cursor: pointer;
+  transition: .2s background-color ease;
 
   &::before {
     content: '';
@@ -98,7 +104,12 @@ img {
     transition: .2s transform ease;
   }
 
+  &:hover {
+    background-color: map.get($theme-colors, 'primary-pale');
+  }
+
   &:checked {
+    background-color: map.get($theme-colors, 'primary');
 
     &::before {
       transform: translateX(125%);
@@ -113,6 +124,7 @@ img {
   height: 8px;
   background-color: map.get($theme-colors, 'gray');
   border-radius: 32px;
+  cursor: pointer;
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -132,7 +144,7 @@ img {
 }
 
 .flare {
-  padding: .1rem .4rem;
+  padding: .2rem .6rem;
   background-color: map.get($theme-colors, 'orange-pale');
   border-radius: 24px;
   color: map.get($theme-colors, 'orange');
@@ -185,6 +197,10 @@ img {
         font-weight: 800;
         letter-spacing: 2px;
         text-transform: uppercase;
+
+        b {
+          color: map.get($text-colors, 'text');
+        }
       }
 
       #pricing-options__range {
@@ -231,6 +247,7 @@ img {
 
         em {
           display: none;
+          font-style: normal;
         }
       }
     }
@@ -238,7 +255,6 @@ img {
     .interactive-pricing__features {
       display: flex;
       flex-flow: column wrap;
-      justify-content: space-between;
       gap: 1rem;
       
       .features {
@@ -252,8 +268,18 @@ img {
         
         li {
           padding: .4rem;
+
+          &::marker {
+            margin: 2rem;
+          }
         }
       }
+    }
+
+    .divider {
+      width: 100%;
+      margin: 2rem -1.4rem;
+      transform: scaleX(100%);
     }
   }
 
@@ -269,12 +295,39 @@ img {
 }
 
 footer {
+  padding: 2rem 0;
 
   .attribution {
     font-size: 11px; text-align: center;
     
     a {
       color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+@media (min-width: 425px) {
+  #interactive-pricing__section {
+    background-size: 100% 50%;
+
+    .interactive-pricing__panel {
+
+      .interactive-pricing__grid {
+
+        .interactive-pricing__billing-options {
+
+          p {
+  
+            &:nth-of-type(2) {
+  
+              span {
+                top: 0;
+                left: 110%;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -291,12 +344,13 @@ footer {
     }
 
     .interactive-pricing__panel {
-      padding: 4rem 2.8rem;
+      padding: 3.4rem 3.4rem 2rem;
       text-align: left;
 
       .interactive-pricing__grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1 1;
         grid-template-rows: 1 1 1;
+        row-gap: 2.8rem;
         width: 100%;
 
         .interactive-pricing__head {
@@ -304,6 +358,7 @@ footer {
           grid-row: 1;
           align-self: center;
           justify-self: start;
+          font-size: .9rem;
         }
 
         .interactive-pricing__price {
@@ -311,6 +366,10 @@ footer {
           grid-row: 1;
           align-self: center;
           justify-self: end;
+
+          b {
+            font-size: 2.8rem;
+          }
         }
 
         .interactive-pricing__billing-options {
@@ -322,8 +381,9 @@ footer {
             &:nth-of-type(2) {
   
               span {
+                display: inline;
                 top: 0;
-                left: 125%;
+                left: 115%;
 
                 em {
                   display: inline;
@@ -340,9 +400,11 @@ footer {
       }
 
       .interactive-pricing__features {
+        width: 100%;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: space-between;
+        gap: initial;
 
         .features {
 
