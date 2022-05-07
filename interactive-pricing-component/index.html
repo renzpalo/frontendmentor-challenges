@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Frontend Mentor | Interactive Pricing Component</title>
+</head>
+<body>
+  <main>
+    <section id="interactive-pricing__section">
+      <div class="container">
+        <div class="interactive-pricing__header">
+          <h1>Simple, traffic-based pricing</h1>
+          <p>Sign-up for our 30-day trial. No credit card required.</p>
+        </div>
+        <div class="interactive-pricing__panel">
+          <div class="interactive-pricing__grid">
+            <p class="interactive-pricing__head"><b>100k</b> Pageviews</p>
+            <div class="input-group">
+              <label for="pricing-options__range">Pricing Range</label>
+              <input type="range" name="pricing-options__range" id="pricing-options__range" class="input-range">
+              <!-- <input type="range" name="" id="" style="margin: 2rem 0;"> -->
+            </div>
+            <div class="interactive-pricing__price">
+              <b>$16.00</b>
+              <small>/ month</small>
+            </div>
+            <div class="interactive-pricing__billing-options">
+              <p>Monthly Billing</p>
+              <div class="input-group">
+                <label for="billing-options__toggle"></label>
+                <input type="checkbox" name="billing-options__toggle" id="billing-options__toggle" class="toggle-button">
+              </div>
+              <p>
+                Yearly Billing
+                <span class="flare">-25%<em> discount</em></span>
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="interactive-pricing__features">
+            <ul class="features">
+              <li>Unlimited websites</li>
+              <li>100% data ownership</li>
+              <li>Email reports</li>
+            </ul>
+            <a href="#" class="button button-primary">Start my trial</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/renzpalo">Renz Palo</a>.
+    </div>
+  </footer>
+</body>
+</html>

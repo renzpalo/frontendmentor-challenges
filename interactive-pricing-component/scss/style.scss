@@ -1,0 +1,353 @@
+@use 'sass:map';
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
+
+$font-main: 'Manrope', sans-serif;
+
+$theme-colors: (
+  'primary': hsl(174, 86%, 45%),
+  'primary-pale': hsl(174, 77%, 80%),
+  'orange': hsl(15, 100%, 70%),
+  'orange-pale': hsl(14, 92%, 95%),
+  'main-background': hsl(230, 100%, 99%),
+  'white': hsl(0, 0%, 100%),
+  'gray': hsl(224, 65%, 95%),
+  'toggle': hsl(223, 50%, 87%)
+);
+
+$text-colors: (
+  'header': hsl(227, 35%, 25%),
+  'text': hsl(225, 20%, 60%),
+  'text-muted': hsl(226, 100%, 87%)
+);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-main;
+}
+
+h1, h2, h3, h4, h5, h6,
+b {
+  color: map.get($text-colors, 'header');
+  font-weight: 800;
+}
+
+p,
+small {
+  color: map.get($text-colors, 'text');
+  font-size: 15px;
+  font-weight: 600;
+}
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+.divider {
+  min-width: 100%;
+  height: 1px;
+  margin: 2rem -1.4rem;
+  background-color: map.get($theme-colors, 'gray');
+}
+
+// Buttons
+.button {
+  padding: .8rem 2.8rem;
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button-primary {
+  background-color: map.get($text-colors, 'header');
+  border-radius: 32px;
+  color: map.get($text-colors, 'text-muted');
+}
+
+.toggle-button {
+  appearance: none;
+  width: 45px;
+  margin: 0;
+  padding: 4px;
+  background-color: map.get($theme-colors, 'toggle');
+  border-radius: 32px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    background-color: map.get($theme-colors, 'white');
+    border-radius: 100%;
+    transition: .2s transform ease;
+  }
+
+  &:checked {
+
+    &::before {
+      transform: translateX(125%);
+    }
+  }
+}
+
+// Inputs
+.input-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background-color: map.get($theme-colors, 'gray');
+  border-radius: 32px;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/icon-slider.svg);
+    background-color: map.get($theme-colors, 'primary');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+  }
+
+  // &::-webkit-slider-runnable-track {
+  //   height: 8px;
+  //   background-color: map.get($theme-colors, 'gray');
+  // }
+}
+
+.flare {
+  padding: .1rem .4rem;
+  background-color: map.get($theme-colors, 'orange-pale');
+  border-radius: 24px;
+  color: map.get($theme-colors, 'orange');
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+#interactive-pricing__section {
+  min-height: 100vh;
+  padding: 2rem 0;
+  background-image: url(../images/bg-pattern.svg);
+  background-color: map.get($theme-colors, 'main-background');
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+
+  .interactive-pricing__header {
+    padding: 2rem 0;
+    background-image: url(../images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+
+    h1 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      width: 64%;
+      margin: 0 auto;
+    }
+  }
+  
+  .interactive-pricing__panel {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    max-width: 540px;
+    margin: 2rem auto;
+    padding: 2rem 1.4rem;
+    background-color: map.get($theme-colors, 'white');
+    border-radius: 12px;
+    text-align: center;
+
+    .interactive-pricing__grid {
+      display: grid;
+      gap: 1.4rem;
+
+      .interactive-pricing__head {
+        font-size: .8rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      #pricing-options__range {
+        display: block;
+        width: 100%;
+      }
+
+      .interactive-pricing__price {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: .4rem;
+
+        b {
+          font-size: 2rem;
+        }
+      }
+
+      .interactive-pricing__billing-options {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: .6rem;
+
+        p {
+          margin: 0;
+          font-size: .8rem;
+
+          &:nth-of-type(2) {
+            position: relative;
+
+            span {
+              position: absolute;
+              top: 125%;
+              left: 25%;
+            }
+          }
+        }
+      }
+
+      .flare {
+
+        em {
+          display: none;
+        }
+      }
+    }
+
+    .interactive-pricing__features {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      
+      .features {
+        margin: 0;
+        padding: 0;
+        color: map.get($text-colors, 'text');
+        font-size: .8rem;
+        font-weight: 600;
+        list-style-image: url(../images/icon-check.svg);
+        list-style-position: inside;
+        
+        li {
+          padding: .4rem;
+        }
+      }
+    }
+  }
+
+  .input-group {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    label {
+      display: none;
+    }
+  }
+}
+
+footer {
+
+  .attribution {
+    font-size: 11px; text-align: center;
+    
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  #interactive-pricing__section {
+
+    .interactive-pricing__header {
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .interactive-pricing__panel {
+      padding: 4rem 2.8rem;
+      text-align: left;
+
+      .interactive-pricing__grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1 1 1;
+        width: 100%;
+
+        .interactive-pricing__head {
+          grid-column: 1;
+          grid-row: 1;
+          align-self: center;
+          justify-self: start;
+        }
+
+        .interactive-pricing__price {
+          grid-column: 2;
+          grid-row: 1;
+          align-self: center;
+          justify-self: end;
+        }
+
+        .interactive-pricing__billing-options {
+          grid-column: 2 span;
+          grid-row: 3;
+
+          p {
+  
+            &:nth-of-type(2) {
+  
+              span {
+                top: 0;
+                left: 125%;
+
+                em {
+                  display: inline;
+                }
+              }
+            }
+          }
+        }
+
+        > .input-group {
+          grid-column: 2 span;
+          grid-row: 2;
+        }
+      }
+
+      .interactive-pricing__features {
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        .features {
+
+        }
+      }
+    }
+  }
+}
