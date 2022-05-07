@@ -56,11 +56,16 @@ p {
   letter-spacing: 4px;
   text-decoration: none;
   text-transform: uppercase;
+  transition: 0.4s background-color ease;
 }
 
 .button-outline {
   border: 1px solid black;
   color: black;
+}
+.button-outline:hover {
+  background-color: black;
+  color: white;
 }
 
 header {
@@ -181,6 +186,14 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  cursor: pointer;
+}
+#our-creations-section .our-creations .creation-card:hover .overlay {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#our-creations-section .our-creations .creation-card:hover h2 {
+  color: black;
 }
 #our-creations-section .our-creations .creation-card .overlay {
   display: flex;
@@ -190,6 +203,7 @@ header {
   min-height: 125px;
   padding: 1.4rem;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  transition: 0.4s background-color ease;
 }
 #our-creations-section .our-creations .creation-card h2 {
   width: 50%;
@@ -237,9 +251,27 @@ footer .footer-attribution a {
   display: block;
 }
 .social-links li a {
+  display: block;
+  position: relative;
+  padding: 0.4rem 0;
   color: white;
   font-size: 1.6rem;
   text-decoration: none;
+}
+.social-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: translateX(50%);
+  transform: scaleX(0%);
+  transition: 0.4s transform ease;
+}
+.social-links li a:hover::after {
+  transform: scaleX(100%);
 }
 
 .footer-links {
@@ -254,10 +286,26 @@ footer .footer-attribution a {
 }
 .footer-links li a {
   display: block;
+  position: relative;
   padding: 0.4rem 2rem;
   color: white;
   font-family: "Alata", sans-serif;
   text-decoration: none;
+}
+.footer-links li a::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+  background-color: white;
+  transform: translateX(50%);
+  transform: scaleX(0%);
+  transition: 0.4s transform ease;
+}
+.footer-links li a:hover::after {
+  transform: scaleX(100%);
 }
 
 @media (min-width: 375px) {
@@ -338,14 +386,34 @@ footer .footer-attribution a {
     margin: 0;
     padding: 0;
     background-color: initial;
+    z-index: initial;
   }
   .navbar .navbar-menu .navbar-links {
     flex-flow: row nowrap;
   }
   .navbar .navbar-menu .navbar-links li a {
+    display: block;
+    position: relative;
+    padding: 0.6rem 0;
     font-family: "Alata", sans-serif;
     font-size: 1rem;
     text-transform: capitalize;
+    cursor: pointer;
+  }
+  .navbar .navbar-menu .navbar-links li a::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    width: 50%;
+    height: 2px;
+    background-color: white;
+    transform: translateX(50%);
+    transform: scaleX(0%);
+    transition: 0.4s transform ease;
+  }
+  .navbar .navbar-menu .navbar-links li a:hover::after {
+    transform: scaleX(100%);
   }
 
   #hero-section {
