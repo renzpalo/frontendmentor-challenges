@@ -106,6 +106,8 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 100%;
+  box-shadow: 0 8px 16px 4px rgba(16, 213, 194, 0.5);
+  transition: 0.2s background-color ease;
 }
 
 .flare {
@@ -222,8 +224,7 @@ img {
 }
 #interactive-pricing__section .interactive-pricing__panel .divider {
   width: 100%;
-  margin: 2rem -1.4rem;
-  transform: scaleX(100%);
+  margin: 2.4rem -1.4rem;
 }
 #interactive-pricing__section .input-group {
   display: flex;
@@ -259,7 +260,7 @@ footer .attribution a {
     font-size: 2rem;
   }
   #interactive-pricing__section .interactive-pricing__panel {
-    padding: 3.4rem 3.4rem 2rem;
+    padding: 2.4em 3.4rem 2rem;
     text-align: left;
   }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid {
@@ -287,6 +288,7 @@ footer .attribution a {
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__billing-options {
     grid-column: 2 span;
     grid-row: 3;
+    gap: 1rem;
   }
   #interactive-pricing__section .interactive-pricing__panel .interactive-pricing__grid .interactive-pricing__billing-options p:nth-of-type(2) span {
     display: inline;

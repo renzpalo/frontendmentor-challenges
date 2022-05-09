@@ -22,11 +22,10 @@
             <p class="interactive-pricing__head"><b>100k</b> Pageviews</p>
             <div class="input-group">
               <label for="pricing-options__range">Pricing Range</label>
-              <input type="range" name="pricing-options__range" id="pricing-options__range" class="input-range">
-              <!-- <input type="range" name="" id="" style="margin: 2rem 0;"> -->
+              <input type="range" name="pricing-options__range" id="pricing-options__range" class="input-range" min="0" max="100">
             </div>
             <div class="interactive-pricing__price">
-              <b>$16.00</b>
+              <b class="pricing-options__price-value">$16.00</b>
               <small>/ month</small>
             </div>
             <div class="interactive-pricing__billing-options">
@@ -63,5 +62,7 @@
       </div>
     </div>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
