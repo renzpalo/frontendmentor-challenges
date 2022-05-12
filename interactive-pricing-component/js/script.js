@@ -6,7 +6,7 @@ const optionsPageviewValue = document.querySelector('.interactive_pricing__pagev
 const optionsToggle = document.getElementById('billing-options__toggle');
 
 optionsRange.addEventListener('change', (event) => {
-  let priceValue = parseInt(event.target.value) / 1000;
+  let priceValue = parseInt(event.target.value);
   let pageViewsValue = '';
   let priceDiscount = 0;
 
@@ -38,9 +38,9 @@ optionsRange.addEventListener('change', (event) => {
 optionsToggle.addEventListener('change', (event) => {
   let optionsRangeValue = optionsRange.value;
   if(event.target.checked) {
-    optionsRangeValue = (optionsRangeValue - (optionsRangeValue * 0.25)) / 1000;
+    optionsRangeValue = optionsRangeValue - (optionsRangeValue * 0.25);
   } else {
-    optionsRangeValue = optionsRangeValue / 1000;
+    optionsRangeValue = optionsRangeValue;
   }
 
   optionsPriceValue.textContent = `$${parseFloat(optionsRangeValue).toFixed(2)}`;
