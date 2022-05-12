@@ -38,10 +38,9 @@ optionsRange.addEventListener('change', (event) => {
 optionsToggle.addEventListener('change', (event) => {
   let optionsRangeValue = optionsRange.value;
   if(event.target.checked) {
-    optionsRangeValue = optionsRangeValue - (optionsRangeValue * 0.25);
-    
+    optionsRangeValue = (optionsRangeValue - (optionsRangeValue * 0.25)) / 1000;
   } else {
-    optionsRangeValue = optionsRangeValue;
+    optionsRangeValue = optionsRangeValue / 1000;
   }
 
   optionsPriceValue.textContent = `$${parseFloat(optionsRangeValue).toFixed(2)}`;
