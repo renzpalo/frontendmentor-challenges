@@ -1,16 +1,240 @@
+@use 'sass:map';
 
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
 
+$font-main: 'Ubuntu', sans-serif;
+$font-secondary: 'Overpass', sans-serif;
 
+$theme-colors: (
+  'primary': hsl(356, 100%, 66%),
+  'secondary' : hsl(355, 100%, 74%),
+  'dark-blue': hsl(208, 49%, 24%),
+  'white': hsl(0, 0%, 100%),
+  'grayish-blue': hsl(240, 2%, 79%),
+  'dark-grayish-blue': hsl(207, 13%, 34%),
+  'dark-black-blue': hsl(240, 10%, 16%),
+  'light-gray': rgb(239, 239, 241)
+);
 
+$gradient-main: linear-gradient(180deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+$gradient-secondary: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  background-color: map.get($theme-colors, 'white');
+  font-family: $font-secondary;
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  color: map.get($theme-colors, 'dark-blue');
+  font-family: $font-secondary;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 3rem;
+}
+
+p {
+  color: map.get($theme-colors, 'dark-grayish-blue');
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.4rem;
+}
+
+.columns {
+  display: flex;
+  flex-flow: column wrap;
+
+  .column {
+    flex: 1;
+  }
+}
+
+// BUTTONS
+.button-link {
+  display: inline-block;
+  min-height: 50px;
+  margin: 0 .4rem;
+  padding: 1rem 1.2rem;
+  border-radius: 32px;
+  font-family: $font-main;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button-primary {
+  background-color: map.get($theme-colors, 'white');
+  color: map.get($theme-colors, 'primary');
+}
+
+.button-outline {
+  padding: 1rem 1.8rem;
+  color: map.get($theme-colors, 'white');
+  border: 1px solid map.get($theme-colors, 'white');
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 100px;
+
+  .nav-hamburger {
+    width: 50px;
+    height: 50px;
+    margin-right: -.6rem;
+    background-image: url(../images/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-flow: column wrap;
+    gap: 1rem;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 2rem 1.4rem;
+    background-color: map.get($theme-colors, 'white');
+    border-radius: 5px;
+    box-shadow: 0 16px 32px 4px rgba(0, 0, 0, 0.20);
+    text-align: center;
+    z-index: 998;
+
+    a {
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-flow: column wrap;
+      gap: 1.4rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .dropdown-link {
+
+        > a {
+          color: map.get($theme-colors, 'dark-blue');
+          font-size: 1.2rem;
+          font-weight: 700;
+
+          &::after {
+            content: url(../images/icon-arrow-dark.svg);
+            display: inline-block;
+            margin-left: .4rem;
+          }
+        }
+      }
+    }
+
+    .line {
+      width: 100%;
+      height: 1px;
+      border-top: 1px solid map.get($theme-colors, 'grayish-blue');
+    }
+
+    .dropdown-menu {
+      display: block;
+      margin: 1.4rem 0 0;
+      padding: 1.4rem;
+      background-color: map.get($theme-colors, 'light-gray');
+      border-radius: 5px;
+      list-style: none;
+
+      li {
+
+        a {
+          display: block;
+          padding: .6rem;
+          color: map.get($theme-colors, 'dark-grayish-blue');
+          font-size: 1rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+#hero-section {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  background-image: $gradient-main, url(../images/bg-pattern-intro-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0 0 0 128px;
+  color: map.get($theme-colors, 'white');
+  text-align: center;
+
+  h1 {
+    color: map.get($theme-colors, 'white');
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: map.get($theme-colors, 'white');
+    opacity: 80%;
+  }
+
+  .link-group {
+    margin-top: 3rem;
+  }
+}
+
+#design-for-the-future-section {
+  padding: 4rem 0;
+  text-align: center;
+
+  .columns {
+    flex-direction: column-reverse;
+
+    .feature-image {
+      margin: 0 -4rem;
+    }
+  }
+}
 
 
 
 footer {
-  
+
   .attribution {
     font-size: 11px; text-align: center; 
     
