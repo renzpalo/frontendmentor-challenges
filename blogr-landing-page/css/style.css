@@ -27,16 +27,21 @@ h1 {
   line-height: 3rem;
 }
 
+h2 {
+  font-size: 1.7rem;
+}
+
 p {
   color: #4b5862;
-  font-size: 16px;
+  font-size: 17px;
+  line-height: 1.8rem;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.4rem;
+  padding: 0 1.4rem;
 }
 
 .columns {
@@ -50,7 +55,7 @@ p {
 .button-link {
   display: inline-block;
   min-height: 50px;
-  margin: 0 0.4rem;
+  margin: 0;
   padding: 1rem 1.2rem;
   border-radius: 32px;
   font-family: "Ubuntu", sans-serif;
@@ -70,6 +75,14 @@ p {
   border: 1px solid white;
 }
 
+.link-group {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 header {
   position: absolute;
   top: 0;
@@ -84,7 +97,7 @@ header {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  height: 100px;
+  min-height: 150px;
 }
 .nav .nav-hamburger {
   width: 50px;
@@ -159,10 +172,10 @@ header {
   align-items: center;
   justify-content: center;
   min-height: 600px;
-  background-image: linear-gradient(180deg, #ff8f70, #ff3d54), url(../images/bg-pattern-intro-mobile.svg);
+  background-image: url(../images/bg-pattern-intro-mobile.svg), linear-gradient(180deg, #ff8f70, #ff3d54);
   background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 0 0 0 128px;
+  background-position: -340px -240px, top left;
+  border-radius: 0 0 0 100px;
   color: white;
   text-align: center;
 }
@@ -179,22 +192,105 @@ header {
 }
 
 #design-for-the-future-section {
-  padding: 4rem 0;
+  padding: 4rem 0 14rem;
   text-align: center;
+  overflow: hidden;
 }
 #design-for-the-future-section .columns {
   flex-direction: column-reverse;
 }
 #design-for-the-future-section .columns .feature-image {
-  margin: 0 -4rem;
+  margin: 2rem -4rem 1rem;
 }
 
-footer .attribution {
+#state-of-the-art-infrastructure-section {
+  padding: 12rem 0 6rem;
+  background-image: url(../images/bg-pattern-circles.svg);
+  background-position: center -250px;
+  background-size: 160% auto;
+  background-repeat: no-repeat;
+  background-color: #3b3e5d;
+  border-radius: 0 100px 0 100px;
+  text-align: center;
+}
+#state-of-the-art-infrastructure-section .columns {
+  position: relative;
+}
+#state-of-the-art-infrastructure-section h2 {
+  color: white;
+  font-size: 2.2rem;
+}
+#state-of-the-art-infrastructure-section p {
+  color: white;
+  opacity: 80%;
+}
+#state-of-the-art-infrastructure-section .section-image {
+  margin: 0 -1.4rem;
+  position: absolute;
+  top: -110%;
+  left: 0;
+  right: 0;
+}
+
+#design-for-the-future-2-section {
+  padding: 4rem 0 6rem;
+  text-align: center;
+  overflow: hidden;
+}
+#design-for-the-future-2-section .section-image {
+  margin: 0 -6rem;
+}
+
+.features {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.4rem;
+}
+.features .feature {
+  padding: 0 0.8rem;
+}
+.features .feature h3 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+  padding: 6rem 0 4rem;
+  background-color: #25252d;
+  border-radius: 0 100px 0 0;
+  text-align: center;
+}
+footer .columns {
+  gap: 3rem;
+}
+footer .footer-brand {
+  margin-bottom: 2rem;
+}
+footer .footer-menu h6 {
+  margin: 0 0 2rem;
+  font-size: 1.2rem;
+  color: white;
+}
+footer .footer-menu .footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer .footer-menu .footer-links li a {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  color: #c8c8cb;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+footer .footer-attribution {
+  margin-top: 4rem;
+  color: white;
   font-size: 11px;
   text-align: center;
 }
-footer .attribution a {
-  color: #3e52a3;
+footer .footer-attribution a {
+  color: #ff525d;
 }
 
 /*# sourceMappingURL=style.css.map */

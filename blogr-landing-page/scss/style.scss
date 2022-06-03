@@ -13,7 +13,8 @@ $theme-colors: (
   'grayish-blue': hsl(240, 2%, 79%),
   'dark-grayish-blue': hsl(207, 13%, 34%),
   'dark-black-blue': hsl(240, 10%, 16%),
-  'light-gray': rgb(239, 239, 241)
+  'light-gray': hsl(240, 7%, 94%),
+  'dark-violet': rgb(59, 62, 93)
 );
 
 $gradient-main: linear-gradient(180deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
@@ -47,16 +48,21 @@ h1 {
   line-height: 3rem;
 }
 
+h2 {
+  font-size: 1.7rem;
+}
+
 p {
   color: map.get($theme-colors, 'dark-grayish-blue');
-  font-size: 16px;
+  font-size: 17px;
+  line-height: 1.8rem;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.4rem;
+  padding: 0 1.4rem;
 }
 
 .columns {
@@ -72,7 +78,7 @@ p {
 .button-link {
   display: inline-block;
   min-height: 50px;
-  margin: 0 .4rem;
+  margin: 0;
   padding: 1rem 1.2rem;
   border-radius: 32px;
   font-family: $font-main;
@@ -92,6 +98,14 @@ p {
   border: 1px solid map.get($theme-colors, 'white');
 }
 
+.link-group {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 header {
   position: absolute;
   top: 0;
@@ -106,7 +120,7 @@ header {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  height: 100px;
+  min-height: 150px;
 
   .nav-hamburger {
     width: 50px;
@@ -196,10 +210,10 @@ header {
   align-items: center;
   justify-content: center;
   min-height: 600px;
-  background-image: $gradient-main, url(../images/bg-pattern-intro-mobile.svg);
+  background-image: url(../images/bg-pattern-intro-mobile.svg), $gradient-main;
   background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 0 0 0 128px;
+  background-position: -340px -240px, top left;
+  border-radius: 0 0 0 100px;
   color: map.get($theme-colors, 'white');
   text-align: center;
 
@@ -219,27 +233,126 @@ header {
 }
 
 #design-for-the-future-section {
-  padding: 4rem 0;
+  padding: 4rem 0 14rem;
   text-align: center;
+  overflow: hidden;
 
   .columns {
     flex-direction: column-reverse;
 
     .feature-image {
-      margin: 0 -4rem;
+      margin: 2rem -4rem 1rem;
     }
   }
 }
 
+#state-of-the-art-infrastructure-section {
+  padding: 12rem 0 6rem;
+  background-image: url(../images/bg-pattern-circles.svg);
+  background-position: center -250px;
+  background-size: 160% auto;
+  background-repeat: no-repeat;
+  background-color: map.get($theme-colors, 'dark-violet');
+  border-radius: 0 100px 0 100px;
+  text-align: center;
 
+  .columns {
+    position: relative;
+  }
+
+  h2 {
+    color: map.get($theme-colors, 'white');
+    font-size: 2.2rem;
+  }
+
+  p {
+    color: map.get($theme-colors, 'white');
+    opacity: 80%;
+  }
+
+  .section-image {
+    margin: 0 -1.4rem;
+    position: absolute;
+    top: -110%;
+    left: 0;
+    right: 0;
+  }
+}
+
+#design-for-the-future-2-section {
+  padding: 4rem 0 6rem;
+  text-align: center;
+  overflow: hidden;
+
+  .section-image {
+    margin: 0 -6rem;
+    
+  }
+}
+
+.features {
+  display: flex;
+  flex-flow: column wrap;
+  gap: .4rem;
+
+  .feature {
+    padding: 0 .8rem;
+
+    h3 {
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
 
 footer {
+  padding: 6rem 0 4rem;
+  background-color: map.get($theme-colors, 'dark-black-blue');
+  border-radius: 0 100px 0 0;
+  text-align: center;
 
-  .attribution {
-    font-size: 11px; text-align: center; 
+  .columns {
+    gap: 3rem;
+  }
+
+  .footer-brand {
+    margin-bottom: 2rem;
+  }
+
+  .footer-menu {
+
+    h6 {
+      margin: 0 0 2rem;
+      font-size: 1.2rem;
+      color: map.get($theme-colors, 'white');
+    }
+
+    .footer-links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+
+        a {
+          display: inline-block;
+          padding: .3rem 1rem;
+          color: map.get($theme-colors, 'grayish-blue');
+          font-size: 1.2rem;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .footer-attribution {
+    margin-top: 4rem;
+    color: map.get($theme-colors, 'white');
+    font-size: 11px;
+    text-align: center; 
     
     a {
-      color: hsl(228, 45%, 44%);
+      color: map.get($theme-colors, 'primary');
     }
   }
 }
