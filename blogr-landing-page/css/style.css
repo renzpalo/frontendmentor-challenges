@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #1f3f5b;
   font-family: "Overpass", sans-serif;
   font-weight: 600;
+  word-break: break-all;
 }
 
 h1 {
@@ -113,7 +114,7 @@ header {
   flex-flow: column wrap;
   gap: 1rem;
   position: absolute;
-  top: 100px;
+  top: 120px;
   left: 0;
   right: 0;
   width: 100%;
@@ -194,8 +195,13 @@ header {
 #design-for-the-future-section {
   padding: 4rem 0 14rem;
 }
-#design-for-the-future-section .columns {
-  flex-direction: column-reverse;
+#design-for-the-future-section .feature-image {
+  flex: 1;
+  min-height: 300px;
+  background-image: url(../images/illustration-editor-mobile.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 }
 
 .feature-section {
@@ -203,12 +209,18 @@ header {
 }
 .feature-section .feature-image {
   margin: 1rem -1.4rem;
+  max-width: 100vw;
 }
+.feature-section .feature-image img {
+  margin: 0 auto;
+  max-width: 100vw;
+}
+
 #state-of-the-art-infrastructure-section {
   padding: 13rem 0 6rem;
   background-image: url(../images/bg-pattern-circles.svg);
-  background-position: center -250px;
-  background-size: 160% auto;
+  background-position: 50% -200px;
+  background-size: 160vw auto;
   background-repeat: no-repeat;
   background-color: #3b3e5d;
   border-radius: 0 100px 0 100px;
@@ -224,20 +236,22 @@ header {
 }
 #state-of-the-art-infrastructure-section .section-image {
   position: relative;
+  max-width: 100%;
   margin: 0 -1.4rem;
+  text-align: center;
 }
 #state-of-the-art-infrastructure-section .section-image img {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+  max-width: 100vw;
   max-height: 450px;
   margin: 0 auto;
 }
 
 #design-for-the-future-2-section {
   padding: 4rem 0 6rem;
-  text-align: center;
   overflow: hidden;
 }
 #design-for-the-future-2-section .section-image {
@@ -281,7 +295,7 @@ footer .footer-menu .footer-links {
 }
 footer .footer-menu .footer-links li a {
   display: inline-block;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 0;
   color: #c8c8cb;
   font-size: 1.2rem;
   text-decoration: none;
@@ -296,9 +310,15 @@ footer .footer-attribution a {
   color: #ff525d;
 }
 
+@media (min-width: 320px) {
+  h1, h2, h3, h4, h5, h6 {
+    word-break: normal;
+  }
+}
 @media (min-width: 425px) {
   #state-of-the-art-infrastructure-section {
     padding: 15rem 0 6rem;
+    background-position: center;
   }
 }
 @media (min-width: 768px) {
@@ -323,6 +343,10 @@ footer .footer-attribution a {
   }
 }
 @media (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+
   .columns {
     flex-flow: row nowrap;
   }
@@ -333,8 +357,77 @@ footer .footer-attribution a {
     background-position: 30% 55%, top left;
     background-size: 240% auto;
   }
+  #hero-section p {
+    font-size: 1.4rem;
+  }
+
+  #design-for-the-future-section {
+    padding: 10rem 0;
+  }
+  #design-for-the-future-section .columns {
+    gap: 4rem;
+  }
+  #design-for-the-future-section .feature-image {
+    background-image: url(../images/illustration-editor-desktop.svg);
+  }
+
+  #state-of-the-art-infrastructure-section {
+    max-height: 400px;
+    padding: 4rem 0;
+    background-size: 60%;
+    background-position: -30% 70%;
+    text-align: left;
+  }
+  #state-of-the-art-infrastructure-section h2 {
+    margin-top: 0;
+  }
+  #state-of-the-art-infrastructure-section .columns {
+    align-items: center;
+  }
+  #state-of-the-art-infrastructure-section .section-content {
+    padding: 0;
+  }
+  #state-of-the-art-infrastructure-section .section-image {
+    margin: 0;
+  }
+  #state-of-the-art-infrastructure-section .section-image img {
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
+  }
 
   .feature-section {
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+  }
+  .feature-section .columns {
+    align-items: center;
+  }
+  .feature-section h2 {
+    text-align: center;
+  }
+  .feature-section .feature-image {
+    min-width: 100vh;
+    max-height: 70%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    bottom: 0;
+    z-index: -999;
+    background-position: center right !important;
+    transform: translateY(-50%);
+  }
+  .feature-section .features {
+    flex: 0.5;
+  }
+
+  .features .feature {
+    padding: 0;
+  }
+
+  footer {
     text-align: left;
   }
 }
