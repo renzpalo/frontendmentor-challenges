@@ -174,7 +174,7 @@ header {
   min-height: 600px;
   background-image: url(../images/bg-pattern-intro-mobile.svg), linear-gradient(180deg, #ff8f70, #ff3d54);
   background-repeat: no-repeat;
-  background-position: -340px -240px, top left;
+  background-position: 35% 32%, top left;
   border-radius: 0 0 0 100px;
   color: white;
   text-align: center;
@@ -193,18 +193,19 @@ header {
 
 #design-for-the-future-section {
   padding: 4rem 0 14rem;
-  text-align: center;
-  overflow: hidden;
 }
 #design-for-the-future-section .columns {
   flex-direction: column-reverse;
 }
-#design-for-the-future-section .columns .feature-image {
-  margin: 2rem -4rem 1rem;
-}
 
+.feature-section {
+  text-align: center;
+}
+.feature-section .feature-image {
+  margin: 1rem -1.4rem;
+}
 #state-of-the-art-infrastructure-section {
-  padding: 12rem 0 6rem;
+  padding: 13rem 0 6rem;
   background-image: url(../images/bg-pattern-circles.svg);
   background-position: center -250px;
   background-size: 160% auto;
@@ -212,9 +213,6 @@ header {
   background-color: #3b3e5d;
   border-radius: 0 100px 0 100px;
   text-align: center;
-}
-#state-of-the-art-infrastructure-section .columns {
-  position: relative;
 }
 #state-of-the-art-infrastructure-section h2 {
   color: white;
@@ -225,11 +223,16 @@ header {
   opacity: 80%;
 }
 #state-of-the-art-infrastructure-section .section-image {
+  position: relative;
   margin: 0 -1.4rem;
+}
+#state-of-the-art-infrastructure-section .section-image img {
   position: absolute;
-  top: -110%;
   left: 0;
   right: 0;
+  bottom: 0;
+  max-height: 450px;
+  margin: 0 auto;
 }
 
 #design-for-the-future-2-section {
@@ -291,6 +294,49 @@ footer .footer-attribution {
 }
 footer .footer-attribution a {
   color: #ff525d;
+}
+
+@media (min-width: 425px) {
+  #state-of-the-art-infrastructure-section {
+    padding: 15rem 0 6rem;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.4rem;
+    line-height: 4rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  #state-of-the-art-infrastructure-section .section-content {
+    padding: 0 10rem;
+  }
+  #state-of-the-art-infrastructure-section .section-content h2 {
+    font-size: 2.4rem;
+  }
+
+  .features .feature {
+    padding: 0 10rem;
+  }
+}
+@media (min-width: 1024px) {
+  .columns {
+    flex-flow: row nowrap;
+  }
+
+  #hero-section {
+    background-image: url(../images/bg-pattern-intro-desktop.svg), linear-gradient(180deg, #ff8f70, #ff3d54);
+    background-repeat: no-repeat;
+    background-position: 30% 55%, top left;
+    background-size: 240% auto;
+  }
+
+  .feature-section {
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

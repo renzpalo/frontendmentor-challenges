@@ -212,7 +212,7 @@ header {
   min-height: 600px;
   background-image: url(../images/bg-pattern-intro-mobile.svg), $gradient-main;
   background-repeat: no-repeat;
-  background-position: -340px -240px, top left;
+  background-position: 35% 32%, top left;
   border-radius: 0 0 0 100px;
   color: map.get($theme-colors, 'white');
   text-align: center;
@@ -234,20 +234,26 @@ header {
 
 #design-for-the-future-section {
   padding: 4rem 0 14rem;
-  text-align: center;
-  overflow: hidden;
 
   .columns {
     flex-direction: column-reverse;
+  }
+}
 
-    .feature-image {
-      margin: 2rem -4rem 1rem;
+.feature-section {
+  text-align: center;
+
+  .feature-image {
+    margin: 1rem -1.4rem;
+
+    img {
+      
     }
   }
 }
 
 #state-of-the-art-infrastructure-section {
-  padding: 12rem 0 6rem;
+  padding: 13rem 0 6rem;
   background-image: url(../images/bg-pattern-circles.svg);
   background-position: center -250px;
   background-size: 160% auto;
@@ -255,10 +261,6 @@ header {
   background-color: map.get($theme-colors, 'dark-violet');
   border-radius: 0 100px 0 100px;
   text-align: center;
-
-  .columns {
-    position: relative;
-  }
 
   h2 {
     color: map.get($theme-colors, 'white');
@@ -271,11 +273,17 @@ header {
   }
 
   .section-image {
+    position: relative;
     margin: 0 -1.4rem;
-    position: absolute;
-    top: -110%;
-    left: 0;
-    right: 0;
+
+    img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-height: 450px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -286,6 +294,7 @@ header {
 
   .section-image {
     margin: 0 -6rem;
+    
     
   }
 }
@@ -354,5 +363,57 @@ footer {
     a {
       color: map.get($theme-colors, 'primary');
     }
+  }
+}
+
+@media (min-width: 425px) {
+
+  #state-of-the-art-infrastructure-section {
+    padding: 15rem 0 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.4rem;
+    line-height: 4rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  #state-of-the-art-infrastructure-section {
+
+    .section-content {
+      padding: 0 10rem;
+
+      h2 {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  .features {
+
+    .feature {
+      padding: 0 10rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .columns {
+    flex-flow: row nowrap;
+  }
+  #hero-section {
+    background-image: url(../images/bg-pattern-intro-desktop.svg), $gradient-main;
+    background-repeat: no-repeat;
+    background-position: 30% 55%, top left;
+    background-size: 240% auto;
+  }
+
+  .feature-section {
+    text-align: left;
   }
 }
