@@ -9,6 +9,7 @@ body {
   margin: 0;
   background-color: white;
   font-family: "Overpass", sans-serif;
+  overflow-x: hidden;
 }
 
 img {
@@ -207,6 +208,18 @@ header {
 .feature-section {
   text-align: center;
 }
+.feature-section .features {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.4rem;
+}
+.feature-section .features .feature {
+  padding: 0 0.8rem;
+}
+.feature-section .features .feature h3 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
 .feature-section .feature-image {
   margin: 1rem -1.4rem;
   max-width: 100vw;
@@ -254,21 +267,13 @@ header {
   padding: 4rem 0 6rem;
   overflow: hidden;
 }
-#design-for-the-future-2-section .section-image {
-  margin: 0 -6rem;
-}
-
-.features {
-  display: flex;
-  flex-flow: column wrap;
-  gap: 0.4rem;
-}
-.features .feature {
-  padding: 0 0.8rem;
-}
-.features .feature h3 {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
+#design-for-the-future-2-section .feature-image {
+  flex: 1;
+  min-height: 300px;
+  background-image: url(../images/illustration-laptop-mobile.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 }
 
 footer {
@@ -365,10 +370,14 @@ footer .footer-attribution a {
     padding: 10rem 0;
   }
   #design-for-the-future-section .columns {
+    flex-direction: row-reverse;
     gap: 4rem;
   }
   #design-for-the-future-section .feature-image {
+    min-height: 500px;
+    margin: -40rem -4rem;
     background-image: url(../images/illustration-editor-desktop.svg);
+    background-position: left center;
   }
 
   #state-of-the-art-infrastructure-section {
@@ -396,6 +405,16 @@ footer .footer-attribution a {
     transform: translateY(-50%);
   }
 
+  #design-for-the-future-2-section {
+    padding: 10rem 0;
+  }
+  #design-for-the-future-2-section .feature-image {
+    min-height: 500px;
+    margin: 0;
+    background-image: url(../images/illustration-laptop-desktop.svg);
+    background-position: center;
+  }
+
   .feature-section {
     text-align: left;
     overflow: hidden;
@@ -403,27 +422,12 @@ footer .footer-attribution a {
   }
   .feature-section .columns {
     align-items: center;
+    gap: 4rem;
   }
   .feature-section h2 {
     text-align: center;
   }
-  .feature-section .feature-image {
-    min-width: 100vh;
-    max-height: 70%;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    right: -5%;
-    bottom: 0;
-    z-index: -999;
-    background-position: center right !important;
-    transform: translateY(-50%);
-  }
-  .feature-section .features {
-    flex: 0.5;
-  }
-
-  .features .feature {
+  .feature-section .features .feature {
     padding: 0;
   }
 
