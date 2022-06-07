@@ -20,6 +20,10 @@ $theme-colors: (
 $gradient-main: linear-gradient(180deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
 $gradient-secondary: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
 
+@function generateGradientMain($position) {
+  @return linear-gradient($position, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+}
+
 *,
 *::before,
 *::after {
@@ -84,15 +88,17 @@ p {
   margin: 0;
   padding: 1rem 1.2rem;
   border-radius: 32px;
-  font-family: $font-main;
-  font-size: 1rem;
+  color: map.get($theme-colors, 'dark-blue');
+  font-family: $font-secondary;
+  font-size: 1.2rem;
   font-weight: 700;
   text-decoration: none;
 }
 
 .button-primary {
-  background-color: map.get($theme-colors, 'white');
-  color: map.get($theme-colors, 'primary');
+  background: generateGradientMain(to right);
+  color: map.get($theme-colors, 'white');
+  font-size: 1rem;
 }
 
 .button-outline {
@@ -136,11 +142,11 @@ header {
   }
 
   .nav-menu {
-    display: none;
+    display: flex;
     flex-flow: column wrap;
     gap: 1rem;
     position: absolute;
-    top: 120px;
+    top: 125px;
     left: 0;
     right: 0;
     width: 100%;
@@ -165,6 +171,18 @@ header {
 
       .dropdown-link {
 
+        &.active {
+
+          > a {
+            color: map.get($theme-colors, 'dark-grayish-blue');
+
+            &::after {
+              transform: rotate(180deg);
+            }
+          }
+          
+        }
+
         > a {
           color: map.get($theme-colors, 'dark-blue');
           font-size: 1.2rem;
@@ -174,6 +192,7 @@ header {
             content: url(../images/icon-arrow-dark.svg);
             display: inline-block;
             margin-left: .4rem;
+            transition: .2s transform ease;
           }
         }
       }
@@ -186,7 +205,7 @@ header {
     }
 
     .dropdown-menu {
-      display: block;
+      display: none;
       margin: 1.4rem 0 0;
       padding: 1.4rem;
       background-color: map.get($theme-colors, 'light-gray');
@@ -199,7 +218,7 @@ header {
           display: block;
           padding: .6rem;
           color: map.get($theme-colors, 'dark-grayish-blue');
-          font-size: 1rem;
+          font-size: 1.1rem;
           font-weight: 700;
         }
       }
