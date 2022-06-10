@@ -14,7 +14,8 @@ $theme-colors: (
   'dark-grayish-blue': hsl(207, 13%, 34%),
   'dark-black-blue': hsl(240, 10%, 16%),
   'light-gray': hsl(240, 7%, 94%),
-  'dark-violet': rgb(59, 62, 93)
+  'dark-violet': rgb(59, 62, 93),
+  'peach': rgb(255, 121, 134)
 );
 
 $gradient-main: linear-gradient(180deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
@@ -82,12 +83,20 @@ p {
 }
 
 // BUTTONS
-.button-link {
+.button {
   display: inline-block;
-  min-height: 50px;
   margin: 0;
   padding: 1rem 1.2rem;
   border-radius: 32px;
+  font-family: $font-main;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button-link {
+  display: inline-block;
+  margin: 0;
+  padding: 1rem 1.2rem;
   color: map.get($theme-colors, 'dark-blue');
   font-family: $font-secondary;
   font-size: 1.2rem;
@@ -98,13 +107,29 @@ p {
 .button-primary {
   background: generateGradientMain(to right);
   color: map.get($theme-colors, 'white');
-  font-size: 1rem;
+}
+
+.button-secondary {
+  background-color: map.get($theme-colors, 'white');
+  color: map.get($theme-colors, 'primary');
+  transition: .4s background-color ease;
+
+  &:hover {
+    background-color: map.get($theme-colors, 'peach');
+    color: map.get($theme-colors, 'white');
+  }
 }
 
 .button-outline {
-  padding: 1rem 1.8rem;
+  padding: 1rem 1.6rem;
   color: map.get($theme-colors, 'white');
   border: 1px solid map.get($theme-colors, 'white');
+  transition: .4s background-color ease;
+
+  &:hover {
+    background-color: map.get($theme-colors, 'white');
+    color: map.get($theme-colors, 'primary');
+  }
 }
 
 .link-group {
@@ -128,6 +153,7 @@ header {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  gap: 4rem;
   position: relative;
   min-height: 150px;
 
@@ -142,7 +168,7 @@ header {
   }
 
   .nav-menu {
-    display: flex;
+    display: none;
     flex-flow: column wrap;
     gap: 1rem;
     position: absolute;
@@ -169,6 +195,15 @@ header {
       padding: 0;
       list-style: none;
 
+      &:nth-last-of-type(1) {
+        gap: 0;
+
+        .button-link,
+        .button-primary {
+          padding: 1rem 2.8rem;
+        }
+      }
+
       .dropdown-link {
 
         &.active {
@@ -180,7 +215,10 @@ header {
               transform: rotate(180deg);
             }
           }
-          
+
+          .dropdown-menu {
+            display: block;
+          }
         }
 
         > a {
@@ -195,6 +233,31 @@ header {
             transition: .2s transform ease;
           }
         }
+
+        .dropdown-menu {
+          display: none;
+          margin: 1.4rem 0 0;
+          padding: 1.4rem;
+          background-color: map.get($theme-colors, 'light-gray');
+          border-radius: 5px;
+          list-style: none;
+    
+          li {
+    
+            a {
+              display: block;
+              padding: .6rem;
+              color: map.get($theme-colors, 'dark-grayish-blue');
+              font-size: 1.1rem;
+              font-weight: 700;
+              transition: .4s color ease;
+
+              &:hover {
+                color: #000;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -202,26 +265,6 @@ header {
       width: 100%;
       height: 1px;
       border-top: 1px solid map.get($theme-colors, 'grayish-blue');
-    }
-
-    .dropdown-menu {
-      display: none;
-      margin: 1.4rem 0 0;
-      padding: 1.4rem;
-      background-color: map.get($theme-colors, 'light-gray');
-      border-radius: 5px;
-      list-style: none;
-
-      li {
-
-        a {
-          display: block;
-          padding: .6rem;
-          color: map.get($theme-colors, 'dark-grayish-blue');
-          font-size: 1.1rem;
-          font-weight: 700;
-        }
-      }
     }
   }
 }
@@ -448,6 +491,108 @@ footer {
     flex-flow: row nowrap;
   }
 
+  .nav {
+    height: 200px;
+
+    .nav-brand {
+      width: 120px;
+    }
+
+    .nav-hamburger {
+      display: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      position: initial;
+      padding: 0;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      text-align: left;
+
+      .nav-links {
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 2rem;
+
+        &:nth-last-of-type(1) {
+          gap: 1rem;
+
+          .button-link {
+            padding: 1rem;
+            color: map.get($theme-colors, 'white');
+            opacity: 80%;
+
+            &:hover {
+              opacity: 100%;
+            }
+          }
+
+          .button-primary {
+            background: map.get($theme-colors, 'white');
+            color: map.get($theme-colors, 'primary');
+            font-size: 1.1rem;
+            transition: .4s background-color ease;
+
+            &:hover {
+              background: map.get($theme-colors, 'peach');
+              color: map.get($theme-colors, 'white');
+            }
+          }
+        }
+
+        .dropdown-link {
+          position: relative;
+
+          &.active {
+
+            > a {
+              color: map.get($theme-colors, 'white');
+              text-decoration: underline;
+              opacity: 100%;
+            }
+          }
+
+          > a {
+            color: map.get($theme-colors, 'white');
+            opacity: 80%;
+
+            &:hover {
+              text-decoration: 2px underline;
+              opacity: 100%;
+            }
+
+            &::after {
+              content: url(../images/icon-arrow-light.svg);
+            }
+          }
+
+          .dropdown-menu {
+            position: absolute;
+            left: -2rem;
+            background-color: map.get($theme-colors, 'white');
+            box-shadow: 1px 1px 32px 4px rgba(0, 0, 0, 0.10);
+    
+            li {
+    
+              a {
+                padding-right: 6rem;
+              }
+            }
+          }
+        }
+      }
+
+      .line {
+        display: none;
+      }
+    }
+  }
+
   #hero-section {
     min-height: 720px;
     background-image: url(../images/bg-pattern-intro-desktop.svg), $gradient-main;
@@ -461,7 +606,7 @@ footer {
   }
 
   #design-for-the-future-section {
-    padding: 12rem 0;
+    padding: 10rem 0 12rem;
 
     .feature-image {
       position: absolute;
@@ -562,6 +707,28 @@ footer {
 
   footer {
     text-align: left;
+
+    .footer-menu {
+
+      h6 {
+        margin-top: .8rem;
+        font-size: 1.1rem;
+      }
+
+      .footer-links {
+
+        li {
+  
+          a {
+            padding: .6rem 0;
+
+            &:hover {
+              text-decoration: 2px underline;
+            }
+          }
+        }
+      }
+    } 
   }
 }
 

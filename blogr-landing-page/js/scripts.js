@@ -3,6 +3,7 @@ const navMenu = document.querySelector('.nav-menu');
 
 const dropdownLinks = document.querySelectorAll('.nav .nav-menu .dropdown-link');
 
+// Open/Close Hamburger Menu
 navHamburger.addEventListener('click', (e) => {
   if(navMenu.style.display == 'flex') {
     navMenu.style.display = 'none';
@@ -13,20 +14,19 @@ navHamburger.addEventListener('click', (e) => {
   }
 });
 
+// Open/Close Dropdown Menus
 dropdownLinks.forEach((dropdownLink, index) => {
-  console.log(dropdownLink, index);
+  dropdownLink.addEventListener('click', (e) => {
+    e.preventDefault();
 
-  dropdownLink.addEventListener('click', (event) => {
-    event.preventDefault();
+    dropdownLinks.forEach((activeDropdownLink, activeIndex) => {
+      if(index !== activeIndex) {
+        if(activeDropdownLink.classList.contains('active')) {
+          activeDropdownLink.classList.remove('active');
+        }
+      }
+    });
 
-    const dropdownMenu = event.currentTarget.children[1];
-
-    if(dropdownMenu.style.display == 'block') {
-      dropdownMenu.style.display = 'none';
-      dropdownLink.classList.remove('active');
-    } else {
-      dropdownMenu.style.display = 'block';
-      dropdownLink.classList.add('active');
-    }
+    e.currentTarget.classList.toggle('active');
   });
 });
