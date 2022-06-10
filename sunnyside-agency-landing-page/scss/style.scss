@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+$font-main: 'Barlow', sans-serif;
+$font-secondary: 'Fraunces', serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+
+  .footer-attribution {
+    font-size: 11px; text-align: center;
+    
+    a {
+      color: hsl(228, 45%, 44%);
+    } 
+  }
+}
