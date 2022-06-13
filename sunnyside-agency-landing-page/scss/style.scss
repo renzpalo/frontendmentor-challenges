@@ -15,7 +15,8 @@ $theme-colors: (
   'very-dark-grayish-blue': hsl(213, 9%, 39%),
   'dark-grayish-blue': hsl(232, 10%, 55%),
   'grayish-blue': hsl(210, 4%, 67%),
-  'white': hsl(0, 0%, 100%)
+  'white': hsl(0, 0%, 100%),
+  'light-green': rgb(144, 212, 197),
 );
 
 *,
@@ -142,10 +143,15 @@ header {
     text-align: center;
 
     .feature-content {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      flex: 1;
       padding: 4rem 1.4rem;
     }
 
     .feature-image {
+      flex: 1;
       min-height: 312px;
       background-position: center;
       background-repeat: no-repeat;
@@ -171,10 +177,13 @@ header {
 #services-section {
 
   .services {
+    display: flex;
+    flex-flow: column wrap;
 
     .service {
       display: flex;
       flex-flow: column wrap;
+      align-items: center;
       justify-content: flex-end;
       gap: 2rem;
       min-height: 600px;
@@ -183,6 +192,11 @@ header {
       background-position: center;
       background-size: cover;
       text-align: center;
+
+      > * {
+        max-width: 330px;
+        margin: 0 auto;
+      }
 
       h3 {
         margin: 0;
@@ -209,6 +223,89 @@ header {
   }
 }
 
+#testimonials-section {
+  padding: 3rem 0;
+  text-align: center;
+
+  h4 {
+    color: map.get($theme-colors, 'grayish-blue');
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-flow: column wrap;
+
+    .testimony {
+      padding: 2rem 0;
+
+      img {
+        width: 75px;
+        height: 75px;
+        border-radius: 100%;
+      }
+
+      blockquote {
+        margin: 2rem 0;
+        color: map.get($theme-colors, 'very-dark-grayish-blue');
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+      }
+
+      .client-name {
+        margin-bottom: 0;
+        color: map.get($theme-colors, 'very-dark-blue');
+        font-family: $font-secondary;
+        font-weight: 900;
+      }
+
+      .client-profession {
+        margin: 0;
+        color: map.get($theme-colors, 'grayish-blue');
+        font-size: .9rem;
+      }
+    }
+  }
+}
+
+#gallery-section {
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    .gallery__image {
+      display: block;
+      max-width: 50vw;
+      min-height: 50vw;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &.gallery__image-1 {
+        background-image: url(../images/mobile/image-gallery-milkbottles.jpg);
+      }
+
+      &.gallery__image-2 {
+        background-image: url(../images/mobile/image-gallery-orange.jpg);
+      }
+
+      &.gallery__image-3 {
+        background-image: url(../images/mobile/image-gallery-cone.jpg);
+      }
+
+      &.gallery__image-4 {
+        background-image: url(../images/mobile/image-gallery-sugar-cubes.jpg);
+      }
+    }
+  }
+}
 
 
 
@@ -227,12 +324,197 @@ header {
 
 
 footer {
+  padding: 4rem 0;
+  background-color: map.get($theme-colors, 'light-green');
+  text-align: center;
+
+  .footer-brand {
+    display: block;
+    width: 100%;
+    height: 32px;
+    margin-bottom: 2rem;
+    background-color: map.get($theme-colors, 'dark-cyan');
+    -webkit-mask: url(../images/logo.svg) no-repeat center;
+    mask: url(../images/logo.svg) no-repeat center;
+    mask-size: 170px;
+
+    img {
+      width: 170px;
+    }
+  }
+
+  .footer-menu {
+    margin: 3rem 0;
+
+    .menu-links {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+
+        a {
+          color: map.get($theme-colors, 'cyan');
+          font-family: $font-main;
+          font-weight: 700;
+          font-size: 18px;
+          letter-spacing: 0;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  .footer-socials {
+    margin: 6rem 0;
+
+    .social-links {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
 
   .footer-attribution {
+    color: map.get($theme-colors, 'cyan');
     font-size: 11px; text-align: center;
     
     a {
-      color: hsl(228, 45%, 44%);
+      color: map.get($theme-colors, 'dark-cyan');
+      font-family: $font-main;
+      text-decoration: underline;
     } 
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  #hero-section {
+    background-image: url(../images/desktop/image-header.jpg);
+  }
+
+  #features-section {
+
+    .feature {
+      flex-flow: row nowrap;
+
+      .feature-content {
+        max-width: 50vw;
+        padding: 4rem 2.4rem;
+      }
+
+      .feature-image {
+        max-width: 50vw;
+      }
+
+      &-1 {
+
+        .feature-image {
+          background-image: url(../images/desktop/image-transform.jpg);
+        }
+      }
+
+      &-2 {
+        flex-direction: row-reverse;
+
+        .feature-image {
+          background-image: url(../images/desktop/image-stand-out.jpg);
+        }
+      }
+    }
+  }
+
+  #services-section {
+
+    .services {
+      flex-flow: row nowrap;
+
+      .service__graphics-design {
+        background-image: url(../images/desktop/image-graphic-design.jpg);
+      }
+
+      .service__photography {
+        background-image: url(../images/desktop/image-photography.jpg);
+      }
+    }
+  }
+
+  #testimonials-section {
+
+    h4 {
+      font-size: 1.4rem;
+    }
+
+    .testimonials {
+      flex-flow: row nowrap;
+      gap: 2.8rem;
+    }
+  }
+
+  #gallery-section {
+
+    .gallery {
+
+      .gallery__image {
+
+        &.gallery__image-1 {
+          background-image: url(../images/desktop/image-gallery-milkbottles.jpg);
+        }
+  
+        &.gallery__image-2 {
+          background-image: url(../images/desktop/image-gallery-orange.jpg);
+        }
+  
+        &.gallery__image-3 {
+          background-image: url(../images/desktop/image-gallery-cone.jpg);
+        }
+  
+        &.gallery__image-4 {
+          background-image: url(../images/desktop/image-gallery-sugarcubes.jpg);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero-section {
+    min-height: 100vh;
+    max-height: 800px;
+  }
+
+  #features-section {
+    
+    .feature {
+      min-height: 600px;
+      text-align: left;
+
+      .feature-content {
+        padding: 6rem;
+      }
+    }
+  }
+
+  #services-section {
+
+    .services {
+
+      .service {
+        
+      }
+    }
   }
 }
