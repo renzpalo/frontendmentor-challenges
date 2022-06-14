@@ -19,7 +19,7 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: calc(1110px + 2.8rem);
   margin: 0 auto;
   padding: 0 1.4rem;
 }
@@ -33,7 +33,7 @@ img {
 }
 #dashboard-section .dashboard {
   display: grid;
-  gap: 1.4rem;
+  gap: 2rem;
 }
 #dashboard-section .dashboard .dashboard__profile {
   background-color: #1c1f4a;
@@ -75,13 +75,33 @@ img {
   align-items: center;
   justify-content: space-between;
 }
+#dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date .input-group input[type=radio] {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+#dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date .input-group input[type=radio]::before {
+  content: attr(value);
+  display: block;
+  color: #bdc1ff;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+#dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date .input-group input[type=radio]:checked::before {
+  color: #fff;
+}
+#dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date .input-group label {
+  display: none;
+}
 #dashboard-section .dashboard .time-tracker {
-  padding-top: 2.4rem;
+  position: relative;
+  min-height: 156px;
   background-color: #ff8c66;
   background-repeat: no-repeat;
   background-position: 90% -10px;
   border-radius: 16px;
-  overflow: hidden;
 }
 #dashboard-section .dashboard .time-tracker:nth-of-type(2) {
   background-color: #ff8c66;
@@ -108,6 +128,11 @@ img {
   background-image: url(../images/icon-self-care.svg);
 }
 #dashboard-section .dashboard .time-tracker .time-tracker__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 124px;
   padding: 2rem;
   background-color: #1c1f4a;
   border-radius: 16px;
@@ -156,7 +181,7 @@ img {
 }
 #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__stats .time-tracker__stats__previous-time {
   color: #bdc1ff;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 
@@ -169,6 +194,87 @@ footer .footer-attribution {
 }
 footer .footer-attribution a {
   color: #3e52a3;
+}
+
+@media (min-width: 375px) {
+  #dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  #dashboard-section .dashboard {
+    grid-template-columns: 1fr 1fr;
+  }
+  #dashboard-section .dashboard .dashboard__profile {
+    grid-column: span 2;
+  }
+  #dashboard-section .dashboard .dashboard__profile .dashboard__profile-info img {
+    width: 85px;
+  }
+}
+@media (min-width: 1024px) {
+  #dashboard-section .dashboard {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #dashboard-section .dashboard .dashboard__profile {
+    grid-column: 1;
+    grid-row: span 3;
+  }
+  #dashboard-section .dashboard .dashboard__profile .dashboard__profile-info {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    min-height: 355px;
+    padding: 2rem;
+  }
+  #dashboard-section .dashboard .dashboard__profile .dashboard__profile-info img {
+    margin-bottom: 1.4rem;
+  }
+  #dashboard-section .dashboard .dashboard__profile .dashboard__profile-info p b {
+    font-size: 2.6rem;
+  }
+  #dashboard-section .dashboard .dashboard__profile .dashboard__controls {
+    padding: 2rem;
+  }
+  #dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+}
+@media (min-width: 1440px) {
+  #dashboard-section {
+    min-height: 100vh;
+  }
+  #dashboard-section .dashboard {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #dashboard-section .dashboard .dashboard__profile {
+    grid-column: 1;
+    grid-row: span 2;
+    max-height: 520px;
+  }
+  #dashboard-section .dashboard .dashboard__profile .dashboard__profile-info {
+    max-height: 355px;
+  }
+  #dashboard-section .dashboard .time-tracker {
+    min-height: 245px;
+    max-height: 245px;
+  }
+  #dashboard-section .dashboard .time-tracker .time-tracker__panel {
+    min-height: 200px;
+    max-height: 200px;
+  }
+  #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__stats {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__stats .time-tracker__stats__time {
+    font-size: 3.2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
