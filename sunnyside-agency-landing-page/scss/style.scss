@@ -16,7 +16,7 @@ $theme-colors: (
   'dark-grayish-blue': hsl(232, 10%, 55%),
   'grayish-blue': hsl(210, 4%, 67%),
   'white': hsl(0, 0%, 100%),
-  'light-green': rgb(144, 212, 197),
+  'light-green': rgb(144, 212, 197)
 );
 
 *,
@@ -82,12 +82,43 @@ img {
   }
 }
 
+.link {
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 115%;
+    height: 10px;
+    background-color: #000;
+    border-radius: 8px;
+    transform: translateX(-50%);
+    opacity: 50%;
+    transition: .4s opacity ease;
+    z-index: -999;
+  }
+
+  &:hover {
+
+    &::after {
+      opacity: 100%;
+    }
+  }
+}
+
 header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
+
+  .container {
+    max-width: calc(1350px + 1.4rem);
+  }
 }
 
 .nav {
@@ -95,31 +126,80 @@ header {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   min-height: 100px;
 
   .nav-hamburger {
     width: 50px;
     height: 50px;
-    margin-right: -1rem;
+    margin-right: -.9rem;
     background-image: url(../images/icon-hamburger.svg);
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
   }
 
   .nav-menu {
     display: none;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 1.4rem;
+    position: absolute;
+    top: 115%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 2.8rem;
+    background-color: map.get($theme-colors, 'white');
+    list-style: none;
+
+    &::before {
+      content: '';
+      border-top: 12px solid transparent;
+      border-right: 12px solid map.get($theme-colors, 'white');
+      border-bottom: 12px solid map.get($theme-colors, 'white');
+      border-left: 12px solid transparent;
+      position: absolute;
+      top: -24px;
+      right: 0;
+    }
+    
+    li {
+
+      a {
+        display: block;
+        padding: .4rem 1rem;
+        color: map.get($theme-colors, 'dark-grayish-blue');
+        font-family: $font-main;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        transition: .2s color ease;
+
+        &:hover {
+          color: map.get($theme-colors, 'dark-blue');
+        }
+      }
+
+      .button-link {
+        padding: 1rem 2rem;
+        background-color: map.get($theme-colors, 'yellow');
+        border-radius: 32px;
+        color: map.get($theme-colors, 'dark-blue');
+        font-family: $font-secondary;
+        font-size: 1rem;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+    }
   }
 }
 
 #hero-section {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
   min-height: 540px;
-  padding: 4rem 0;
+  max-height: 800px;
+  padding: 7rem 0;
   background-image:url(../images/mobile/image-header.jpg);
-  background-position: center;
+  background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -145,9 +225,18 @@ header {
     .feature-content {
       display: flex;
       flex-flow: column wrap;
+      align-items: center;
       justify-content: center;
+      gap: 1.4rem;
       flex: 1;
+      margin: 0 auto;
       padding: 4rem 1.4rem;
+
+      > * {
+        width: 100%;
+        max-width: 440px;
+        margin: 0;
+      }
     }
 
     .feature-image {
@@ -159,6 +248,16 @@ header {
     }
 
     &-1 {
+
+      .feature-content {
+
+        .link {
+
+          &::after {
+            background-color: map.get($theme-colors, 'yellow');
+          }
+        }
+      }
       
       .feature-image {
         background-image: url(../images/mobile/image-transform.jpg);
@@ -166,6 +265,16 @@ header {
     }
 
     &-2 {
+
+      .feature-content {
+
+        .link {
+          
+          &::after {
+            background-color: map.get($theme-colors, 'red');
+          }
+        }
+      }
 
       .feature-image {
         background-image: url(../images/mobile/image-stand-out.jpg);
@@ -239,6 +348,9 @@ header {
     flex-flow: column wrap;
 
     .testimony {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
       padding: 2rem 0;
 
       img {
@@ -262,6 +374,7 @@ header {
       }
 
       .client-profession {
+        justify-self: flex-end;
         margin: 0;
         color: map.get($theme-colors, 'grayish-blue');
         font-size: .9rem;
@@ -307,36 +420,12 @@ header {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 footer {
   padding: 4rem 0;
   background-color: map.get($theme-colors, 'light-green');
   text-align: center;
 
   .footer-brand {
-    display: block;
-    width: 100%;
-    height: 32px;
-    margin-bottom: 2rem;
-    background-color: map.get($theme-colors, 'dark-cyan');
-    -webkit-mask: url(../images/logo.svg) no-repeat center;
-    mask: url(../images/logo.svg) no-repeat center;
-    mask-size: 170px;
 
     img {
       width: 170px;
@@ -365,6 +454,11 @@ footer {
           font-size: 18px;
           letter-spacing: 0;
           text-transform: capitalize;
+          transition: .4s color ease;
+
+          &:hover {
+            color: map.get($theme-colors, 'white');
+          }
         }
       }
     }
@@ -382,6 +476,14 @@ footer {
       margin: 0;
       padding: 0;
       list-style: none;
+
+      li a img {
+        transition: .2s filter ease;
+        
+        &:hover {
+          filter: brightness(0) invert(1);
+        }
+      }
     }
   }
 
@@ -403,7 +505,14 @@ footer {
   }
 
   #hero-section {
+    min-height: 800px;
+    padding: 10rem 0;
     background-image: url(../images/desktop/image-header.jpg);
+    
+    h1 {
+      margin-bottom: 4rem;
+      letter-spacing: 8px;
+    }
   }
 
   #features-section {
@@ -412,12 +521,14 @@ footer {
       flex-flow: row nowrap;
 
       .feature-content {
-        max-width: 50vw;
+        width: 50%;
+        max-width: 50%;
         padding: 4rem 2.4rem;
       }
 
       .feature-image {
-        max-width: 50vw;
+        width: 50%;
+        max-width: 50%;
       }
 
       &-1 {
@@ -441,6 +552,11 @@ footer {
 
     .services {
       flex-flow: row nowrap;
+      
+      .service {
+        background-position: top center;
+        background-size: cover;
+      }
 
       .service__graphics-design {
         background-image: url(../images/desktop/image-graphic-design.jpg);
@@ -491,9 +607,64 @@ footer {
 }
 
 @media (min-width: 1024px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  .nav {
+    height: 150px;
+
+    .nav-brand {
+
+      img {
+        width: 170px;
+      }
+    }
+
+    .nav-hamburger {
+      display: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-flow: row nowrap;
+      position: initial;
+      margin: 0;
+      padding: 0;
+      background: none;
+
+      &::before {
+        display: none;
+      }
+
+      li {
+
+        a {
+          color: map.get($theme-colors, 'white');
+          font-size: 18px;
+          letter-spacing: normal;
+          transition: .4s opacity ease;
+
+          &:hover {
+            opacity: 80%;
+          }
+        }
+
+        .button-link {
+          background-color: map.get($theme-colors, 'white');
+          transition: .4s background-color ease;
+
+          &:hover {
+            background-color: rgba($color: #FFFFFF, $alpha: 0.20);
+            color: map.get($theme-colors, 'white');
+          }
+        }
+      }
+    }
+  }
+
   #hero-section {
-    min-height: 100vh;
-    max-height: 800px;
+    padding: 10rem 0;
   }
 
   #features-section {
@@ -503,8 +674,51 @@ footer {
       text-align: left;
 
       .feature-content {
-        padding: 6rem;
+        gap: 2rem;
+        padding: 6rem auto;
+
+        h2 {
+          font-size: 2.6rem;
+        }
+
+        a {
+          margin: 0;
+          text-align: center;
+        }
       }
+    }
+  }
+
+  #testimonials-section {
+    padding: 8rem 0;
+  }
+
+  #gallery-section {
+
+    .gallery {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      max-height: 450px;
+
+      .gallery__image {
+        min-height: 450px;
+        max-height: 450px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  #hero-section {
+    height: 100vh;
+    max-height: 100vh;
+    padding: 12rem 0;
+  }
+
+  #features-section {
+
+    .feature {
+      height: 80vh;
     }
   }
 
@@ -513,7 +727,19 @@ footer {
     .services {
 
       .service {
-        
+        min-height: 740px;
+      }
+    }
+  }
+
+  #gallery-section {
+
+    .gallery {
+      max-height: 650px;
+
+      .gallery__image {
+        min-height: 650px;
+        max-height: 650px;
       }
     }
   }
