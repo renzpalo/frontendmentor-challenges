@@ -1,0 +1,219 @@
+@use 'sass:map';
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+$font-main: 'Rubik', sans-serif;
+
+$theme-colors: (
+  'primary': hsl(246, 80%, 60%),
+  'light-red': hsl(15, 100%, 70%),
+  'soft-blue': hsl(195, 74%, 62%),
+  'red': hsl(348, 100%, 68%),
+  'lime-green': hsl(145, 58%, 55%),
+  'violet': hsl(264, 64%, 52%),
+  'soft-orange': hsl(43, 84%, 65%)
+);
+
+$neutral-colors: (
+  'very-dark-blue': hsl(226, 43%, 10%),
+  'dark-blue': hsl(235, 46%, 20%),
+  'desaturated-blue': hsl(235, 45%, 61%),
+  'pale-blue': hsl(236, 100%, 87%)
+);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: map.get($neutral-colors, 'very-dark-blue');
+  color: #fff;
+  font-family: $font-main;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+#dashboard-section {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+
+  .dashboard {
+    display: grid;
+    gap: 1.4rem;
+
+    .dashboard__profile {
+      background-color: map.get($neutral-colors, 'dark-blue');
+      border-radius: 16px;
+
+      .dashboard__profile-info {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 1.8rem;
+        background-color: map.get($theme-colors, 'primary');
+        border-radius: 16px;
+
+        img {
+          min-width: 70px;
+          width: 70px;
+          border: 3px solid #fff;
+          border-radius: 100%;
+        }
+
+        p {
+          margin: 0;
+          color: map.get($neutral-colors, 'pale-blue');
+          font-size: .9rem;
+
+          b {
+            display: block;
+            margin-top: .4rem;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 300;
+          }
+        }
+      }
+
+      .dashboard__controls {
+        padding: 1.6rem 1.8rem;
+
+        .dashboard__controls-date {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .time-tracker {
+      padding-top: 2.4rem;
+      background-color: map.get($theme-colors, 'light-red');
+      background-repeat: no-repeat;
+      background-position: 90% -10px;
+      border-radius: 16px;
+      overflow: hidden;
+
+      &:nth-of-type(2) {
+        background-color: map.get($theme-colors, 'light-red');
+        background-image: url(../images/icon-work.svg);
+      }
+
+      &:nth-of-type(3) {
+        background-color: map.get($theme-colors, 'soft-blue');
+        background-image: url(../images/icon-play.svg);
+      }
+
+      &:nth-of-type(4) {
+        background-color: map.get($theme-colors, 'red');
+        background-image: url(../images/icon-study.svg);
+      }
+
+      &:nth-of-type(5) {
+        background-color: map.get($theme-colors, 'lime-green');
+        background-image: url(../images/icon-exercise.svg);
+      }
+
+      &:nth-of-type(6) {
+        background-color: map.get($theme-colors, 'violet');
+        background-image: url(../images/icon-social.svg);
+      }
+
+      &:nth-of-type(7) {
+        background-color: map.get($theme-colors, 'soft-orange');
+        background-image: url(../images/icon-self-care.svg);
+      }
+
+      .time-tracker__panel {
+        padding: 2rem;
+        background-color: map.get($neutral-colors, 'dark-blue');
+        border-radius: 16px;
+
+        .time-tracker__header {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+
+          h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+          }
+
+          .button-icon {
+            width: 32px;
+            height: 32px;
+            margin: 0;
+            padding: 0;
+            background-image: url(../images/icon-ellipsis.svg);
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            border-radius: 100%;
+            cursor: pointer;
+            outline: none;
+            transition: .4s background-color ease;
+
+            &:hover {
+              background-color: map.get($neutral-colors, 'very-dark-blue');
+            }
+          }
+        }
+
+        .time-tracker__stats {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+
+          p {
+            margin: 0;
+          }
+
+          .time-tracker__stats__time {
+            font-size: 2rem;
+            font-weight: 300;
+          }
+
+          .time-tracker__stats__previous-time {
+            color: map.get($neutral-colors, 'pale-blue');
+            font-size: 1rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 2rem 0;
+
+  .footer-attribution {
+    font-size: 11px; text-align: center;
+    
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
