@@ -38,6 +38,7 @@ img {
 #dashboard-section .dashboard .dashboard__profile {
   background-color: #1c1f4a;
   border-radius: 16px;
+  animation: 1s slide ease;
 }
 #dashboard-section .dashboard .dashboard__profile .dashboard__profile-info {
   display: flex;
@@ -96,6 +97,7 @@ img {
   display: none;
 }
 #dashboard-section .dashboard .time-tracker {
+  display: none;
   position: relative;
   min-height: 160px;
   background-color: #ff8c66;
@@ -302,6 +304,23 @@ footer .footer-attribution a {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes slide {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    position: initial;
+    transform: translateY(0);
   }
 }
 

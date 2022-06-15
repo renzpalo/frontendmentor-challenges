@@ -96,3 +96,12 @@ const getTimeFrameLabel = (timeFrame) => {
 };
 
 generateTimetracker(getJSON(), timeFrame);
+
+document.querySelectorAll('.time-tracker').forEach((timeTracker2, i) => {
+  setTimeout(() => {
+    timeTracker2.style.display = 'block';
+    timeTracker2.style.animation = '1s slideUp ease';
+
+    console.log(timeTracker2);
+  }, i * 100);
+});

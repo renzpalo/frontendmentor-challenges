@@ -60,6 +60,7 @@ img {
     .dashboard__profile {
       background-color: map.get($neutral-colors, 'dark-blue');
       border-radius: 16px;
+      animation: 1s slide ease;
 
       .dashboard__profile-info {
         display: flex;
@@ -136,6 +137,7 @@ img {
     }
 
     .time-tracker {
+      display: none;
       position: relative;
       min-height: 160px;
       background-color: map.get($theme-colors, 'light-red');
@@ -407,5 +409,24 @@ footer {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    position: initial;
+    transform: translateY(0);
   }
 }
