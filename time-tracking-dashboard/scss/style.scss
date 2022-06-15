@@ -118,7 +118,8 @@ img {
                 text-transform: capitalize;
               }
 
-              &:checked {
+              &:checked,
+              &:hover {
 
                 &::before {
                   color: #fff;
@@ -140,7 +141,9 @@ img {
       background-color: map.get($theme-colors, 'light-red');
       background-repeat: no-repeat;
       background-position: 94% -10px;
+      border-bottom: 2px inset map.get($neutral-colors, 'dark-blue');
       border-radius: 16px;
+      overflow: hidden;
 
       &:nth-of-type(2) {
         background-color: map.get($theme-colors, 'light-red');
@@ -180,7 +183,13 @@ img {
         min-height: 124px;
         padding: 1.4rem 2rem;
         background-color: map.get($neutral-colors, 'dark-blue');
-        border-radius: 16px;
+        border-radius: 16px 16px 0 0;
+        cursor: pointer;
+        transition: .4s background-color ease;
+
+        &:hover {
+          background-color: map.get($neutral-colors, 'desaturated-blue');
+        }
 
         .time-tracker__header {
           display: flex;
@@ -204,13 +213,13 @@ img {
             background-repeat: no-repeat;
             background-position: center;
             border: none;
-            border-radius: 100%;
             cursor: pointer;
             outline: none;
-            transition: .4s background-color ease;
+            opacity: 50%;;
+            transition: .4s opacity ease;
 
             &:hover {
-              background-color: map.get($neutral-colors, 'very-dark-blue');
+              opacity: 100%;
             }
           }
         }
@@ -220,6 +229,11 @@ img {
           flex-flow: row nowrap;
           align-items: center;
           justify-content: space-between;
+          animation: 2s fade ease;
+          
+          &.fade {
+            animation: 2s fade2 ease;
+          }
 
           p {
             margin: 0;
@@ -360,6 +374,7 @@ footer {
         .time-tracker__panel {
           min-height: 200px;
           max-height: 200px;
+          padding: 2rem;
 
           .time-tracker__stats {
             flex-flow: column wrap;
@@ -374,5 +389,23 @@ footer {
         }
       }
     }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -89,7 +89,7 @@ img {
   font-size: 1.1rem;
   text-transform: capitalize;
 }
-#dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date .input-group input[type=radio]:checked::before {
+#dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date .input-group input[type=radio]:checked::before, #dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date .input-group input[type=radio]:hover::before {
   color: #fff;
 }
 #dashboard-section .dashboard .dashboard__profile .dashboard__controls .dashboard__controls-date .input-group label {
@@ -101,7 +101,9 @@ img {
   background-color: #ff8c66;
   background-repeat: no-repeat;
   background-position: 94% -10px;
+  border-bottom: 2px inset #1c1f4a;
   border-radius: 16px;
+  overflow: hidden;
 }
 #dashboard-section .dashboard .time-tracker:nth-of-type(2) {
   background-color: #ff8c66;
@@ -135,7 +137,12 @@ img {
   min-height: 124px;
   padding: 1.4rem 2rem;
   background-color: #1c1f4a;
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0;
+  cursor: pointer;
+  transition: 0.4s background-color ease;
+}
+#dashboard-section .dashboard .time-tracker .time-tracker__panel:hover {
+  background-color: #6f76c8;
 }
 #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__header {
   display: flex;
@@ -158,19 +165,23 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   border: none;
-  border-radius: 100%;
   cursor: pointer;
   outline: none;
-  transition: 0.4s background-color ease;
+  opacity: 50%;
+  transition: 0.4s opacity ease;
 }
 #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__header .button-icon:hover {
-  background-color: #0f1424;
+  opacity: 100%;
 }
 #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__stats {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  animation: 2s fade ease;
+}
+#dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__stats.fade {
+  animation: 2s fade2 ease;
 }
 #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__stats p {
   margin: 0;
@@ -265,6 +276,7 @@ footer .footer-attribution a {
   #dashboard-section .dashboard .time-tracker .time-tracker__panel {
     min-height: 200px;
     max-height: 200px;
+    padding: 2rem;
   }
   #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__stats {
     flex-flow: column wrap;
@@ -274,6 +286,22 @@ footer .footer-attribution a {
   }
   #dashboard-section .dashboard .time-tracker .time-tracker__panel .time-tracker__stats .time-tracker__stats__time {
     font-size: 3.2rem;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
