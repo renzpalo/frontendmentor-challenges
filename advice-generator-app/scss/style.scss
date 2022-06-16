@@ -60,6 +60,15 @@ blockquote {
   }
 }
 
+.on-load {
+  opacity: 0;
+  transition: .4s all ease;
+
+  .button-icon {
+    animation: 1s rotate360 infinite;
+  }
+}
+
 #advice-generator__section {
   display: flex;
   flex-flow: column wrap;
@@ -88,14 +97,6 @@ blockquote {
     .advice__quote {
       color: map.get($theme-colors, 'light-cyan');
       font-size: 24px;
-
-      &::before {
-        content: '\201C';
-      }
-
-      &::after {
-        content: '\201D';
-      }
     }
 
     .divider {
@@ -112,6 +113,10 @@ blockquote {
       left: 50%;
       bottom: -32px;
       transform: translateX(-50%);
+
+      // &:hover {
+      //   transform: translateX(-50%) rotate(50deg);
+      // }
     }
   }
 }
@@ -123,7 +128,7 @@ footer {
     font-size: 11px; text-align: center;
     
     a {
-      color: hsl(228, 45%, 44%);
+      color: map.get($theme-colors, 'neon-green');
     }
   }
 }
@@ -149,5 +154,14 @@ footer {
         background-image: url(../images/pattern-divider-desktop.svg);
       }
     }
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
   }
 }
