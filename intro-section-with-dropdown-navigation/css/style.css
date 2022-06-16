@@ -1,3 +1,9 @@
-
+footer .footer-attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .footer-attribution a {
+  color: #3e52a3;
+}
 
 /*# sourceMappingURL=style.css.map */

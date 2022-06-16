@@ -10,30 +10,94 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    
   </style>
 </head>
 <body>
-
-  Features
-  Company
-  Careers
-  About
-
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="nav-brand">
+          <img src="images/logo.svg" alt="snap Logo">
+        </a>
+        <button class="nav-hamburger" type="button"></button>
+        <div class="nav-menu">
+          <div class="nav-menu__panel">
+            <ul class="nav-links">
+              <li class="nav-dropdown-link">Features
+                <ul class="nav-dropdown-menu">
+                  <li>
+                    <a href="#">
+                      <img src="images/icon-todo.svg" alt="Todo Icon">
+                      Todo List
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/icon-calendar.svg" alt="Calendar Icon">
+                      Calendar
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/icon-reminders.svg" alt="Reminders Icon">
+                      Reminders
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/icon-planning.svg" alt="Planning Icon">
+                      Planning
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-dropdown-link">Company
+                <ul class="nav-dropdown-menu">
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+            <ul class="nav-buttons">
+              <li><a href="#">Login</a></li>
+              <li><a href="#" class="button button-outline">Register</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="hero-section">
+      <div class="container">
+        <div class="columns">
+          <div class="column content">
+            <h1>Make remote work</h1>
+            <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+            <a href="#" class="button button-primary">Learn more</a>
+            <div class="clients">
+              <a href="#"><img src="images/client-databiz.svg" alt="databiz Logo"></a>
+              <a href="#"><img src="images/client-audiophile.svg" alt="audiophile Logo"></a>
+              <a href="#"><img src="images/client-meet.svg" alt="meet Logo"></a>
+              <a href="#"><img src="images/client-maker.svg" alt="maker Logo"></a>
+            </div>
+          </div>
+          <div class="column content-image"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://www.frontendmentor.io/profile/renzpalo">Renz Palo</a>.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
