@@ -31,8 +31,6 @@ const generateQuote = (quote, isSuccess) => {
     adviceGenerator.classList.remove('on-load');
 
     currentAdviceId = quote.slip.id;
-
-    console.log('Render');
   } else if(quote.slip.id === currentAdviceId) {
     adviceGenerator.classList.remove('on-load');
   } else {
