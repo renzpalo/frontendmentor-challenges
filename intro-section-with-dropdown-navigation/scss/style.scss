@@ -19,6 +19,7 @@ $theme-colors: (
 body {
   margin: 0;
   font-family: $font-main;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -108,6 +109,22 @@ header {
   justify-content: space-between;
   height: 75px;
 
+  &.nav__active {
+    
+    .nav-hamburger {
+      background-image: url(../images/icon-close-menu.svg);
+    }
+
+    .nav-menu {
+      display: block;
+
+      .nav-menu__panel {
+        animation: .4s expand ease;
+        transform-origin: 100% 0;
+      }
+    }
+  }
+
   .nav-brand {
 
     img {
@@ -132,7 +149,7 @@ header {
   }
 
   .nav-menu {
-    display: block;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -194,12 +211,18 @@ header {
         }
 
         .nav-dropdown-menu {
-          display: flex;
+          display: none;
           flex-flow: column wrap;
           gap: 1rem;
           margin: 0;
           padding: 1rem 0 1rem 1.4rem;
           list-style: none;
+
+          &.nav-dropdown-menu__active {
+            display: flex;
+            animation: .4s expandDown ease;
+            transform-origin: 100% 0;
+          }
 
           li {
             display: flex;
@@ -414,5 +437,41 @@ footer {
   .clients {
     gap: 2.8rem;
     margin: 6rem 0 0;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150%);
+  }
+}
+
+@keyframes expand {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes expandDown {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
   }
 }

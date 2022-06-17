@@ -8,6 +8,7 @@
 body {
   margin: 0;
   font-family: "Epilogue", sans-serif;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -92,6 +93,16 @@ header .container {
   justify-content: space-between;
   height: 75px;
 }
+.nav.nav__active .nav-hamburger {
+  background-image: url(../images/icon-close-menu.svg);
+}
+.nav.nav__active .nav-menu {
+  display: block;
+}
+.nav.nav__active .nav-menu .nav-menu__panel {
+  animation: 0.4s expand ease;
+  transform-origin: 100% 0;
+}
 .nav .nav-brand img {
   margin-top: 10px;
 }
@@ -111,7 +122,7 @@ header .container {
   z-index: 999;
 }
 .nav .nav-menu {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -163,12 +174,17 @@ header .container {
   margin-left: 8px;
 }
 .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu {
-  display: flex;
+  display: none;
   flex-flow: column wrap;
   gap: 1rem;
   margin: 0;
   padding: 1rem 0 1rem 1.4rem;
   list-style: none;
+}
+.nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu.nav-dropdown-menu__active {
+  display: flex;
+  animation: 0.4s expandDown ease;
+  transform-origin: 100% 0;
 }
 .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu li {
   display: flex;
@@ -344,6 +360,38 @@ footer .footer-attribution a {
   .clients {
     gap: 2.8rem;
     margin: 6rem 0 0;
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150%);
+  }
+}
+@keyframes expand {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes expandDown {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
   }
 }
 
