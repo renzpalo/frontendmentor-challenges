@@ -53,11 +53,33 @@ img {
 .button-primary {
   background-color: #141414;
   color: #fafafa;
+  transition: 0.4s background-color ease;
+}
+.button-primary:hover {
+  margin: -1px;
+  background-color: #fafafa;
+  border: 1px inset #141414;
+  color: #141414;
+}
+
+.button-outline {
+  border: 2px solid dimgray;
+  color: dimgray;
+  transition: 0.2s border ease, 0.2s color ease;
+}
+.button-outline:hover {
+  border: 2px solid #141414;
+  color: #141414 !important;
 }
 
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   max-width: 100%;
+  z-index: 999;
 }
 header .container {
   max-width: calc(1360px + 2rem);
@@ -85,11 +107,114 @@ header .container {
   background-position: center;
   border: none;
   outline: none;
+  cursor: pointer;
+  z-index: 999;
 }
 .nav .nav-menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+}
+.nav .nav-menu .nav-menu__panel {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  min-width: 240px;
+  max-width: 240px;
+  height: 100%;
+  max-height: 100%;
+  padding: 5.4rem 1.4rem 2rem;
+  background-color: #fff;
+  float: right;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.nav .nav-menu .nav-menu__panel::-webkit-scrollbar {
   display: none;
 }
+.nav .nav-menu .nav-menu__panel .nav-links {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav .nav-menu .nav-menu__panel .nav-links li a {
+  display: block;
+  padding: 0.6rem 0;
+  color: dimgray;
+  text-decoration: none;
+  transition: 0.4s color ease;
+}
+.nav .nav-menu .nav-menu__panel .nav-links li a:hover {
+  color: #141414;
+}
+.nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-link::after {
+  content: url(../images/icon-arrow-down.svg);
+  display: inline-block;
+  margin-top: -4px;
+  margin-left: 8px;
+}
+.nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem 0 1rem 1.4rem;
+  list-style: none;
+}
+.nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu li {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+.nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu li img {
+  width: 20px;
+}
+.nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu li a {
+  flex: 1;
+  display: inline-block;
+  margin-top: 4px;
+  padding: 0.2rem 0;
+  color: dimgray;
+  text-decoration: none;
+  transition: 0.4s color ease;
+}
+.nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu li a:hover {
+  color: #141414;
+}
+.nav .nav-menu .nav-menu__panel .nav-buttons {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav .nav-menu .nav-menu__panel .nav-buttons li a {
+  display: block;
+  padding: 0.8rem 1.4rem;
+  color: dimgray;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.4s color ease;
+}
+.nav .nav-menu .nav-menu__panel .nav-buttons li a:hover {
+  color: #141414;
+}
 
+#hero-section {
+  padding-top: 75px;
+}
 #hero-section .columns {
   flex-direction: column-reverse;
 }
@@ -144,12 +269,19 @@ footer .footer-attribution a {
     font-size: 18px;
   }
 
+  .button {
+    padding: 1.2rem 2rem;
+    font-size: 18px;
+  }
+
   .nav {
     min-height: 85px;
   }
 
+  #hero-section {
+    padding-top: 85px;
+  }
   #hero-section .content p {
-    margin: 2rem 0;
     white-space: pre-line;
   }
   #hero-section .content-image {
@@ -163,10 +295,12 @@ footer .footer-attribution a {
 @media (min-width: 1024px) {
   h1 {
     font-size: 4.2rem;
+    margin-bottom: 2rem;
   }
 
   #hero-section {
-    padding: 3.2rem 0;
+    min-height: 100vh;
+    padding-top: 130px;
   }
   #hero-section .columns {
     flex-flow: row nowrap;
@@ -178,6 +312,9 @@ footer .footer-attribution a {
     flex: 1;
     margin: 0;
     text-align: left;
+  }
+  #hero-section .content p {
+    margin: 2rem 0;
   }
   #hero-section .content-image {
     flex: 1;
@@ -192,6 +329,21 @@ footer .footer-attribution a {
 
   .clients {
     justify-content: flex-start;
+  }
+}
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 3.2rem;
+  }
+
+  #hero-section .content p {
+    margin-bottom: 3.2rem;
+  }
+
+  .clients {
+    gap: 2.8rem;
+    margin: 6rem 0 0;
   }
 }
 

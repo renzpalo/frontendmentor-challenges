@@ -66,11 +66,35 @@ img {
 .button-primary {
   background-color: map.get($theme-colors, 'almost-black');
   color: map.get($theme-colors, 'almost-white');
+  transition: .4s background-color ease;
+
+  &:hover {
+    margin: -1px;
+    background-color: map.get($theme-colors, 'almost-white');
+    border: 1px inset map.get($theme-colors, 'almost-black');
+    color: map.get($theme-colors, 'almost-black');
+  }
+}
+
+.button-outline {
+  border: 2px solid map.get($theme-colors, 'medium-gray');
+  color: map.get($theme-colors, 'medium-gray');
+  transition: .2s border ease, .2s color ease;
+
+  &:hover {
+    border: 2px solid map.get($theme-colors, 'almost-black');
+    color: map.get($theme-colors, 'almost-black') !important;
+  }
 }
 
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   max-width: 100%;
+  z-index: 999;
 
   .container {
     max-width: calc(1360px + 2rem);
@@ -103,14 +127,138 @@ header {
     background-position: center;
     border: none;
     outline: none;
+    cursor: pointer;
+    z-index: 999;
   }
 
   .nav-menu {
-    display: none;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.70);
+    z-index: 998;
+
+    .nav-menu__panel {
+      display: flex;
+      flex-flow: column wrap;
+      gap: 1rem;
+      min-width: 240px;
+      max-width: 240px;
+      height: 100%;
+      max-height: 100%;
+      padding: 5.4rem 1.4rem 2rem;
+      background-color: #fff;
+      float: right;
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar { 
+        display: none;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+
+          a {
+            display: block;
+            padding: .6rem 0;
+            color: map.get($theme-colors, 'medium-gray');
+            text-decoration: none;
+            transition: .4s color ease;
+
+            &:hover {
+              color: map.get($theme-colors, 'almost-black');
+            }
+          }
+        }
+
+        .nav-dropdown-link {
+
+          &::after {
+            content: url(../images/icon-arrow-down.svg);
+            display: inline-block;
+            margin-top: -4px;
+            margin-left: 8px;
+          }
+        }
+
+        .nav-dropdown-menu {
+          display: flex;
+          flex-flow: column wrap;
+          gap: 1rem;
+          margin: 0;
+          padding: 1rem 0 1rem 1.4rem;
+          list-style: none;
+
+          li {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+              width: 20px;
+            }
+
+            a {
+              flex: 1;
+              display: inline-block;
+              margin-top: 4px;
+              padding: .2rem 0;
+              color: map.get($theme-colors, 'medium-gray');
+              text-decoration: none;
+              transition: .4s color ease;
+
+              &:hover {
+                color: map.get($theme-colors, 'almost-black');
+              }
+            }
+          }
+        }
+      }
+
+      .nav-buttons {
+        display: flex;
+        flex-flow: column wrap;
+        gap: .4rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+
+          a {
+            display: block;
+            padding: .8rem 1.4rem;
+            color: map.get($theme-colors, 'medium-gray');
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            transition: .4s color ease;
+
+            &:hover {
+              color: map.get($theme-colors, 'almost-black');
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 #hero-section {
+  padding-top: 75px;
 
   .columns {
     flex-direction: column-reverse;
@@ -172,16 +320,21 @@ footer {
     font-size: 18px;
   }
 
+  .button {
+    padding: 1.2rem 2rem;
+    font-size: 18px;
+  }
+
   .nav {
     min-height: 85px;
   }
 
   #hero-section {
+    padding-top: 85px;
 
     .content {
       
       p {
-        margin: 2rem 0;
         white-space: pre-line;
       }
     }
@@ -200,10 +353,12 @@ footer {
 
   h1 {
     font-size: 4.2rem;
+    margin-bottom: 2rem;
   }
 
   #hero-section {
-    padding: 3.2rem 0;
+    min-height: 100vh;
+    padding-top: 130px;
     
     .columns {
       flex-flow: row nowrap;
@@ -216,6 +371,10 @@ footer {
       flex: 1;
       margin: 0;
       text-align: left;
+
+      p {
+        margin: 2rem 0;
+      }
     }
 
     .content-image {
@@ -232,5 +391,28 @@ footer {
 
   .clients {
     justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 3.2rem;
+  }
+
+  #hero-section {
+
+    .content {
+      
+      p {
+        margin-bottom: 3.2rem;
+      }
+    }
+  }
+
+  .clients {
+    gap: 2.8rem;
+    margin: 6rem 0 0;
   }
 }
