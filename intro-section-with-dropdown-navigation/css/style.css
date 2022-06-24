@@ -75,12 +75,13 @@ img {
 }
 
 header {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   max-width: 100%;
+  background-color: #fafafa;
   z-index: 999;
 }
 header .container {
@@ -194,7 +195,7 @@ header .container {
   gap: 1rem;
 }
 .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu li img {
-  width: 20px;
+  min-width: 20px;
 }
 .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown-menu li a {
   flex: 1;
@@ -229,9 +230,6 @@ header .container {
   color: #141414;
 }
 
-#hero-section {
-  padding-top: 75px;
-}
 #hero-section .columns {
   flex-direction: column-reverse;
 }
@@ -295,9 +293,6 @@ footer .footer-attribution a {
     min-height: 85px;
   }
 
-  #hero-section {
-    padding-top: 85px;
-  }
   #hero-section .content p {
     white-space: pre-line;
   }
@@ -349,20 +344,23 @@ footer .footer-attribution a {
     position: relative;
   }
   .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown .nav-dropdown-menu {
-    display: block;
+    gap: 0.4rem;
     position: absolute;
     top: 64px;
-    padding: 1rem 1.6rem;
+    padding: 1.6rem;
     background-color: #fff;
     border-radius: 10px;
+    box-shadow: 1px 16px 32px 1px rgba(0, 0, 0, 0.1);
   }
-  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown .nav-dropdown-menu:nth-of-type(1) {
+  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown .nav-dropdown-menu li a {
+    display: block;
+    white-space: nowrap;
+  }
+  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown:nth-of-type(1) .nav-dropdown-menu {
     right: 0;
-    background-color: #000000;
   }
-  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown .nav-dropdown-menu:nth-of-type(2) {
+  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown:nth-of-type(2) .nav-dropdown-menu {
     left: 0;
-    background-color: pink;
   }
   .nav .nav-menu .nav-menu__panel .nav-buttons {
     flex-flow: row nowrap;
@@ -371,7 +369,7 @@ footer .footer-attribution a {
 
   #hero-section {
     min-height: 100vh;
-    padding-top: 130px;
+    padding-top: 45px;
   }
   #hero-section .columns {
     flex-flow: row nowrap;
