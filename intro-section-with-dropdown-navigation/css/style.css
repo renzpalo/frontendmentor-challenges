@@ -7,6 +7,7 @@
 
 body {
   margin: 0;
+  background-color: #fafafa;
   font-family: "Epilogue", sans-serif;
   overflow-x: hidden;
 }
@@ -312,6 +313,60 @@ footer .footer-attribution a {
   h1 {
     font-size: 4.2rem;
     margin-bottom: 2rem;
+  }
+
+  .nav {
+    gap: 4rem;
+  }
+  .nav .nav-hamburger {
+    display: none;
+  }
+  .nav .nav-menu {
+    flex: 1;
+    display: block;
+    position: initial;
+    background-color: transparent;
+  }
+  .nav .nav-menu .nav-menu__panel {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    min-width: initial;
+    max-width: initial;
+    height: initial;
+    max-height: initial;
+    padding: 0;
+    float: none;
+    background-color: transparent;
+    overflow-y: visible;
+  }
+  .nav .nav-menu .nav-menu__panel .nav-links {
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown {
+    position: relative;
+  }
+  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown .nav-dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 64px;
+    padding: 1rem 1.6rem;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown .nav-dropdown-menu:nth-of-type(1) {
+    right: 0;
+    background-color: #000000;
+  }
+  .nav .nav-menu .nav-menu__panel .nav-links .nav-dropdown .nav-dropdown-menu:nth-of-type(2) {
+    left: 0;
+    background-color: pink;
+  }
+  .nav .nav-menu .nav-menu__panel .nav-buttons {
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
   #hero-section {
