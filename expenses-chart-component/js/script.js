@@ -40,12 +40,7 @@ const generateExpenses = (expenses) => {
                         </div>
                         <small>${expense.day}</small>
                       </div>`;
-
-    console.log(expense.amount + ' / ' + highestExpense);
-    console.log('Percentage', expensePercentage);
   });
-
-  console.log('Highest expense', highestExpense);
 
   chartContainer.innerHTML = expensesHTML;
 };
