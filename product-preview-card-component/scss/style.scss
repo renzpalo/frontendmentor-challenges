@@ -1,0 +1,207 @@
+@use 'sass:map';
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+$font-main: 'Montserrat', sans-serif;
+$font-secondary: 'Fraunces', serif;
+
+$theme-colors: (
+  'dark-cyan': hsl(158, 36%, 37%),
+  'very-dark-cyan': rgb(26, 64, 49),
+  'cream': hsl(30, 38%, 92%),
+  'very-dark-blue': hsl(212, 21%, 14%),
+  'dark-grayish-blue': hsl(228, 12%, 48%),
+  'white': hsl(0, 0%, 100%)
+);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: map.get($theme-colors, 'cream');
+  font-family: $font-main;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: map.get($theme-colors, 'very-dark-blue');
+  font-family: $font-secondary;
+  font-weight: 700;
+}
+
+p {
+  font-size: 14px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Buttons
+.button {
+  display: block;
+  min-height: 50px;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-family: $font-main;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s background-color ease;
+}
+
+.button-primary {
+  background-color: map.get($theme-colors, 'dark-cyan');
+  color: map.get($theme-colors, 'white');
+
+  &:hover {
+    background-color: map.get($theme-colors, 'very-dark-cyan');
+  }
+}
+
+#product-preview__section {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+
+  .product-preview {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: map.get($theme-colors, 'white');
+    border-radius: 10px;
+    overflow: hidden;
+
+    &__image {
+      object-fit: fill;
+
+      picture {
+        display: block;
+        height: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          overflow: hidden;
+        }
+      }
+    }
+
+    &__details {
+      padding: 1.4rem;
+
+      &-category {
+        margin: 0;
+        color: map.get($theme-colors, 'dark-grayish-blue');
+        font-family: $font-main;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+      }
+
+      &-title {
+        margin: 1rem 0;
+        font-size: 1.9rem;
+        line-height: 2rem;
+      }
+
+      &-description {
+        color: map.get($theme-colors, 'dark-grayish-blue');
+        line-height: 1.4rem;
+      }
+
+      &-price {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 1.4rem;
+        margin: 2.8rem 0 1rem;
+
+        .discounted-price {
+          margin: 0;
+          color: map.get($theme-colors, 'dark-cyan');
+          font-family: $font-secondary;
+          font-size: 2rem;
+          font-weight: 700;
+        }
+
+        .original-price {
+          margin: 0;
+          color: map.get($theme-colors, 'dark-grayish-blue');
+          text-decoration: line-through;
+        }
+      }
+
+      .button__add-to-cart {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        width: 100%;
+      }
+    }
+  }
+}
+
+footer {
+  padding: 2rem 0;
+
+  .footer-attribution {
+    font-size: 11px;
+    text-align: center;
+    
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  #product-preview__section {
+    min-height: 100vh;
+
+    .product-preview {
+      flex-flow: row nowrap;
+
+      &__image {
+        flex: 0.5;
+        width: 50%;
+        min-width: 50%;
+        max-width: 50%;
+      }
+
+      &__details {
+        flex: 0.5;
+        width: 50%;
+        min-width: 50%;
+        max-width: 50%;
+        padding: 2rem;
+
+        &-title {
+          margin: 1.4rem 0;
+        }
+
+        &-price {
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
+}
