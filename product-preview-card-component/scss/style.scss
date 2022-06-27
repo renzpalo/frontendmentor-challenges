@@ -81,7 +81,7 @@ img {
   .product-preview {
     display: flex;
     flex-flow: column wrap;
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
     background-color: map.get($theme-colors, 'white');
     border-radius: 10px;
@@ -179,6 +179,7 @@ footer {
 
     .product-preview {
       flex-flow: row nowrap;
+      max-width: 600px;
 
       &__image {
         flex: 0.5;

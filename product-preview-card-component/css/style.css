@@ -64,7 +64,7 @@ img {
 #product-preview__section .product-preview {
   display: flex;
   flex-flow: column wrap;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
   background-color: white;
   border-radius: 10px;
@@ -148,6 +148,7 @@ footer .footer-attribution a {
   }
   #product-preview__section .product-preview {
     flex-flow: row nowrap;
+    max-width: 600px;
   }
   #product-preview__section .product-preview__image {
     flex: 0.5;
