@@ -1,25 +1,458 @@
+@use 'sass:map';
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
+$font-main: 'Rubik', sans-serif;
 
+$theme-colors: (
+  'primary': hsl(231, 69%, 60%),
+  'secondary': hsl(0, 94%, 66%),
+  'grayish-blue': hsl(229, 8%, 60%),
+  'light-gray': rgb(247, 247, 249),
+  'very-dark-blue': hsl(229, 31%, 21%)
+);
 
+@mixin oval-background($oval-position) {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 300px;
+  min-height: 200px;
+  background-color: map.get($theme-colors, 'primary');
+  z-index: -999;
 
+  @if $oval-position == 'right' {
+    border-radius: 128px 0 0 128px;
+    right: 0;
+  } @else {
+    border-radius: 0 128px 128px 0;
+    left: 0;
+  }
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: $font-main;
+}
 
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  color: map.get($theme-colors, 'very-dark-blue');
+  font-weight: 500;
+}
 
+h1 {
+  font-size: 1.9rem;
+}
 
+p {
+  color: map.get($theme-colors, 'grayish-blue');
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6rem;
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 
+.columns {
+  display: flex;
+  flex-flow: column wrap;
+
+  > * {
+    flex: 1;
+  }
+}
+
+// Buttons
+.button {
+  display: inline-block;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: map.get($theme-colors, 'primary');
+  color: #fff;
+}
+
+.button-secondary {
+  background-color: map.get($theme-colors, 'light-gray');
+  color: map.get($theme-colors, 'very-dark-blue');
+}
+
+.button-group {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+// Input
+.input {
+  margin: 0;
+  padding: 1rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  color: map.get($theme-colors, 'very-dark-blue');
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+
+  &::placeholder {
+    color: map.get($theme-colors, 'grayish-blue');
+  }
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+main {
+  margin-top: 100px;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+
+  .nav-hamburger {
+    width: 50px;
+    height: 50px;
+    margin-right: -0.8rem;
+    background-image: url(../images/icon-hamburger.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+}
+
+#hero-section {
+  position: relative;
+  padding: 2.4rem 0;
+  text-align: center;
+
+  &::after {
+    @include oval-background('right');
+    top: 12%;
+  }
+
+  .columns {
+    flex-direction: column-reverse;
+  }
+
+  .content {
+    padding: 1.8rem 0;
+  }
+
+  .content-image {
+    margin: 0 -1.4rem;
+    position: relative;
+  }
+}
+
+#features-section {
+  position: relative;
+  padding: 2.8rem 0;
+  text-align: center;
+
+  .features {
+
+    .tabs {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0;
+      padding: 0;
+      border-bottom: 1px solid map.get($theme-colors, 'grayish-blue');
+      list-style: none;
+
+      li {
+        display: block;
+        width: 100%;
+      }
+
+      .tab-button {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 1.2rem 2rem;
+        background-color: transparent;
+        border: none;
+        border-top: 1px solid map.get($theme-colors, 'grayish-blue');
+        color: map.get($theme-colors, 'grayish-blue');
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 400;
+        outline: none;
+        cursor: pointer;
+
+        &::after {
+          content: '';
+          display: none;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 40%;
+          height: 4px;
+          background-color: map.get($theme-colors, 'secondary');
+          transform: translateX(-50%);
+        }
+
+        &.tab-active {
+          color: map.get($theme-colors, 'very-dark-blue');
+
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .tab-contents {
+      
+      .tab-content {
+        display: none;
+        margin-top: 2rem;
+
+        &.tab-active {
+          display: block;
+        }
+
+        .tab-content__image {
+          position: relative;
+          margin: 0 -2rem;
+          padding: 0 2rem;
+
+          &::before {
+            @include oval-background('left');
+            top: 16.5%;
+          }
+        }
+
+        .tab-content__text {
+          padding: 3.2rem 0 2rem;
+
+          h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+          }
+
+          a {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+#downloads-section {
+  padding: 2.2rem 0;
+  text-align: center;
+
+  .browsers {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem 1rem;
+
+    .browser {
+      width: 100%;
+      padding: 1.6rem;
+      box-shadow: 1px 16px 32px 0px rgba($color: #000000, $alpha: 0.05);
+      border-radius: 16px;
+
+      h4 {
+        margin-bottom: 0.6rem;
+        font-size: 1.3rem;
+      }
+
+      small {
+        color: map.get($theme-colors, 'grayish-blue');
+        font-size: 15px;
+      }
+
+      .divider {
+        display: block;
+        height: 5px;
+        margin: 2.4rem -1.6rem 1.4rem;
+        background-image: url(../images/bg-dots.svg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+      }
+
+      a {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#faq-section {
+  padding: 3rem 0 9rem;
+  text-align: center;
+
+  .faqs {
+    margin: 2rem 0;
+    text-align: left;
+    
+    .faq {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid map.get($theme-colors, 'grayish-blue');
+
+      .faq__question {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        
+        h5 {
+          margin: 0;
+          font-size: 1rem;
+          font-weight: 400;
+          flex: 1;
+        }
+      }
+
+      .faq__answer {
+        display: none;
+      }
+    }
+  }
+
+  .button {
+    padding: 1rem 1.5rem;
+  }
+}
+
+#mailing-list-section {
+  padding: 4rem 0;
+  background-color: map.get($theme-colors, 'primary');
+  text-align: center;
+  
+  h2 {
+    color: #fff;
+  }
+
+  p {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .mailing-list__form {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+
+    .button {
+      background-color: map.get($theme-colors, 'secondary');
+      color: #fff;
+      font-family: inherit;
+    }
+  }
+}
 
 footer {
+  padding: 2.8rem 0;
+  background-color: map.get($theme-colors, 'very-dark-blue');
+  text-align: center;
+
+  .columns {
+    gap: 2.4rem;
+  }
+
+  .footer-menu {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+
+      a {
+        display: block;
+        padding: .4rem 1rem;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .footer-socials {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
   .footer-attribution {
+    margin: 2rem 0 0;
     font-size: 11px;
     text-align: center;
 
     a {
-      color: hsl(228, 45%, 44%);
+      color: map.get($theme-colors, 'primary');
     }
   }
+}
+
+@media screen and (min-width: 375px) {
+  
 }

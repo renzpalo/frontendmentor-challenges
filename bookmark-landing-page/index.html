@@ -16,7 +16,7 @@
         <a href="#" class="nav-brand">
           <img src="images/logo-bookmark.svg" alt="BOOKMARK Logo">
         </a>
-        <button type="button" class="nav-hamburger-menu"></button>
+        <button type="button" class="nav-hamburger"></button>
         <div class="nav-menu">
           <ul class="nav-links">
             <li><a href="#">Features</a></li>
@@ -39,9 +39,9 @@
           <div class="content">
             <h1>A Simple Bookmark Manager</h1>
             <p>A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
-            <div class="link-group">
-              <a href="#" class="link-outline">Get it on Chrome</a>
-              <a href="#" class="link-outline">Get it on Firefox</a>
+            <div class="button-group">
+              <a href="#" class="button button-primary">Get it on Chrome</a>
+              <a href="#" class="button button-secondary">Get it on Firefox</a>
             </div>
           </div>
           <div class="content-image">
@@ -57,19 +57,19 @@
         <p>Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
         <div class="features">
           <ul class="tabs">
-            <li><button type="button" class="tab-button">Simple Bookmarking</button></li>
+            <li><button type="button" class="tab-button tab-active">Simple Bookmarking</button></li>
             <li><button type="button" class="tab-button">Speedy Searching</button></li>
             <li><button type="button" class="tab-button">Easy Sharing</button></li>
           </ul>
           <div class="tab-contents">
-            <div class="tab-content">
+            <div class="tab-content tab-active">
               <div class="tab-content__image">
                 <img src="images/illustration-features-tab-1.svg" alt="">
               </div>
               <div class="tab-content__text">
                 <h3>Bookmark in one click</h3>
                 <p>Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.</p>
-                <a href="#" class="button">More Info</a>
+                <a href="#" class="button button-primary">More Info</a>
               </div>
             </div>
             <div class="tab-content">
@@ -79,7 +79,7 @@
               <div class="tab-content__text">
                 <h3>Intelligent search</h3>
                 <p>Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.</p>
-                <a href="#" class="button">More Info</a>
+                <a href="#" class="button button-primary">More Info</a>
               </div>
             </div>
             <div class="tab-content">
@@ -89,7 +89,7 @@
               <div class="tab-content__text">
                 <h3>Share your bookmarks</h3>
                 <p>Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
-                <a href="#" class="button">More Info</a>
+                <a href="#" class="button button-primary">More Info</a>
               </div>
             </div>
           </div>
@@ -170,29 +170,29 @@
         <p>35,000+ already joined</p>
         <h2>Stay up-to-date with what we’re doing</h2>
         <form class="mailing-list__form">
-          <input type="email">
-          <button type="submit" class="button button-primary">Contact Us</button>
+          <input type="email" class="input" placeholder="Enter your email address">
+          <button type="submit" class="button">Contact Us</button>
         </form>
       </div>
     </section>
   </main>
   
-  
   <footer>
     <div class="container">
-      <a href="#" class="footer-brand">
-        <img src="images/logo-bookmark.svg" alt="BOOKMARK Logo">
-      </a>
-      <ul class="footer-menu">
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="footer-socials">
-        <li><a href="#"><img src="images/icon-facebook.svg" alt="Facebook Icon"></a></li>
-        <li><a href="#"><img src="images/icon-twitter.svg" alt="Twitter Icon"></a></li>
-        <li><a href="#"></a></li>
-      </ul>
+      <div class="columns">
+        <a href="#" class="footer-brand">
+          <img src="images/logo-bookmark-white.svg" alt="BOOKMARK Logo">
+        </a>
+        <ul class="footer-menu">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="footer-socials">
+          <li><a href="#"><img src="images/icon-facebook.svg" alt="Facebook Icon"></a></li>
+          <li><a href="#"><img src="images/icon-twitter.svg" alt="Twitter Icon"></a></li>
+        </ul>
+      </div>
       <p class="footer-attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         Coded by <a href="https://www.frontendmentor.io/profile/renzpalo">Renz Palo</a>.
