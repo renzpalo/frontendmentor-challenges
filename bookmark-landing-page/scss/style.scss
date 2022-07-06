@@ -9,7 +9,8 @@ $theme-colors: (
   'secondary': hsl(0, 94%, 66%),
   'grayish-blue': hsl(229, 8%, 60%),
   'light-gray': rgb(247, 247, 249),
-  'very-dark-blue': hsl(229, 31%, 21%)
+  'very-dark-blue': hsl(229, 31%, 21%),
+  'very-dark-blue-opaque': hsla(229, 31%, 21%, 0.95)
 );
 
 @mixin oval-background($oval-position) {
@@ -148,6 +149,21 @@ main {
   justify-content: space-between;
   min-height: 100px;
 
+  &.nav-active {
+
+    .nav-brand {
+      filter: brightness(0) invert(1);
+    }
+      
+    .nav-hamburger {
+      background-image: url(../images/icon-close.svg);
+    }
+
+    .nav-menu {
+      display: flex;
+    }
+  }
+
   .nav-hamburger {
     width: 50px;
     height: 50px;
@@ -163,6 +179,60 @@ main {
 
   .nav-menu {
     display: none;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 6.5rem 2rem 4rem;
+    background-color: map.get($theme-colors, 'very-dark-blue-opaque');
+    z-index: -999;
+
+    .nav-links {
+      display: flex;
+      flex-flow: column wrap;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid gray;
+      list-style: none;
+      
+      li {
+
+        a {
+          display: block;
+          padding: 1.4rem 2rem;
+          color: #fff;
+          font-size: 1.2rem;
+          font-weight: 400;
+          letter-spacing: 2px;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          border-bottom: 1px solid gray;
+        }
+
+        .button-link {
+          margin-top: 1.4rem;
+          padding: .8rem 2rem;
+          border: 2px solid #fff;
+          border-radius: 4px;
+          
+        }
+      }
+    }
+
+    .nav-socials {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
   }
 }
 
@@ -181,6 +251,8 @@ main {
   }
 
   .content {
+    max-width: 480px;
+    margin: 0 auto;
     padding: 1.8rem 0;
   }
 
@@ -202,9 +274,10 @@ main {
       flex-flow: column wrap;
       align-items: center;
       justify-content: center;
-      margin: 2rem 0;
+      max-width: 730px;
+      margin: 2rem auto;
       padding: 0;
-      border-bottom: 1px solid map.get($theme-colors, 'grayish-blue');
+      border-bottom: 1px solid gainsboro;
       list-style: none;
 
       li {
@@ -220,7 +293,7 @@ main {
         padding: 1.2rem 2rem;
         background-color: transparent;
         border: none;
-        border-top: 1px solid map.get($theme-colors, 'grayish-blue');
+        border-top: 1px solid gainsboro;
         color: map.get($theme-colors, 'grayish-blue');
         font-family: inherit;
         font-size: 1rem;
@@ -254,10 +327,13 @@ main {
       
       .tab-content {
         display: none;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: space-between;
         margin-top: 2rem;
 
         &.tab-active {
-          display: block;
+          display: flex;
         }
 
         .tab-content__image {
@@ -272,6 +348,8 @@ main {
         }
 
         .tab-content__text {
+          max-width: 440px;
+          margin: 0 auto;
           padding: 3.2rem 0 2rem;
 
           h3 {
@@ -292,6 +370,15 @@ main {
   padding: 2.2rem 0;
   text-align: center;
 
+  .container {
+    
+    > h2,
+    > p {
+      max-width: 550px;
+      margin: 1.4rem auto;
+    }
+  }
+
   .browsers {
     display: flex;
     flex-flow: column wrap;
@@ -302,6 +389,7 @@ main {
 
     .browser {
       width: 100%;
+      max-width: 280px;
       padding: 1.6rem;
       box-shadow: 1px 16px 32px 0px rgba($color: #000000, $alpha: 0.05);
       border-radius: 16px;
@@ -337,13 +425,18 @@ main {
   padding: 3rem 0 9rem;
   text-align: center;
 
+  .container {
+    max-width: calc(540px + 2rem);
+  }
+
   .faqs {
-    margin: 2rem 0;
+    margin: 2rem auto;
     text-align: left;
     
     .faq {
       padding: 1.4rem 0;
-      border-bottom: 1px solid map.get($theme-colors, 'grayish-blue');
+      border-bottom: 1px solid gainsboro;
+      cursor: pointer;
 
       .faq__question {
         display: flex;
@@ -375,6 +468,10 @@ main {
   padding: 4rem 0;
   background-color: map.get($theme-colors, 'primary');
   text-align: center;
+
+  .container {
+    max-width: calc(440px + 2rem);
+  }
   
   h2 {
     color: #fff;
@@ -393,6 +490,7 @@ main {
     gap: 1rem;
 
     .button {
+      min-width: 130px;
       background-color: map.get($theme-colors, 'secondary');
       color: #fff;
       font-family: inherit;
@@ -455,4 +553,235 @@ footer {
 
 @media screen and (min-width: 375px) {
   
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .button {
+    padding: 1rem 1.6rem;
+  }
+
+  #features-section {
+
+    .container {
+
+      > h2,
+      > p {
+        max-width: 540px;
+        margin: 1.4rem auto;
+      }
+    }
+
+    .features {
+
+      .tabs {
+        flex-flow: row nowrap;
+
+        .tab-button {
+          border: none;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  #downloads-section {
+
+    .browsers {
+      flex-flow: row nowrap;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+  }
+
+  #mailing-list-section {
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .mailing-list__form {
+      flex-flow: row nowrap;
+      justify-content: center;
+
+      .input {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .columns {
+    flex-flow: row wrap;
+  }
+
+  .button-group {
+    justify-content: flex-start;
+  }
+
+  .nav {
+    min-height: 140px;
+
+    .nav-hamburger {
+      display: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: initial;
+      position: initial;
+      padding: 0;
+      background: none;
+      z-index: initial;
+
+      .nav-links {
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 3rem;
+        border: none;
+
+        li {
+
+          a {
+            padding: 1rem 0;
+            border: none;
+            color: map.get($theme-colors, 'very-dark-blue');
+            font-size: 1rem;
+          }
+
+          .button-link {
+            margin: 0;
+            background-color: map.get($theme-colors, 'secondary');
+            color: #fff;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      .nav-socials {
+        display: none;
+      }
+    }
+  }
+
+  #hero-section {
+
+    .columns {
+      flex-flow: row nowrap;
+      gap: 4rem;
+    }
+
+    .content {
+      text-align: left;
+    }
+
+    .content-image {
+      margin: 0;
+      margin-right: -2rem;
+    }
+  }
+
+  #features-section {
+
+    .features {
+
+      .tab-contents {
+
+        .tab-content {
+          flex-flow: row nowrap;
+          gap: 60px;
+          margin: 0;
+          padding: 2rem 0;
+
+          .tab-content__text {
+            padding: 0;
+            text-align: left;
+
+            a {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #downloads-section {
+
+    .browsers {
+      gap: 2rem;
+
+      .browser {
+
+        &:nth-of-type(2) {
+          transform: translateY(32px);
+        }
+
+        &:nth-of-type(3) {
+          transform: translateY(64px);
+        }
+      }
+    }
+  }
+  
+  footer {
+    text-align: left;
+
+    .columns {
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4.8rem;
+    }
+
+    .footer-brand {
+      flex: none;
+      padding-top: .2rem;
+    }
+
+    .footer-menu {
+      flex-flow: row nowrap;
+      flex: 1;
+      gap: 2.8rem;
+    
+      li {
+
+        a {
+          padding: .4rem 0;
+        }
+      }
+    }
+
+    .footer-socials {
+      justify-content: flex-end;
+      flex: none;
+    }
+
+    .footer-attribution {
+      text-align: left;
+    }
+  }
 }

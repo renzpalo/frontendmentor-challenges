@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #252b46;
+  color: hsl(229deg, 31%, 21%);
   font-weight: 500;
 }
 
@@ -20,7 +20,7 @@ h1 {
 }
 
 p {
-  color: #9194a1;
+  color: hsl(229deg, 8%, 60%);
   font-size: 15px;
   font-weight: 400;
   line-height: 1.6rem;
@@ -59,13 +59,13 @@ img {
 }
 
 .button-primary {
-  background-color: #5368df;
+  background-color: hsl(231deg, 69%, 60%);
   color: #fff;
 }
 
 .button-secondary {
-  background-color: #f7f7f9;
-  color: #252b46;
+  background-color: rgb(247, 247, 249);
+  color: hsl(229deg, 31%, 21%);
 }
 
 .button-group {
@@ -82,14 +82,14 @@ img {
   padding: 1rem 1.4rem;
   border: none;
   border-radius: 6px;
-  color: #252b46;
+  color: hsl(229deg, 31%, 21%);
   font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   outline: none;
 }
 .input::placeholder {
-  color: #9194a1;
+  color: hsl(229deg, 8%, 60%);
 }
 
 header {
@@ -112,6 +112,15 @@ main {
   justify-content: space-between;
   min-height: 100px;
 }
+.nav.nav-active .nav-brand {
+  filter: brightness(0) invert(1);
+}
+.nav.nav-active .nav-hamburger {
+  background-image: url(../images/icon-close.svg);
+}
+.nav.nav-active .nav-menu {
+  display: flex;
+}
 .nav .nav-hamburger {
   width: 50px;
   height: 50px;
@@ -126,6 +135,52 @@ main {
 }
 .nav .nav-menu {
   display: none;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 6.5rem 2rem 4rem;
+  background-color: hsla(229deg, 31%, 21%, 0.95);
+  z-index: -999;
+}
+.nav .nav-menu .nav-links {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid gray;
+  list-style: none;
+}
+.nav .nav-menu .nav-links li a {
+  display: block;
+  padding: 1.4rem 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid gray;
+}
+.nav .nav-menu .nav-links li .button-link {
+  margin-top: 1.4rem;
+  padding: 0.8rem 2rem;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+.nav .nav-menu .nav-socials {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 #hero-section {
@@ -139,7 +194,7 @@ main {
   position: absolute;
   width: 300px;
   min-height: 200px;
-  background-color: #5368df;
+  background-color: hsl(231deg, 69%, 60%);
   z-index: -999;
   border-radius: 128px 0 0 128px;
   right: 0;
@@ -149,6 +204,8 @@ main {
   flex-direction: column-reverse;
 }
 #hero-section .content {
+  max-width: 480px;
+  margin: 0 auto;
   padding: 1.8rem 0;
 }
 #hero-section .content-image {
@@ -166,9 +223,10 @@ main {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0;
+  max-width: 730px;
+  margin: 2rem auto;
   padding: 0;
-  border-bottom: 1px solid #9194a1;
+  border-bottom: 1px solid gainsboro;
   list-style: none;
 }
 #features-section .features .tabs li {
@@ -183,8 +241,8 @@ main {
   padding: 1.2rem 2rem;
   background-color: transparent;
   border: none;
-  border-top: 1px solid #9194a1;
-  color: #9194a1;
+  border-top: 1px solid gainsboro;
+  color: hsl(229deg, 8%, 60%);
   font-family: inherit;
   font-size: 1rem;
   font-weight: 400;
@@ -199,21 +257,24 @@ main {
   bottom: 0;
   width: 40%;
   height: 4px;
-  background-color: #fa5757;
+  background-color: hsl(0deg, 94%, 66%);
   transform: translateX(-50%);
 }
 #features-section .features .tabs .tab-button.tab-active {
-  color: #252b46;
+  color: hsl(229deg, 31%, 21%);
 }
 #features-section .features .tabs .tab-button.tab-active::after {
   display: block;
 }
 #features-section .features .tab-contents .tab-content {
   display: none;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 2rem;
 }
 #features-section .features .tab-contents .tab-content.tab-active {
-  display: block;
+  display: flex;
 }
 #features-section .features .tab-contents .tab-content .tab-content__image {
   position: relative;
@@ -226,13 +287,15 @@ main {
   position: absolute;
   width: 300px;
   min-height: 200px;
-  background-color: #5368df;
+  background-color: hsl(231deg, 69%, 60%);
   z-index: -999;
   border-radius: 0 128px 128px 0;
   left: 0;
   top: 16.5%;
 }
 #features-section .features .tab-contents .tab-content .tab-content__text {
+  max-width: 440px;
+  margin: 0 auto;
   padding: 3.2rem 0 2rem;
 }
 #features-section .features .tab-contents .tab-content .tab-content__text h3 {
@@ -247,6 +310,11 @@ main {
   padding: 2.2rem 0;
   text-align: center;
 }
+#downloads-section .container > h2,
+#downloads-section .container > p {
+  max-width: 550px;
+  margin: 1.4rem auto;
+}
 #downloads-section .browsers {
   display: flex;
   flex-flow: column wrap;
@@ -257,6 +325,7 @@ main {
 }
 #downloads-section .browsers .browser {
   width: 100%;
+  max-width: 280px;
   padding: 1.6rem;
   box-shadow: 1px 16px 32px 0px rgba(0, 0, 0, 0.05);
   border-radius: 16px;
@@ -266,7 +335,7 @@ main {
   font-size: 1.3rem;
 }
 #downloads-section .browsers .browser small {
-  color: #9194a1;
+  color: hsl(229deg, 8%, 60%);
   font-size: 15px;
 }
 #downloads-section .browsers .browser .divider {
@@ -286,13 +355,17 @@ main {
   padding: 3rem 0 9rem;
   text-align: center;
 }
+#faq-section .container {
+  max-width: calc(540px + 2rem);
+}
 #faq-section .faqs {
-  margin: 2rem 0;
+  margin: 2rem auto;
   text-align: left;
 }
 #faq-section .faqs .faq {
   padding: 1.4rem 0;
-  border-bottom: 1px solid #9194a1;
+  border-bottom: 1px solid gainsboro;
+  cursor: pointer;
 }
 #faq-section .faqs .faq .faq__question {
   display: flex;
@@ -316,8 +389,11 @@ main {
 
 #mailing-list-section {
   padding: 4rem 0;
-  background-color: #5368df;
+  background-color: hsl(231deg, 69%, 60%);
   text-align: center;
+}
+#mailing-list-section .container {
+  max-width: calc(440px + 2rem);
 }
 #mailing-list-section h2 {
   color: #fff;
@@ -334,14 +410,15 @@ main {
   gap: 1rem;
 }
 #mailing-list-section .mailing-list__form .button {
-  background-color: #fa5757;
+  min-width: 130px;
+  background-color: hsl(0deg, 94%, 66%);
   color: #fff;
   font-family: inherit;
 }
 
 footer {
   padding: 2.8rem 0;
-  background-color: #252b46;
+  background-color: hsl(229deg, 31%, 21%);
   text-align: center;
 }
 footer .columns {
@@ -380,7 +457,161 @@ footer .footer-attribution {
   text-align: center;
 }
 footer .footer-attribution a {
-  color: #5368df;
+  color: hsl(231deg, 69%, 60%);
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 18px;
+  }
+  .button {
+    padding: 1rem 1.6rem;
+  }
+  #features-section .container > h2,
+#features-section .container > p {
+    max-width: 540px;
+    margin: 1.4rem auto;
+  }
+  #features-section .features .tabs {
+    flex-flow: row nowrap;
+  }
+  #features-section .features .tabs .tab-button {
+    border: none;
+  }
+  #features-section .features .tabs .tab-button::after {
+    width: 100%;
+  }
+  #downloads-section .browsers {
+    flex-flow: row nowrap;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+  #mailing-list-section h2 {
+    font-size: 2rem;
+  }
+  #mailing-list-section .mailing-list__form {
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  #mailing-list-section .mailing-list__form .input {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  .columns {
+    flex-flow: row wrap;
+  }
+  .button-group {
+    justify-content: flex-start;
+  }
+  .nav {
+    min-height: 140px;
+  }
+  .nav .nav-hamburger {
+    display: none;
+  }
+  .nav .nav-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: initial;
+    position: initial;
+    padding: 0;
+    background: none;
+    z-index: initial;
+  }
+  .nav .nav-menu .nav-links {
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 3rem;
+    border: none;
+  }
+  .nav .nav-menu .nav-links li a {
+    padding: 1rem 0;
+    border: none;
+    color: hsl(229deg, 31%, 21%);
+    font-size: 1rem;
+  }
+  .nav .nav-menu .nav-links li .button-link {
+    margin: 0;
+    background-color: hsl(0deg, 94%, 66%);
+    color: #fff;
+    border-radius: 8px;
+  }
+  .nav .nav-menu .nav-socials {
+    display: none;
+  }
+  #hero-section .columns {
+    flex-flow: row nowrap;
+    gap: 4rem;
+  }
+  #hero-section .content {
+    text-align: left;
+  }
+  #hero-section .content-image {
+    margin: 0;
+    margin-right: -2rem;
+  }
+  #features-section .features .tab-contents .tab-content {
+    flex-flow: row nowrap;
+    gap: 60px;
+    margin: 0;
+    padding: 2rem 0;
+  }
+  #features-section .features .tab-contents .tab-content .tab-content__text {
+    padding: 0;
+    text-align: left;
+  }
+  #features-section .features .tab-contents .tab-content .tab-content__text a {
+    display: inline-block;
+  }
+  #downloads-section .browsers {
+    gap: 2rem;
+  }
+  #downloads-section .browsers .browser:nth-of-type(2) {
+    transform: translateY(32px);
+  }
+  #downloads-section .browsers .browser:nth-of-type(3) {
+    transform: translateY(64px);
+  }
+  footer {
+    text-align: left;
+  }
+  footer .columns {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4.8rem;
+  }
+  footer .footer-brand {
+    flex: none;
+    padding-top: 0.2rem;
+  }
+  footer .footer-menu {
+    flex-flow: row nowrap;
+    flex: 1;
+    gap: 2.8rem;
+  }
+  footer .footer-menu li a {
+    padding: 0.4rem 0;
+  }
+  footer .footer-socials {
+    justify-content: flex-end;
+    flex: none;
+  }
+  footer .footer-attribution {
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
