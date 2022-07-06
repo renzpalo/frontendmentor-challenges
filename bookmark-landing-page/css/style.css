@@ -383,6 +383,12 @@ main {
 #faq-section .faqs .faq .faq__answer {
   display: none;
 }
+#faq-section .faqs .faq.faq-active .faq__question img {
+  transform: rotate(180deg);
+}
+#faq-section .faqs .faq.faq-active .faq__answer {
+  display: block;
+}
 #faq-section .button {
   padding: 1rem 1.5rem;
 }
@@ -491,6 +497,12 @@ footer .footer-attribution a {
     flex-flow: row nowrap;
     gap: 1rem;
     padding: 2rem 0;
+  }
+  #faq-section .faqs .faq .faq__question h5 {
+    font-size: 18px;
+  }
+  #faq-section .faqs .faq .faq__answer {
+    font-size: 1rem;
   }
   #mailing-list-section h2 {
     font-size: 2rem;
