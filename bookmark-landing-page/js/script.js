@@ -1,10 +1,17 @@
 
 // NAVIGATION
 const navigation = document.querySelector('.nav');
-const hamburgerMenu = document.querySelector('.nav .nav-hamburger');
+const navMenu = document.querySelector('.nav .nav-menu');
+const navHamburgerMenu = document.querySelector('.nav .nav-hamburger');
 
-hamburgerMenu.addEventListener('click', (e) => {
-  navigation.classList.toggle('nav-active');
+navHamburgerMenu.addEventListener('click', (e) => {
+  if(navigation.classList.contains('nav-active')) {
+    navigation.classList.remove('nav-active');
+  } else {
+    navigation.classList.add('nav-active');
+  }
+
+  console.log('hello');
 });
 
 const faqs = [
