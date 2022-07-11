@@ -865,12 +865,15 @@ footer {
         .tab-content {
           flex-flow: row nowrap;
           align-items: flex-start;
+          justify-content: space-between;
           gap: 64;
           margin: 0;
           padding: 3.4rem 0;
 
           .tab-content__image {
             flex: .5;
+            max-width: 50%;
+            margin: 0;
           }
 
           .tab-content__text {

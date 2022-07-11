@@ -659,12 +659,15 @@ footer .footer-attribution a {
   #features-section .features .tab-contents .tab-content {
     flex-flow: row nowrap;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 64;
     margin: 0;
     padding: 3.4rem 0;
   }
   #features-section .features .tab-contents .tab-content .tab-content__image {
     flex: 0.5;
+    max-width: 50%;
+    margin: 0;
   }
   #features-section .features .tab-contents .tab-content .tab-content__text {
     flex: 0.5;
