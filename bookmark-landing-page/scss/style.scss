@@ -94,16 +94,29 @@ img {
   text-decoration: none;
   outline: none;
   cursor: pointer;
+  transition: .4s background-color ease;
 }
 
 .button-primary {
   background-color: map.get($theme-colors, 'primary');
   color: #fff;
+
+  &:hover {
+    background-color: transparent;
+    outline: 2px solid map.get($theme-colors, 'primary');
+    color: map.get($theme-colors, 'primary');
+  }
 }
 
 .button-secondary {
   background-color: map.get($theme-colors, 'light-gray');
   color: map.get($theme-colors, 'very-dark-blue');
+
+  &:hover {
+    background-color: transparent;
+    outline: 2px solid map.get($theme-colors, 'very-dark-blue');
+    color: map.get($theme-colors, 'very-dark-blue');
+  }
 }
 
 .button-group {
@@ -219,6 +232,11 @@ main {
           text-decoration: none;
           text-transform: uppercase;
           border-bottom: 1px solid gray;
+          transition: .4s color ease;
+
+          &:hover {
+            color: map.get($theme-colors, 'secondary');
+          }
         }
 
         .button-link {
@@ -226,6 +244,12 @@ main {
           padding: .8rem 2rem;
           border: 2px solid #fff;
           border-radius: 4px;
+          transition: .4s background-color ease;
+
+          &:hover {
+            background-color: #fff;
+            color: #000;
+          }
         }
       }
     }
@@ -239,6 +263,19 @@ main {
       margin: 0;
       padding: 0;
       list-style: none;
+
+      li {
+
+        a {
+          color: #fff;
+          font-size: 1.5rem;
+          transition: .4s color ease;
+
+          &:hover {
+            color: map.get($theme-colors, 'secondary');
+          }
+        }
+      }
     }
   }
 }
@@ -307,6 +344,11 @@ main {
         font-weight: 400;
         outline: none;
         cursor: pointer;
+
+        &:hover {
+          color: map.get($theme-colors, 'secondary');
+          transition: .4s color ease;
+        }
 
         &::after {
           content: '';
@@ -451,12 +493,24 @@ main {
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
+
+        &:hover {
+
+          h5 {
+            color: map.get($theme-colors, 'secondary');
+            transition: .4s color ease;
+          }
+        }
         
         h5 {
           margin: 0;
           font-size: 1rem;
           font-weight: 400;
           flex: 1;
+        }
+
+        img {
+          transition: .4s transform ease;
         }
       }
 
@@ -515,6 +569,12 @@ main {
       background-color: map.get($theme-colors, 'secondary');
       color: #fff;
       font-family: inherit;
+
+      &:hover {
+        background-color: #fff;
+        color: map.get($theme-colors, 'secondary');
+        outline: 2px solid map.get($theme-colors, 'secondary');
+      }
     }
   }
 }
@@ -546,6 +606,11 @@ footer {
         letter-spacing: 2px;
         text-transform: uppercase;
         text-decoration: none;
+        transition: .4s color ease;
+
+        &:hover {
+          color: map.get($theme-colors, 'secondary');
+        }
       }
     }
   }
@@ -559,6 +624,19 @@ footer {
     margin: 0;
     padding: 0;
     list-style: none;
+
+    li {
+
+      a {
+        color: #fff;
+        font-size: 1.8rem;
+        transition: .4s color ease;
+
+        &:hover {
+          color: map.get($theme-colors, 'secondary');
+        }
+      }
+    }
   }
 
   .footer-attribution {
@@ -713,6 +791,7 @@ footer {
             border: none;
             color: map.get($theme-colors, 'very-dark-blue');
             font-size: .8rem;
+            font-weight: 500;
           }
 
           .button-link {
@@ -720,6 +799,12 @@ footer {
             background-color: map.get($theme-colors, 'secondary');
             color: #fff;
             border-radius: 8px;
+
+            &:hover {
+              background-color: #fff;
+              color: map.get($theme-colors, 'secondary');
+              border: 2px solid map.get($theme-colors, 'secondary');
+            }
           }
         }
       }

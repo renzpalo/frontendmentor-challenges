@@ -58,15 +58,26 @@ img {
   text-decoration: none;
   outline: none;
   cursor: pointer;
+  transition: 0.4s background-color ease;
 }
 
 .button-primary {
   background-color: hsl(231deg, 69%, 60%);
   color: #fff;
 }
+.button-primary:hover {
+  background-color: transparent;
+  outline: 2px solid hsl(231deg, 69%, 60%);
+  color: hsl(231deg, 69%, 60%);
+}
 
 .button-secondary {
   background-color: rgb(247, 247, 249);
+  color: hsl(229deg, 31%, 21%);
+}
+.button-secondary:hover {
+  background-color: transparent;
+  outline: 2px solid hsl(229deg, 31%, 21%);
   color: hsl(229deg, 31%, 21%);
 }
 
@@ -169,12 +180,21 @@ main {
   text-decoration: none;
   text-transform: uppercase;
   border-bottom: 1px solid gray;
+  transition: 0.4s color ease;
+}
+.nav .nav-menu .nav-links li a:hover {
+  color: hsl(0deg, 94%, 66%);
 }
 .nav .nav-menu .nav-links li .button-link {
   margin-top: 1.4rem;
   padding: 0.8rem 2rem;
   border: 2px solid #fff;
   border-radius: 4px;
+  transition: 0.4s background-color ease;
+}
+.nav .nav-menu .nav-links li .button-link:hover {
+  background-color: #fff;
+  color: #000;
 }
 .nav .nav-menu .nav-socials {
   display: flex;
@@ -185,6 +205,14 @@ main {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.nav .nav-menu .nav-socials li a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: 0.4s color ease;
+}
+.nav .nav-menu .nav-socials li a:hover {
+  color: hsl(0deg, 94%, 66%);
 }
 
 #hero-section {
@@ -252,6 +280,10 @@ main {
   font-weight: 400;
   outline: none;
   cursor: pointer;
+}
+#features-section .features .tabs .tab-button:hover {
+  color: hsl(0deg, 94%, 66%);
+  transition: 0.4s color ease;
 }
 #features-section .features .tabs .tab-button::after {
   content: "";
@@ -378,11 +410,18 @@ main {
   justify-content: space-between;
   gap: 1rem;
 }
+#faq-section .faqs .faq .faq__question:hover h5 {
+  color: hsl(0deg, 94%, 66%);
+  transition: 0.4s color ease;
+}
 #faq-section .faqs .faq .faq__question h5 {
   margin: 0;
   font-size: 1rem;
   font-weight: 400;
   flex: 1;
+}
+#faq-section .faqs .faq .faq__question img {
+  transition: 0.4s transform ease;
 }
 #faq-section .faqs .faq .faq__answer {
   display: none;
@@ -425,6 +464,11 @@ main {
   color: #fff;
   font-family: inherit;
 }
+#mailing-list-section .mailing-list__form .button:hover {
+  background-color: #fff;
+  color: hsl(0deg, 94%, 66%);
+  outline: 2px solid hsl(0deg, 94%, 66%);
+}
 
 footer {
   padding: 2.8rem 0;
@@ -450,6 +494,10 @@ footer .footer-menu li a {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
+  transition: 0.4s color ease;
+}
+footer .footer-menu li a:hover {
+  color: hsl(0deg, 94%, 66%);
 }
 footer .footer-socials {
   display: flex;
@@ -460,6 +508,14 @@ footer .footer-socials {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+footer .footer-socials li a {
+  color: #fff;
+  font-size: 1.8rem;
+  transition: 0.4s color ease;
+}
+footer .footer-socials li a:hover {
+  color: hsl(0deg, 94%, 66%);
 }
 footer .footer-attribution {
   margin: 2rem 0 0;
@@ -559,12 +615,18 @@ footer .footer-attribution a {
     border: none;
     color: hsl(229deg, 31%, 21%);
     font-size: 0.8rem;
+    font-weight: 500;
   }
   .nav .nav-menu .nav-links li .button-link {
     margin: 0;
     background-color: hsl(0deg, 94%, 66%);
     color: #fff;
     border-radius: 8px;
+  }
+  .nav .nav-menu .nav-links li .button-link:hover {
+    background-color: #fff;
+    color: hsl(0deg, 94%, 66%);
+    border: 2px solid hsl(0deg, 94%, 66%);
   }
   .nav .nav-menu .nav-socials {
     display: none;
