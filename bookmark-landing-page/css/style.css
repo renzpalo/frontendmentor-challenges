@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
-@import url(animations.css);
 *,
 *::before,
 *::after {
@@ -224,13 +223,17 @@ main {
   content: "";
   display: block;
   position: absolute;
-  width: 300px;
-  min-height: 200px;
-  background-color: hsl(231deg, 69%, 60%);
-  z-index: -999;
-  border-radius: 128px 0 0 128px;
-  right: 0;
   top: 12%;
+  right: 0;
+  width: 70vw;
+  min-width: 300px;
+  max-width: 500px;
+  height: 60vw;
+  min-height: 200px;
+  max-height: 350px;
+  background-color: hsl(231deg, 69%, 60%);
+  border-radius: 200px 0 0 200px;
+  z-index: -999;
 }
 #hero-section .columns {
   flex-direction: column-reverse;
@@ -249,6 +252,22 @@ main {
   position: relative;
   padding: 2.8rem 0;
   text-align: center;
+}
+#features-section::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: clamp(50%, 52%, 380px);
+  left: 0;
+  width: 75vw;
+  min-width: 300px;
+  max-width: 500px;
+  height: 40vw;
+  min-height: 200px;
+  max-height: 350px;
+  background-color: hsl(231deg, 69%, 60%);
+  border-radius: 0 200px 200px 0;
+  z-index: -999;
 }
 #features-section .features .tabs {
   display: flex;
@@ -316,18 +335,6 @@ main {
   position: relative;
   margin: 0 -2rem;
   padding: 0 2rem;
-}
-#features-section .features .tab-contents .tab-content .tab-content__image::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 300px;
-  min-height: 200px;
-  background-color: hsl(231deg, 69%, 60%);
-  z-index: -999;
-  border-radius: 0 128px 128px 0;
-  left: 0;
-  top: 16.5%;
 }
 #features-section .features .tab-contents .tab-content .tab-content__text {
   max-width: 440px;
@@ -427,10 +434,12 @@ main {
   display: none;
 }
 #faq-section .faqs .faq.faq-active .faq__question img {
+  filter: invert(54%) sepia(38%) saturate(6235%) hue-rotate(331deg) brightness(107%) contrast(94%);
   transform: rotate(180deg);
 }
 #faq-section .faqs .faq.faq-active .faq__answer {
   display: block;
+  animation: 0.4s expand ease;
 }
 #faq-section .button {
   padding: 1rem 1.5rem;
@@ -631,16 +640,21 @@ footer .footer-attribution a {
   .nav .nav-menu .nav-socials {
     display: none;
   }
+  #hero-section::after {
+    top: auto;
+    bottom: 0;
+  }
   #hero-section .columns {
     flex-flow: row nowrap;
+    align-items: center;
     gap: 4rem;
   }
   #hero-section .content {
     text-align: left;
   }
-  #hero-section .content-image {
-    margin: 0;
-    margin-right: -8rem;
+  #features-section::after {
+    top: auto;
+    bottom: 0;
   }
   #features-section .features .tab-contents .tab-content {
     flex-flow: row nowrap;
@@ -716,11 +730,26 @@ footer .footer-attribution a {
   #hero-section {
     padding: 6.2rem 0 2.4rem;
   }
+  #hero-section::after {
+    max-width: 800px;
+  }
   #hero-section .columns {
     gap: 4.4rem;
   }
+  #features-section::after {
+    max-width: 800px;
+  }
   #features-section .features {
     margin-top: 3rem;
+  }
+}
+@keyframes expand {
+  0% {
+    transform: scaleY(0%);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(100%);
   }
 }
 
