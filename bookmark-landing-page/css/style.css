@@ -467,6 +467,16 @@ main {
   flex-flow: column wrap;
   gap: 1rem;
 }
+#mailing-list-section .mailing-list__form .input-group {
+  flex: 1;
+  position: relative;
+}
+#mailing-list-section .mailing-list__form .input-group label {
+  display: none;
+}
+#mailing-list-section .mailing-list__form .input-group .input {
+  width: 100%;
+}
 #mailing-list-section .mailing-list__form .button {
   min-width: 130px;
   background-color: hsl(0deg, 94%, 66%);

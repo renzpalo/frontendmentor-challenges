@@ -151,7 +151,10 @@
         <p>35,000+ already joined</p>
         <h2>Stay up-to-date with what we’re doing</h2>
         <form class="mailing-list__form">
-          <input type="email" class="input" placeholder="Enter your email address">
+          <div class="input-group input-invalid">
+            <label for="mailing-list__email">Email</label>
+            <input type="email" name="mailing-list__email" id="mailing-list__email" class="input input-invalid" placeholder="Enter your email address" required>
+          </div>
           <button type="submit" class="button">Contact Us</button>
         </form>
       </div>
