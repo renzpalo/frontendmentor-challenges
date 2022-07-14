@@ -1,3 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: hsl(255deg, 11%, 22%);
+  font-weight: 700;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2.6rem;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  color: hsl(257deg, 7%, 63%);
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2.6rem;
+  border: none;
+  border-radius: 32px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button-primary {
+  background-color: hsl(180deg, 66%, 49%);
+  color: #fff;
+}
+
+.input {
+  display: block;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+}
+.input::placeholder {
+  color: hsl(257deg, 7%, 63%);
+}
+
+.input-group label {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+.columns {
+  display: flex;
+  flex-flow: column wrap;
+}
+.columns > * {
+  flex: 1;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+}
+.nav .nav-logo {
+  max-height: 33px;
+}
+.nav .nav-hamburger {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 50px;
+  height: 50px;
+  margin-right: -12px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.nav .nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: hsl(257deg, 7%, 63%);
+}
+.nav .nav-menu {
+  display: none;
+}
+
+#hero__section {
+  padding-bottom: 2rem;
+}
+#hero__section .columns {
+  flex-direction: column-reverse;
+}
+#hero__section .content {
+  text-align: center;
+}
+#hero__section .content p {
+  font-size: 18px;
+}
+
+#shorten-link__section {
+  padding: 2.8rem 0;
+}
+#shorten-link__section .shorten-link__form {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  padding: 1.4rem;
+  background-color: hsl(257deg, 27%, 26%);
+  background-image: url(../images/bg-shorten-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  border-radius: 10px;
+}
+#shorten-link__section .shorten-link__form .input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+}
+#shorten-link__section .shorten-link__form .button {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+}
+
+#advanced-statistics__section {
+  padding: 2rem 0;
+  background-color: hsl(230deg, 25%, 95%);
+  text-align: center;
+}
+#advanced-statistics__section .features {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  margin: 4rem 0;
+}
+#advanced-statistics__section .features .feature {
+  position: relative;
+  background-color: #fff;
+  padding: 4rem 2rem 2rem;
+}
+#advanced-statistics__section .features .feature .feature__icon {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  background-color: hsl(257deg, 27%, 26%);
+  border-radius: 100%;
+  line-height: 90px;
+  transform: translateX(-50%);
+}
+#advanced-statistics__section .features .feature h3 {
+  font-size: 1.4rem;
+}
+#advanced-statistics__section .features .feature p {
+  line-height: 1.6rem;
+  font-size: 15px;
+}
+
+#cta__section {
+  padding: 6rem 0;
+  background-color: hsl(257deg, 27%, 26%);
+  background-image: url(../images/bg-boost-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+#cta__section h2 {
+  margin-top: 0;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+footer {
+  padding: 2.8rem 0;
+  background-color: hsl(260deg, 8%, 14%);
+  color: #fff;
+  text-align: center;
+}
+footer .footer-logo img {
+  filter: invert(95%) sepia(100%) saturate(22%) hue-rotate(318deg) brightness(104%) contrast(107%);
+}
+footer .footer-menu {
+  color: #fff;
+}
+footer .footer-menu h6 {
+  color: #fff;
+}
 footer .footer-attribution {
   font-size: 11px;
   text-align: center;
