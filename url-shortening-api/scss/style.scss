@@ -93,7 +93,7 @@ p {
 // Forms & Inputs
 .input {
   display: block;
-  padding: 1rem;
+  padding: .8rem 1rem;
   background-color: #fff;
   border-radius: 8px;
   border: none;
@@ -117,7 +117,7 @@ p {
 // Grid and Containers
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: calc(1110px + 2.8rem);
   margin: 0 auto;
   padding: 0 1.4rem;
 }
@@ -129,6 +129,15 @@ p {
   > * {
     flex: 1;
   }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .nav {
@@ -237,7 +246,6 @@ p {
   }
 
   .content {
-    max-width: calc(1110px / 2);
     margin: 0 auto;
     
     p {
@@ -277,7 +285,7 @@ p {
 
     .input {
       width: 100%;
-      padding: .8rem 1rem;
+
     }
 
     .button {
@@ -328,6 +336,14 @@ p {
 
       &-shortened {
         color: map.get($theme-colors, 'primary');
+      }
+
+      .button-copy {
+
+        &.button-copied {
+          content: 'Copied!';
+          background-color: map.get($theme-colors, 'dark-violet');
+        }
       }
     }
   }
@@ -510,13 +526,39 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4.8rem;
+    line-height: 5.4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
   .columns {
     flex-flow: row wrap;
   }
 
+  // Button
+  .button {
+    padding: 1.1rem 2rem;
+    font-size: 20px;
+  }
+
+  // Input
+  .input {
+    padding: 1.1rem 2rem;
+    font-size: 20px;
+  }
+
   .nav {
-    gap: 4rem;
-    min-height: 135px;
+    gap: 2.8rem;
+    min-height: 136px;
 
     .nav-hamburger {
       display: none;
@@ -538,7 +580,7 @@ footer {
 
       .nav-menu__links {
         flex-flow: row nowrap;
-        gap: 2rem;
+        gap: 1.8rem;
         min-width: 0;
 
         li {
@@ -547,6 +589,10 @@ footer {
           a {
             color: map.get($theme-colors, 'grayish');
             font-size: 1rem;
+
+            &.button {
+              padding: .4rem 1.4rem
+            }
           }
         }
       }
@@ -554,11 +600,34 @@ footer {
   }
 
   #hero__section {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+    padding-top: 6.2rem;
     text-align: left;
 
     .columns {
-      flex-direction: initial;
+      flex-flow: row nowrap;
       align-items: center;
+      gap: 6rem;
+    }
+
+    .content {
+      min-width: 575px;
+      max-width: 600px;
+      flex: 570px;
+
+      p {
+        margin: 1rem 0;
+        font-size: 20px;
+      }
+    }
+
+    .content-image {
+      min-width: 500px;
+      max-width: 500px;
     }
   }
 
@@ -566,9 +635,15 @@ footer {
 
     .shorten-link__form {
       flex-flow: row nowrap;
+      gap: 1.5rem;
+      padding: 3rem 4rem;
 
       .input-group {
         flex: 1;
+      }
+
+      .button {
+        padding: 1rem 2.5rem;
       }
     }
 
@@ -600,6 +675,15 @@ footer {
   }
 
   #advanced-statistics__section {
+    padding-top: .5rem;
+
+    .container {
+
+      > p {
+        max-width: 48%;
+        margin: 0 auto;
+      }
+    }
 
     .features {
       flex-flow: row nowrap;
@@ -613,12 +697,34 @@ footer {
 
       .feature {
         margin: 0;
+        text-align: left;
+
+        .feature-icon {
+          left: 2rem;
+          transform: none;
+        }
+
+        &:nth-of-type(2) {
+          margin-top: 100px;
+        }
+
+        &:nth-of-type(3) {
+          margin-top: 200px;
+        }
       }
     }
   }
 }
 
-
+.desktop-design {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 auto;
+  opacity: 50%;
+  transform: translateX(-50%);
+  z-index: 999999;
+}
 
 
 

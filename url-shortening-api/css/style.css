@@ -74,7 +74,7 @@ p {
 
 .input {
   display: block;
-  padding: 1rem;
+  padding: 0.8rem 1rem;
   background-color: #fff;
   border-radius: 8px;
   border: none;
@@ -93,7 +93,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: calc(1110px + 2.8rem);
   margin: 0 auto;
   padding: 0 1.4rem;
 }
@@ -104,6 +104,15 @@ p {
 }
 .columns > * {
   flex: 1;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .nav {
@@ -197,7 +206,6 @@ p {
   flex-direction: column-reverse;
 }
 #hero__section .content {
-  max-width: 555px;
   margin: 0 auto;
 }
 #hero__section .content p {
@@ -229,7 +237,6 @@ p {
 }
 #shorten-link__section .shorten-link__form .input {
   width: 100%;
-  padding: 0.8rem 1rem;
 }
 #shorten-link__section .shorten-link__form .button {
   padding: 0.7rem 1rem;
@@ -273,6 +280,10 @@ p {
 }
 #shorten-link__section .shorten-links__link-shortened {
   color: hsl(180deg, 66%, 49%);
+}
+#shorten-link__section .shorten-links__link .button-copy.button-copied {
+  content: "Copied!";
+  background-color: hsl(257deg, 27%, 26%);
 }
 
 #advanced-statistics__section {
@@ -419,12 +430,31 @@ footer .footer-attribution a {
   }
 }
 @media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4.8rem;
+    line-height: 5.4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 18px;
+  }
   .columns {
     flex-flow: row wrap;
   }
+  .button {
+    padding: 1.1rem 2rem;
+    font-size: 20px;
+  }
+  .input {
+    padding: 1.1rem 2rem;
+    font-size: 20px;
+  }
   .nav {
-    gap: 4rem;
-    min-height: 135px;
+    gap: 2.8rem;
+    min-height: 136px;
   }
   .nav .nav-hamburger {
     display: none;
@@ -444,7 +474,7 @@ footer .footer-attribution a {
   }
   .nav .nav-menu .nav-menu__links {
     flex-flow: row nowrap;
-    gap: 2rem;
+    gap: 1.8rem;
     min-width: 0;
   }
   .nav .nav-menu .nav-menu__links li {
@@ -454,18 +484,46 @@ footer .footer-attribution a {
     color: hsl(257deg, 7%, 63%);
     font-size: 1rem;
   }
+  .nav .nav-menu .nav-menu__links li a.button {
+    padding: 0.4rem 1.4rem;
+  }
   #hero__section {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+    padding-top: 6.2rem;
     text-align: left;
   }
   #hero__section .columns {
-    flex-direction: initial;
+    flex-flow: row nowrap;
     align-items: center;
+    gap: 6rem;
+  }
+  #hero__section .content {
+    min-width: 575px;
+    max-width: 600px;
+    flex: 570px;
+  }
+  #hero__section .content p {
+    margin: 1rem 0;
+    font-size: 20px;
+  }
+  #hero__section .content-image {
+    min-width: 500px;
+    max-width: 500px;
   }
   #shorten-link__section .shorten-link__form {
     flex-flow: row nowrap;
+    gap: 1.5rem;
+    padding: 3rem 4rem;
   }
   #shorten-link__section .shorten-link__form .input-group {
     flex: 1;
+  }
+  #shorten-link__section .shorten-link__form .button {
+    padding: 1rem 2.5rem;
   }
   #shorten-link__section .shorten-links__link {
     flex-flow: row nowrap;
@@ -486,6 +544,13 @@ footer .footer-attribution a {
     gap: 2rem;
     margin: 0;
   }
+  #advanced-statistics__section {
+    padding-top: 0.5rem;
+  }
+  #advanced-statistics__section .container > p {
+    max-width: 48%;
+    margin: 0 auto;
+  }
   #advanced-statistics__section .features {
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -497,7 +562,27 @@ footer .footer-attribution a {
   }
   #advanced-statistics__section .features .feature {
     margin: 0;
+    text-align: left;
   }
+  #advanced-statistics__section .features .feature .feature-icon {
+    left: 2rem;
+    transform: none;
+  }
+  #advanced-statistics__section .features .feature:nth-of-type(2) {
+    margin-top: 100px;
+  }
+  #advanced-statistics__section .features .feature:nth-of-type(3) {
+    margin-top: 200px;
+  }
+}
+.desktop-design {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 auto;
+  opacity: 50%;
+  transform: translateX(-50%);
+  z-index: 999999;
 }
 
 /*# sourceMappingURL=style.css.map */

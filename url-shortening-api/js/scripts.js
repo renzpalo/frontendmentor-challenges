@@ -34,8 +34,16 @@ function copyShortUrls() {
 
   shortUrlButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
+      // Reset all buttons
+      shortUrlButtons.forEach((button) => {
+        button.classList.remove('button-copied');
+        button.textContent = 'Copy';
+      });
       // Copy text to clipboard.
       navigator.clipboard.writeText(e.currentTarget.value);
+
+      e.currentTarget.classList.add('button-copied');
+      e.currentTarget.textContent = 'Copied!';
     });
   });
 }
