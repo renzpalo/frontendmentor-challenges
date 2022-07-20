@@ -23,7 +23,14 @@ const formShortenLink = document.querySelector('.shorten-link__form');
 formShortenLink.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  generateShortURL(e.target[0].value);
+  const urlInput = e.target[0].value;
+
+  if(urlInput.trim() == null || urlInput.trim() == '') {
+    document.querySelector('.shorten-link__form .input-group').classList.add('input-error');
+  } else {
+    document.querySelector('.shorten-link__form .input-group').classList.remove('input-error');
+    generateShortURL(urlInput);
+  }
 });
 
 const shortenLinkLists = document.querySelector('.shorten-links');
@@ -60,7 +67,7 @@ function generateShortUrlHTML(urls) {
                   </div>
                 </li>`;
 
-  shortenLinkLists.insertAdjacentHTML('beforeend', html); 
+  shortenLinkLists.insertAdjacentHTML('afterbegin', html); 
 
   copyShortUrls();
 }

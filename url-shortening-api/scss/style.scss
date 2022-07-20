@@ -95,6 +95,12 @@ p {
   border-radius: 8px;
   color: #fff;
   font-size: 16px;
+  transition: .4s color ease, .4s background-color ease;
+
+  &:hover {
+    background-color: map.get($theme-colors, 'cyan-light');
+    color: #fff !important;
+  }
 }
 
 // Forms & Inputs
@@ -111,6 +117,30 @@ p {
 
   &::placeholder {
     color: map.get($theme-colors, 'grayish');
+  }
+}
+
+.input-error {
+  position: relative;
+  margin-bottom: 1.4rem;
+
+  .input {
+    margin: -2px;
+    border: 2px solid map.get($theme-colors, 'secondary');
+    
+    &::placeholder {
+      color: map.get($theme-colors, 'secondary');
+      opacity: 50%;
+    }
+  }
+
+  &::after {
+    content: 'Please add a link';
+    display: block;
+    position: absolute;
+    margin-top: .4rem;
+    color: map.get($theme-colors, 'secondary');
+    font-style: italic;
   }
 }
 
@@ -244,7 +274,7 @@ header {
 }
 
 #hero__section {
-  padding: 0 0 10rem;
+  padding: 100px 0 10rem;
   overflow-x: hidden;
   text-align: center;
 
@@ -292,7 +322,6 @@ header {
 
     .input {
       width: 100%;
-
     }
 
     .button {
@@ -315,7 +344,7 @@ header {
 
     p {
       max-width: calc(100% - 2.8rem);
-      margin: 0;
+      margin: 0 1.4rem;
       font-size: 18px;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -342,13 +371,13 @@ header {
       }
 
       &-shortened {
+        margin: 0 !important;
         color: map.get($theme-colors, 'primary');
       }
 
       .button-copy {
 
         &.button-copied {
-          content: 'Copied!';
           background-color: map.get($theme-colors, 'dark-violet');
         }
       }
@@ -506,12 +535,12 @@ footer {
     li {
 
       a {
-
-        img {
-
-          &:hover {
-            filter: invert(74%) sepia(84%) saturate(424%) hue-rotate(122deg) brightness(84%) contrast(91%);
-          }
+        color: #fff;
+        font-size: 24px;
+        transition: .4s color ease;
+        
+        &:hover {
+          color: map.get($theme-colors, 'primary');
         }
       }
     }
@@ -575,10 +604,21 @@ footer {
     font-size: 20px;
   }
 
+  .button-copy {
+    min-width: 100px;
+    max-width: 100px;
+    padding: .5rem 1rem;
+    font-size: 16px;
+  }
+
   // Input
   .input {
     padding: 1.1rem 2rem;
     font-size: 20px;
+  }
+
+  .input-error {
+    margin: 0;
   }
 
   .nav {
@@ -677,6 +717,11 @@ footer {
     }
 
     .shorten-links {
+      gap: 1.4rem;
+
+      > p {
+        margin: 0;
+      }
 
       &__link {
         flex-flow: row nowrap;
@@ -697,6 +742,10 @@ footer {
           flex-flow: row nowrap;
           align-items: center;
           gap: 2rem;
+          margin: 0;
+        }
+
+        &-shortened {
           margin: 0;
         }
       }

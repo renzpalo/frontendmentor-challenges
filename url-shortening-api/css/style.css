@@ -75,6 +75,11 @@ p {
   border-radius: 8px;
   color: #fff;
   font-size: 16px;
+  transition: 0.4s color ease, 0.4s background-color ease;
+}
+.button-copy:hover {
+  background-color: hsl(179deg, 56%, 75%);
+  color: #fff !important;
 }
 
 .input {
@@ -90,6 +95,27 @@ p {
 }
 .input::placeholder {
   color: hsl(257deg, 7%, 63%);
+}
+
+.input-error {
+  position: relative;
+  margin-bottom: 1.4rem;
+}
+.input-error .input {
+  margin: -2px;
+  border: 2px solid hsl(0deg, 87%, 67%);
+}
+.input-error .input::placeholder {
+  color: hsl(0deg, 87%, 67%);
+  opacity: 50%;
+}
+.input-error::after {
+  content: "Please add a link";
+  display: block;
+  position: absolute;
+  margin-top: 0.4rem;
+  color: hsl(0deg, 87%, 67%);
+  font-style: italic;
 }
 
 .input-group label {
@@ -203,7 +229,7 @@ header {
 }
 
 #hero__section {
-  padding: 0 0 10rem;
+  padding: 100px 0 10rem;
   overflow-x: hidden;
   text-align: center;
 }
@@ -260,7 +286,7 @@ header {
 }
 #shorten-link__section .shorten-links p {
   max-width: calc(100% - 2.8rem);
-  margin: 0;
+  margin: 0 1.4rem;
   font-size: 18px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -284,10 +310,10 @@ header {
   margin: 0 1.4rem;
 }
 #shorten-link__section .shorten-links__link-shortened {
+  margin: 0 !important;
   color: hsl(180deg, 66%, 49%);
 }
 #shorten-link__section .shorten-links__link .button-copy.button-copied {
-  content: "Copied!";
   background-color: hsl(257deg, 27%, 26%);
 }
 
@@ -413,8 +439,13 @@ footer .footer-socials {
   padding: 0;
   list-style: none;
 }
-footer .footer-socials li a img:hover {
-  filter: invert(74%) sepia(84%) saturate(424%) hue-rotate(122deg) brightness(84%) contrast(91%);
+footer .footer-socials li a {
+  color: #fff;
+  font-size: 24px;
+  transition: 0.4s color ease;
+}
+footer .footer-socials li a:hover {
+  color: hsl(180deg, 66%, 49%);
 }
 footer .footer-attribution {
   margin-top: 2rem;
@@ -460,9 +491,18 @@ footer .footer-attribution a {
     padding: 1.1rem 2rem;
     font-size: 20px;
   }
+  .button-copy {
+    min-width: 100px;
+    max-width: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+  }
   .input {
     padding: 1.1rem 2rem;
     font-size: 20px;
+  }
+  .input-error {
+    margin: 0;
   }
   .nav {
     gap: 2.8rem;
@@ -540,6 +580,12 @@ footer .footer-attribution a {
   #shorten-link__section .shorten-link__form .button {
     padding: 1rem 2.5rem;
   }
+  #shorten-link__section .shorten-links {
+    gap: 1.4rem;
+  }
+  #shorten-link__section .shorten-links > p {
+    margin: 0;
+  }
   #shorten-link__section .shorten-links__link {
     flex-flow: row nowrap;
     align-items: center;
@@ -557,6 +603,9 @@ footer .footer-attribution a {
     flex-flow: row nowrap;
     align-items: center;
     gap: 2rem;
+    margin: 0;
+  }
+  #shorten-link__section .shorten-links__link-shortened {
     margin: 0;
   }
   #advanced-statistics__section {
