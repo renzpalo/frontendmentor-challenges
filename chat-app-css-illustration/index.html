@@ -5,42 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
   
-  <title>Frontend Mentor | [Challenge Name Here]</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Chat App CSS Illustration</title>
 </head>
 <body>
+  <!-- <img src="design/mobile-design.jpg" alt="" class="design"> -->
   <main>
     <section id="chat-app__section">
       <div class="container">
         <div class="columns">
           <div class="content-image">
             <div class="phone">
-              <div class="header">
-                <button type="button" class="button-icon button-back">X</button>
-                <img src="images/avatar.jpg" alt="Samuel Green">
-                <div class="header__title">
-                  <h4>Samuel Green</h4>
-                  <small>Available to Walk</small>
+              <div class="chat-header">
+                <button type="button" class="button-icon button-back">
+                  <span></span>
+                  <span></span>
+                </button>
+                <div class="chat-header__details">
+                  <img src="images/avatar.jpg" alt="Samuel Green" class="chat-header__avatar">
+                  <div class="chat-header__title">
+                    <h4>Samuel Green</h4>
+                    <small>Available to Walk</small>
+                  </div>
                 </div>
-                <button type="button" class="button-icon button-menu"></button>
+                <button type="button" class="button-icon button-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
               </div>
               <div class="chat-conversations">
-                <div class="sender">
-                  <p></p>
+                <p class="sender-chat chat-text">That sounds great. I’d be happy with that.</p>
+                <p class="sender-chat chat-text">Could you send over some pictures of your dog, please?</p>
+                <div class="receiver-chat chat-images">
+                  <img src="images/dog-image-1.jpg" alt="">
+                  <img src="images/dog-image-2.jpg" alt="">
+                  <img src="images/dog-image-3.jpg" alt="">
+                </div>
+                <p class="receiver-chat chat-text">Here are a few pictures. She’s a happy girl!</p>
+                <p class="receiver-chat chat-text">Can you make it?</p>
+                <p class="sender-chat chat-text">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+                <div class="sender-chat chat-task">
+                  <button type="button">O</button>
+                  <p>30 minute walk</p>
+                  <p>$29</p>
+                </div>
+                <div class="sender-chat chat-task">
+                  <button type="button">O</button>
+                  <p>1 hour walk</p>
+                  <p>$49</p>
                 </div>
               </div>
               <form class="message__form">
                 <div class="input-group">
                   <label for=""></label>
-                  <input type="text">
+                  <input type="text" placeholder="Type a message…">
                 </div>
-                <button type="button"></button>
+                <button type="button">x</button>
               </form>
             </div>
           </div>
@@ -52,35 +74,13 @@
       </div>
     </section>
   </main>
-
-  
-  
-
-  That sounds great. I’d be happy with that.
-
-  Could you send over some pictures of your dog, please?
-
-  Here are a few pictures. She’s a happy girl!
-
-  Can you make it?
-
-  She looks so happy! The time we discussed works. How long shall I take her out for?
-
-  30 minute walk
-  $29
-
-  1 hour walk
-  $49
-
-  Type a message…
-
-  
-
-  
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://www.frontendmentor.io/profile/renzpalo">Renz Palo</a>.
-  </div>
+  <footer>
+    <div class="container">
+      <div class="footer-attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://www.frontendmentor.io/profile/renzpalo">Renz Palo</a>.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
